@@ -1,5 +1,7 @@
-personaje{
+#gnomo{
+    background-color: #62ff00;
     width: 200px;
     height: 200px;
-    background-color: #62ff00;
+    align-items: center;
+    margin-left: 583px;
 }
