@@ -1,6 +1,23 @@
-
-
 .imagen-container {
 display: flex;
 justify-content: center;
+margin-top: 150px;
+}
+
+.primera{
+    display: flex;
+    flex-direction: row;
+    column-gap: 250px;
+}
+
+.info-foto{
+    height: 50px;
+    width: 50px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    column-gap: 300px;
+    margin-right: auto;
 }
