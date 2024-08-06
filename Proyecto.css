@@ -1,1 +1,6 @@
 
+
+.imagen-container {
+display: flex;
+justify-content: center;
+}
