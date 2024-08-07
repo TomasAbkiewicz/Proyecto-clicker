@@ -1,7 +1,3 @@
-#body{
-    display: flex;
-    justify-content: center;
-}
 
 .crear{
     color: deepskyblue;
@@ -11,4 +7,10 @@
 .row{
     display: flex;
     flex-direction: row;
+}
+
+.explicacion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
