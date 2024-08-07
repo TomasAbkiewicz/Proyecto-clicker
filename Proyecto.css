@@ -1,7 +1,28 @@
-#gnomo{
-    background-color: #62ff00;
-    width: 200px;
-    height: 200px;
-    align-items: center;
-    margin-left: 583px;
+.imagen-container {
+display: flex;
+justify-content: center;
+margin-top: 150px;
+}
+
+.primera{
+    display: flex;
+    flex-direction: row;
+    column-gap: 250px;
+}
+
+.info-foto{
+    height: 50px;
+    width: 50px;
+}
+
+.column{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+}
+
+.config{
+    background-color: gray;
+    display: inline;
 }
