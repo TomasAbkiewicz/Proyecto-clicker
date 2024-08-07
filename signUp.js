@@ -1,8 +1,8 @@
 
 
 const usuario = {
-    usuario: "joaco",
-    contraseña: "sch", 
+    usuario: document.getElementById("usuario").textContent,
+    contraseña: document.getElementById("contraseña").textContent, 
     id: "#00000001",
 }
 
