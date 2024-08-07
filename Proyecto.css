@@ -18,6 +18,11 @@ margin-top: 150px;
 .column{
     display: flex;
     flex-direction: column;
-    column-gap: 300px;
-    margin-right: auto;
+    justify-content: flex-end;
+
+}
+
+.config{
+    background-color: gray;
+    display: inline;
 }

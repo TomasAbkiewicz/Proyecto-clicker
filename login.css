@@ -1,4 +1,14 @@
-.body{
+#body{
     display: flex;
     justify-content: center;
+}
+
+.crear{
+    color: deepskyblue;
+    text-decoration: underline;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
 }
