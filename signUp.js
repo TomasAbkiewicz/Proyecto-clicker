@@ -19,10 +19,14 @@ class Partida {
 
 function guardarLocalStorageUsuario() {
     console.log("guardado");
+    if(usuario.usuario !== "" && usuario.contraseña !== ""){
     localStorage.setItem("usuario", (usuario.usuario));
     localStorage.setItem("contraseña", (usuario.contraseña));
     localStorage.setItem("id usuario", (usuario.id));
     window.location.href = "login.html";
+    } else {
+        alert("escribi un usuario y contraseña")
+    }
 }
 
 let partida1 = new Partida();
