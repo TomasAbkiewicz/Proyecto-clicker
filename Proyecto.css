@@ -1,54 +1,61 @@
-.imagen-container {
-display: flex;
-justify-content: center;
-margin-top: 150px;
+.caja1{
+    background-color: lightgray;
+    border: 3px solid black;
+    font-weight: bold;
+    height: 100px;
+    width: 150px;
+    text-align: center;
+    margin: 5px;
+    float: left;
+}
+
+.caja{
+    background-color: lightgray;
+    border: 3px solid black;
+    font-weight: bold;
+    height: 100px;
+    width: 150px;   
+    text-align: center;
+    margin: 5px;
 }
 
 .primera{
     display: flex;
+    border: 1px solid black;
+    background-color: coral;
+    padding: 20px;
     flex-direction: row;
-    column-gap: 220px;
+    justify-content: space-between;
 }
 
-.info-foto{
-    height: 50px;
-    width: 50px;
-}
-
-.column{
+.segunda{
     display: flex;
+    border: 1px solid black;
+    background-color: green;
+    padding: 20px;
     flex-direction: column;
     justify-content: flex-end;
-
+    row-gap: 50px;
+    align-items: flex-end;
 }
 
-.config{
-    background-color: lightgray;
-    display: flex;
-    height: 10vh;
-    width: 20vw;
-    justify-content: center;
+#informacion{
+    height: 30px;
+    width: 30px;
 }
 
-.time{
-    background-color: lightgray;
-    display: flex;
-    height: 10vh;
-    width: 20vw;
-    justify-content: center;
+#modo{
+    height: 200px;
+    align-items: center;
 }
 
-.currencya{
-    background-color: lightgray;
-    display: flex;
-    height: 10vh;
-    width: 20vw;
-    justify-content: center;
+#shop{
+margin-top: 5px;
 }
-.info-foto{
-    background-color: lightgray;
+
+.imagen-container{
     display: flex;
-    height: 10vh;
-    width: 20vw;
     justify-content: center;
+    align-items: center;
+    margin-top: -350px;
 }

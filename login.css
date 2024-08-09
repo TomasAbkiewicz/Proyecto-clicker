@@ -1,16 +1,8 @@
-
-.crear{
-    color: deepskyblue;
-    text-decoration: underline;
-}
-
-.row{
-    display: flex;
-    flex-direction: row;
-}
-
-.explicacion{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.menu{
+display: flex;
+border: 1px solid black;
+background-color: black;
+padding: 20px;
+flex-direction: row;
+justify-content: space-between;
 }
