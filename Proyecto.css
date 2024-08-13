@@ -25,7 +25,8 @@
     background-color: coral;
     padding: 20px;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: baseline;
 }
 
 .segunda{
@@ -58,4 +59,9 @@ margin-top: 5px;
     justify-content: center;
     align-items: center;
     margin-top: -350px;
+}
+
+.info-foto{
+    position: relative;
+    top: 50px;
 }
