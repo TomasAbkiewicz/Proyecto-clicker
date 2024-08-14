@@ -79,3 +79,21 @@
     justify-content: center;
     display: flex;
 }
+
+#vent{
+    background-color: lightgray;
+    position: relative;
+    left: 50px;
+    top: 200px;
+}
+
+.vent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+    height: 200px;
+    width: 75px;
+}
+
+
