@@ -46,6 +46,19 @@
     display: flex;
 }
 
+#upgrade1{
+    position: relative;
+    bottom: 400px;
+    right: 50px;
+    background-color: lightgray;
+    height: 50px;
+    width: 150px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
 
 #modos{
     position: relative;
