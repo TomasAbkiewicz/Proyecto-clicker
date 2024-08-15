@@ -3,29 +3,31 @@ let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
 
 let clickStrength= 1
-
 let contadorMonedas = 0
+let precio =10
+let extra= .1
 
 function updateCoins (){
     contadorMonedas += clickStrength
     contador.textContent = "Monedas: "+Math.floor(contadorMonedas)
 }
-let precio =10
-let extraStr =1
-function addStr(){
+
+function addStr(amount){
     if (contadorMonedas >= precio){
         contadorMonedas -=Math.floor(precio)
         contador.textContent ="Monedas: "+ Math.floor(contadorMonedas)
-        clickStrength+=extraStr;
-        extraStr *= 1.2
+        clickStrength+=amount + extra;
+        extra*= 2
         precio *=1.8
-        mejora.textContent ="Plantar Gnomo: "+Math.floor(precio)
+        mejora.textContent = "Plantar Gnomo: " + Math.floor(precio)
     }
     
 }
 
 personaje.addEventListener("click",updateCoins)
-mejora.addEventListener("click",addStr)
+mejora.addEventListener("click", () => addStr(1))
+
+
 
 
 
