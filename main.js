@@ -6,13 +6,15 @@ let contadorDT= document.getElementById("time")
 let modal = document.getElementById("loginModal");
 let closeBtn = document.getElementsByClassName("close")[0];
 let logInBtn=document.getElementById("login");
+let sacrificio =document.getElementById("upgradePer1");
 
+let sacriP= 2000
 let upgradeStage1 = 0; 
 let upgradeStageP1 = 0; 
 let minutos= 0
 let tiempoJ= 50
 let clickStrength= 0
-let contadorMonedas = 1000
+let contadorMonedas = 100000
 let precio =10
 let precioP1= 30
 let extra= 0.1
@@ -97,7 +99,17 @@ function addPStr(){
     }
     
 }
-
+function sacrifice(){
+    if (contadorMonedas >= sacriP) {
+        contadorMonedas -= sacriP;  
+        contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
+        coinPerSec += 1.2;   
+        sacriP *= 1.2  
+        sacrificio.textContent = "Sacrificio: " + Math.floor(sacriP);
+        
+    }
+    
+}
 document.getElementById('shop').addEventListener('click', function() {
     var upgradeButtons = document.getElementById('upgrade-buttons');
     if (upgradeButtons.style.display === 'none' || upgradeButtons.style.display === '') {
@@ -120,6 +132,7 @@ personaje.addEventListener("click",updateCoins)
 mejora.addEventListener("click", addStr);  // Correctly add the reference to the function
 mejoraPassiva.addEventListener("click", addPStr); // Correctly add the reference to the function
 logInBtn.addEventListener("click", displayLog);
+sacrificio.addEventListener("click", sacrifice);
 
 setInterval(passiveCoins,100);
 setInterval(updateTime,1000);
