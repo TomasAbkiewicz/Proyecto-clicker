@@ -1,8 +1,9 @@
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: solid black 3px;
-    height: 300px;
-    width: 300px;
+body{
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to right, #523a2b 50%, #256082 50%);
+}
+
+.menu{
+    
 }

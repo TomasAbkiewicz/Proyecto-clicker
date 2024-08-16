@@ -87,13 +87,23 @@
     top: 200px;
 }
 
-.vent{
+.vent-container{
+    position: absolute;
+    top: 20%;
+    left: 10%;
+    width: 200px;
+    height: 300px;
+    background-color: lightgray;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: lightgray;
-    height: 200px;
-    width: 75px;
+}
+
+.franja{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 
