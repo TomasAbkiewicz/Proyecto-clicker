@@ -1,8 +1,0 @@
-.menu{
-display: flex;
-border: 1px solid black;
-background-color: black;
-padding: 20px;
-flex-direction: row;
-justify-content: space-between;
-}
