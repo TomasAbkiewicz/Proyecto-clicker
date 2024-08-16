@@ -1,9 +1,33 @@
-body{
-    margin: 0;
-    height: 100vh;
-    background: linear-gradient(to right, #523a2b 50%, #256082 50%);
+header{
+    display: flex;
+    background-color: black;
+    justify-content: flex-start;
+    color: white;
 }
 
-.menu{
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: solid black 3px;
+    gap: 50px;
+    flex-direction: column;
     
+}
+
+.welcome{
+    font-weight: bold;
+    text-align: center;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iniciar-sesion{
+    font-weight: bold;
 }
