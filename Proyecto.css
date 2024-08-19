@@ -81,6 +81,18 @@
     justify-content: center;
     display: flex;
 }
+#rebirthButton{
+    position: relative;
+    bottom: 160px;
+    right: 50px;
+    background-color: lightgray;
+    height: 50px;
+    width: 150px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
 #gnomeCounter{
     background-color: lightgray;
     height: 50px;
@@ -96,7 +108,7 @@
 
 #modos{
     position: relative;
-    bottom: 140px;
+    bottom: 220px;
     right: 50px;
     background-color: lightgray;
     height: 50px;

@@ -8,20 +8,23 @@ let closeBtn = document.getElementsByClassName("close")[0];
 let logInBtn=document.getElementById("login");
 let sacrificio =document.getElementById("upgradePer1");
 let contadorGnomos =document.getElementById("gnomeCounter");
+let rebirth = document.getElementById("rebirthButton");
 
 let sacriP= 2000
 let upgradeStage1 = 0; 
+let rebirtStage = 0; 
 let upgradeStageP1 = 0; 
 let minutos= 0
 let tiempoJ= 50
 let clickStrength= 0
-let contadorMonedas = 100000
-let precio =10
-let precioP1= 30
+let contadorMonedas = 300000
 let extra= 0.1
 let coinPerSec = 0
 let gnomos= 0
+let rebirtExtra= 1
 
+
+let rebirtStages = [2,4,9,18,30,40]
 let upgradeStages1 = [
     {price:10, clickStrength:1 , extra:1},
     {price:20,clickStrength:2,extra:1},
@@ -70,6 +73,27 @@ let upgradeStagesP1 = [
     { price: 50000, coinPerSec: 120 },
     { price: 65000, coinPerSec: 150 },
 ]
+
+function rebirt(){
+    rebirtExtra = rebirtStages[rebirtStage];
+    rebirtStage +=1;
+    clickStrength= 0;
+    contadorMonedas = 10;
+    precio =10;
+    precioP1= 30;    
+    extra= 0.1;
+    coinPerSec = 0;
+    gnomos= 0;
+    sacriP= 2000;
+    upgradeStage1 = 0; 
+    upgradeStageP1 = 0; 
+    mejora.textContent = "Plantar Gnomo: " + upgradeStages1[0].price;
+    mejoraPassiva.textContent = "Regar Jardin: " + upgradeStagesP1[0].price; 
+    contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
+    contadorGnomos.textContent = "Gnomos: " + gnomos;
+    sacrificio.textContent = "Sacrificio: " + Math.floor(sacriP);
+
+}
 function updateTime(){
      
     if (tiempoJ>59){
@@ -96,7 +120,7 @@ function addStr() {
     if (contadorMonedas >= currentStage.price) {
         contadorMonedas -= currentStage.price;  
         contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
-        clickStrength += currentStage.clickStrength * currentStage.extra; 
+        clickStrength += (currentStage.clickStrength * currentStage.extra)* rebirtExtra; 
         gnomos +=1;
         contadorGnomos.textContent = "Gnomos: "+ gnomos;
         upgradeStage1 += 1; // Move to the next stage
@@ -114,7 +138,7 @@ function addPStr(){
     if (contadorMonedas >= currentStage.price) {
         contadorMonedas -= currentStage.price;  
         contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
-        coinPerSec += currentStage.coinPerSec; 
+        coinPerSec += currentStage.coinPerSec* rebirtExtra; 
     
         upgradeStageP1 += 1; // Move to the next stage
 
@@ -133,7 +157,7 @@ function sacrifice(){
         gnomos -=1
         contadorGnomos.textContent = "Gnomos: "+ gnomos;
         contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
-        coinPerSec += 1.2;   
+        coinPerSec += 1.2*rebirtExtra;   
         sacriP *= 1.2  
         sacrificio.textContent = "Sacrificio: " + Math.floor(sacriP);
         
@@ -163,6 +187,7 @@ mejora.addEventListener("click", addStr);  // Correctly add the reference to the
 mejoraPassiva.addEventListener("click", addPStr); // Correctly add the reference to the function
 logInBtn.addEventListener("click", displayLog);
 sacrificio.addEventListener("click", sacrifice);
+rebirth.addEventListener("click", rebirt);
 
 setInterval(passiveCoins,100);
 setInterval(updateTime,1000);
