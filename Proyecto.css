@@ -214,3 +214,21 @@
     text-decoration: none;
     cursor: pointer;
 }
+.golden-elf {
+    position: absolute;
+    display: none; /* Initially hidden */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    background-color: gold; /* Placeholder background color */
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000; /* Optional border for better visibility */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.golden-elf-text {
+    font-size: 18px;
+    font-weight: bold;
+}
