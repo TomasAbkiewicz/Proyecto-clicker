@@ -24,7 +24,14 @@ let gnomos= 0
 let rebirtExtra= 1
 
 
-let rebirtStages = [2,4,9,18,30,40]
+let rebirtStages = [
+    { price: 300000, extra:2},
+    { price: 1000000, extra:4},
+    { price: 3000000, extra:8},
+    { price: 5000000, extra:12},
+    { price: 9999999, extra:20},
+    { price: 20000000, extra:40},
+]
 let upgradeStages1 = [
     {price:10, clickStrength:1 , extra:1},
     {price:20,clickStrength:2,extra:1},
@@ -49,7 +56,7 @@ let upgradeStages1 = [
     {price:100000, clickStrength:0 , extra:1.5},
     {price:130000,clickStrength:2,extra:2},
     {price:180000, clickStrength:4 , extra:1.5},
-    {price:200000,clickStrength:0,extra: 3},
+    {price:2000000,clickStrength:0,extra: 3},
 ]
 let upgradeStagesP1 = [
     { price: 30, coinPerSec: 1 },
@@ -75,23 +82,35 @@ let upgradeStagesP1 = [
 ]
 
 function rebirt(){
-    rebirtExtra = rebirtStages[rebirtStage];
-    rebirtStage +=1;
-    clickStrength= 0;
-    contadorMonedas = 10;
-    precio =10;
-    precioP1= 30;    
-    extra= 0.1;
-    coinPerSec = 0;
-    gnomos= 0;
-    sacriP= 2000;
-    upgradeStage1 = 0; 
-    upgradeStageP1 = 0; 
-    mejora.textContent = "Plantar Gnomo: " + upgradeStages1[0].price;
-    mejoraPassiva.textContent = "Regar Jardin: " + upgradeStagesP1[0].price; 
-    contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
-    contadorGnomos.textContent = "Gnomos: " + gnomos;
-    sacrificio.textContent = "Sacrificio: " + Math.floor(sacriP);
+    let currentStage= rebirtStages[rebirtStage];
+    if (contadorMonedas >= currentStage.price) {
+        contadorMonedas -= currentStage.price;  
+        
+       
+        rebirtExtra = currentStage.extra;
+       
+        clickStrength= 0;
+        contadorMonedas = 10 ;
+        precio =10;
+        precioP1= 30;    
+        extra= 0.1;
+        coinPerSec = 0;
+        gnomos= 0;
+        sacriP= 2000;
+        upgradeStage1 = 0; 
+        upgradeStageP1 = 0; 
+        mejora.textContent = "Plantar Gnomo: " + upgradeStages1[0].price;
+        mejoraPassiva.textContent = "Regar Jardin: " + upgradeStagesP1[0].price; 
+        contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
+        contadorGnomos.textContent = "Gnomos: " + gnomos;
+        sacrificio.textContent = "Sacrificio: " + Math.floor(sacriP);
+        rebirtStage +=1;
+        if (rebirtStage < rebirtStages.length) {
+            rebirth.textContent = "Rebirth: " + rebirtStages[rebirtStage].price;
+        } else {
+            rebirth.textContent = "Max Upgrade Reached";
+        }
+    }
 
 }
 function updateTime(){
