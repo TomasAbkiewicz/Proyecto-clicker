@@ -7,6 +7,7 @@ let modal = document.getElementById("loginModal");
 let closeBtn = document.getElementsByClassName("close")[0];
 let logInBtn=document.getElementById("login");
 let sacrificio =document.getElementById("upgradePer1");
+let contadorGnomos =document.getElementById("gnomeCounter");
 
 let sacriP= 2000
 let upgradeStage1 = 0; 
@@ -19,6 +20,7 @@ let precio =10
 let precioP1= 30
 let extra= 0.1
 let coinPerSec = 0
+let gnomos= 0
 
 let upgradeStages1 = [
     {price:10, clickStrength:1 , extra:1},
@@ -29,6 +31,22 @@ let upgradeStages1 = [
     {price:300,clickStrength:2,extra:2},
     {price:1000, clickStrength:4 , extra:2},
     {price:4000,clickStrength:0,extra: 3},
+    {price:6000, clickStrength:29 , extra:1},
+    {price:6500,clickStrength:0,extra:2},
+    {price:10000, clickStrength:0 , extra:4},
+    {price:15000,clickStrength:100,extra: 1.5},
+    {price:25000, clickStrength: 50, extra:2},
+    {price:38000,clickStrength:150,extra:1.2},
+    {price:50000, clickStrength:0 , extra:4},
+    {price:54000,clickStrength:200,extra: 2},
+    {price:59000, clickStrength:1 , extra: 2},
+    {price:61000,clickStrength:200,extra:1},
+    {price:80000, clickStrength:0 , extra:1.5},
+    {price:90000,clickStrength:0,extra: 1.2},
+    {price:100000, clickStrength:0 , extra:1.5},
+    {price:130000,clickStrength:2,extra:2},
+    {price:180000, clickStrength:4 , extra:1.5},
+    {price:200000,clickStrength:0,extra: 3},
 ]
 let upgradeStagesP1 = [
     { price: 30, coinPerSec: 1 },
@@ -42,6 +60,15 @@ let upgradeStagesP1 = [
     { price: 2000, coinPerSec: 10 },
     { price: 5000, coinPerSec: 12 },
     { price: 5500, coinPerSec: 15 },
+    { price: 7000, coinPerSec: 20 }, 
+    { price: 9000, coinPerSec: 40 },
+    { price: 10000, coinPerSec: 40 },
+    { price: 13000, coinPerSec: 50 },
+    { price: 17000, coinPerSec: 55 },
+    { price: 25000, coinPerSec: 70 },
+    { price: 35000, coinPerSec: 90 },
+    { price: 50000, coinPerSec: 120 },
+    { price: 65000, coinPerSec: 150 },
 ]
 function updateTime(){
      
@@ -70,7 +97,8 @@ function addStr() {
         contadorMonedas -= currentStage.price;  
         contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
         clickStrength += currentStage.clickStrength * currentStage.extra; 
-    
+        gnomos +=1;
+        contadorGnomos.textContent = "Gnomos: "+ gnomos;
         upgradeStage1 += 1; // Move to the next stage
 
         // Update button text to reflect the next stage price
@@ -100,8 +128,10 @@ function addPStr(){
     
 }
 function sacrifice(){
-    if (contadorMonedas >= sacriP) {
+    if (contadorMonedas >= sacriP && gnomos>0) {
         contadorMonedas -= sacriP;  
+        gnomos -=1
+        contadorGnomos.textContent = "Gnomos: "+ gnomos;
         contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
         coinPerSec += 1.2;   
         sacriP *= 1.2  

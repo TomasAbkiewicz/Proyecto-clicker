@@ -81,6 +81,17 @@
     justify-content: center;
     display: flex;
 }
+#gnomeCounter{
+    background-color: lightgray;
+    height: 50px;
+    width: 180px;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+   
+    align-items: center;
+    justify-content: center;
+}
 
 
 #modos{
