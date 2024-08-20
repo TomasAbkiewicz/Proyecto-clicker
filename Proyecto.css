@@ -81,11 +81,34 @@
     justify-content: center;
     display: flex;
 }
+#rebirthButton{
+    position: relative;
+    bottom: 160px;
+    right: 50px;
+    background-color: lightgray;
+    height: 50px;
+    width: 150px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+#gnomeCounter{
+    background-color: lightgray;
+    height: 50px;
+    width: 180px;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+   
+    align-items: center;
+    justify-content: center;
+}
 
 
 #modos{
     position: relative;
-    bottom: 140px;
+    bottom: 220px;
     right: 50px;
     background-color: lightgray;
     height: 50px;
@@ -190,4 +213,22 @@
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+.golden-elf {
+    position: absolute;
+    display: none; /* Initially hidden */
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    background-color: gold; /* Placeholder background color */
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #000; /* Optional border for better visibility */
+    border-radius: 10px; /* Rounded corners */
+}
+
+.golden-elf-text {
+    font-size: 18px;
+    font-weight: bold;
 }

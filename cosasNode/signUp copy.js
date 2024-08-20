@@ -1,6 +1,6 @@
 let fs = require(fs)
 let USUARIOS =[];
-let CONTRASEÑA =[];
+let CONTRASEÑAS =[];
 let PARTIDAS =[];
 let archivoUsuarios = "Usuarios.json"
 let archivoContraseñas = "Contraseñas.json"
