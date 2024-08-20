@@ -1,0 +1,13 @@
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .usuario{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 35px;
+    }
