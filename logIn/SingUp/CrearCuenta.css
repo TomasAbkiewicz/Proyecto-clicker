@@ -1,0 +1,30 @@
+.titulo{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+    
+    .usuario{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 35px;
+    }
+
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: solid black 3px;
+    gap: 50px;
+    flex-direction: column;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
