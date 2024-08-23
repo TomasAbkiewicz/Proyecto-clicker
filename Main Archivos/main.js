@@ -13,12 +13,12 @@ let goldenElf = document.getElementById('goldenElf');
 let helloScreen = document.getElementById("helloScreen");
 let hmodos = document.getElementById("modos");
 let progressBar = document.getElementById('progressBar');
-let clickableImage = document.getElementById('arbol');
+let arbol= document.getElementById('Arbol');
 
 function goToHelloScreen() {
     // Apply zoom in effect
     
-    personaje.style.transform = "scale(3)"; // Adjust the scale as needed
+    personaje.style.transform = "scale(2.5)"; // Adjust the scale as needed
 
     // Wait for the transition to complete, then change the screen
     setTimeout(() => {
@@ -28,7 +28,7 @@ function goToHelloScreen() {
         // Display the hello screen
         helloScreen.style.display = 'flex';
         arbol.style.display = 'flex'
-    }, 2000); // Match this timing with your transition duration
+    }, 1500); // Match this timing with your transition duration
 }
 // Add event listener for the transition
 
