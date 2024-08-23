@@ -10,6 +10,29 @@ let sacrificio =document.getElementById("upgradePer1");
 let contadorGnomos =document.getElementById("gnomeCounter");
 let rebirth = document.getElementById("rebirthButton");
 let goldenElf = document.getElementById('goldenElf'); 
+let helloScreen = document.getElementById("helloScreen");
+let hmodos = document.getElementById("modos");
+let progressBar = document.getElementById('progressBar');
+let clickableImage = document.getElementById('arbol');
+
+function goToHelloScreen() {
+    // Apply zoom in effect
+    
+    personaje.style.transform = "scale(3)"; // Adjust the scale as needed
+
+    // Wait for the transition to complete, then change the screen
+    setTimeout(() => {
+        // Hide current content
+        document.querySelector('.screen1').style.display = 'none';
+
+        // Display the hello screen
+        helloScreen.style.display = 'flex';
+        arbol.style.display = 'flex'
+    }, 2000); // Match this timing with your transition duration
+}
+// Add event listener for the transition
+
+
 
 let isBoostActive= false;
 let sacriP= 2000
@@ -24,8 +47,10 @@ let extra= 0.1
 let coinPerSec = 0
 let gnomos= 0
 let rebirtExtra= 1
+let progress = 0;
 
 
+// Function to handle the click event
 
 let rebirtStages = [
     { price: 300000, extra:2},
@@ -83,7 +108,6 @@ let upgradeStagesP1 = [
     { price: 50000, coinPerSec: 120 },
     { price: 65000, coinPerSec: 200 },
 ]
-
 function rebirt(){
     let currentStage= rebirtStages[rebirtStage];
     if (contadorMonedas >= currentStage.price) {
@@ -148,8 +172,6 @@ function updateCoins (){
     contadorMonedas += clickStrength
     
 }
-
-
 function addStr() {
     let currentStage = upgradeStages1[upgradeStage1];
     if (contadorMonedas >= currentStage.price) {
@@ -199,7 +221,6 @@ function sacrifice(){
     }
     
 }
-
 function showGoldenElf() {
     goldenElf.style.display = 'block';
     goldenElf.style.left = `${Math.random() * (window.innerWidth - 100)}px`;
@@ -210,7 +231,6 @@ function showGoldenElf() {
         goldenElf.style.display = 'none';
     }, 5000);
 }
-
 function applyBoost() {
     isBoostActive=true;
     if (Math.random() < 0.5) { // Adjust probability as needed
@@ -236,14 +256,6 @@ function randomGoldenElfAppearance() {
         }
     }, 600); // Check every 1000 milliseconds = 1 second
 }
-
-
-
-// Periodically check for golden elf appearance
-
-
-document.getElement
-
 document.getElementById('shop').addEventListener('click', function() {
     var upgradeButtons = document.getElementById('upgrade-buttons');
     if (upgradeButtons.style.display === 'none' || upgradeButtons.style.display === '') {
@@ -252,12 +264,9 @@ document.getElementById('shop').addEventListener('click', function() {
         upgradeButtons.style.display = 'none'; // Hide the upgrade buttons if already visible
     }
 });
-
-
 function displayLog() {
     modal.style.display = "block";
 }
-
 closeBtn.onclick = function() {
     modal.style.display = "none";
 }
@@ -271,6 +280,13 @@ mejoraPassiva.addEventListener("click", addPStr); // Correctly add the reference
 logInBtn.addEventListener("click", displayLog);
 sacrificio.addEventListener("click", sacrifice);
 rebirth.addEventListener("click", rebirt);
+modos.addEventListener("click", goToHelloScreen);
+clickableImage.addEventListener('click', function() {
+    if (progress < 100) {
+        progress += 10; // Increment the progress by 10% on each click
+        progressBar.style.width = progress + '%';
+    }
+});
 
 setInterval(passiveCoins,10);
 setInterval(updateTime,1000);
