@@ -11,3 +11,13 @@
 #body{
     overflow-y: hidden;
 }
+#Banana{
+    position: relative;
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    top: 50;
+    left: 0%;
+    transform: translate(560px, -440px);
+
+}
