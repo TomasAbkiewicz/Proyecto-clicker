@@ -1,0 +1,61 @@
+#Arbol{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clip-path: inset(0px 0px 50px 0px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#body{
+    overflow-y: hidden;
+}
+#Banana{
+    position: relative;
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    top: 50;
+    left: 0%;
+    transform: translate(560px, -440px);
+
+}
+
+#Frutilla{
+    position: relative;
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    top: 50;
+    left: 0%;
+    transform: translate(460px, -340px);
+}
+#FrutaDragon{
+    position: relative;
+    width: 50px;
+    height: 25px;
+    position: absolute;
+    top: 50;
+    left: 0%;
+    transform: translate(840px, -350px);
+}
+#Uva{
+    position: relative;
+    width: 60px;
+    height: 25px;
+    position: absolute;
+    top: 50;
+    left: 0%;
+    transform: translate(827px, -550px);
+}
+#Gelatina{
+    position: relative;
+    width: 60px;
+    height: 25px;
+    position: absolute;
+    top: 50;
+    left: 0%;
+    transform: translate(475px, -550px);
+}
+

@@ -1,3 +1,18 @@
+#helloScreen {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #282c34;
+    color: white;
+    
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    font-family: Arial, sans-serif;
+}
 .high{
     display: flex;
     padding: 20px;
@@ -26,11 +41,24 @@
     align-items: center;
 }
 
+#arbol{
+    display: none;
+    position: absolute;
+    bottom: 0px;
+
+    right: 400px;
+    width: 30%;
+    height: 85%;
+    background-color: #282c34;
+    color: white;
+}
 #gnomo{
     position: absolute;
     bottom: 10px;
     height: 400px;
     width: 300px;
+    transition: transform 2s ease-in-out;
+    cursor: pointer;
 }
 
 #shop{

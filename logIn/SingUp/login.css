@@ -30,5 +30,19 @@ header{
 
 .iniciar-sesion{
     font-weight: bold;
+    font-size: x-large;
+}
+
+#ingresar{
+    background-color: lightblue;
+    border:  solid lightskyblue 2px;
+    border-radius: 25px;
+    width: 250px;
+}
+
+.segunda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
