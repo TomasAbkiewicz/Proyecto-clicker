@@ -1,0 +1,33 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+}
+
+.celd {
+    margin: 2px;
+    height: 33%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.grid-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: wrap;
+}
+main {
+    width: 150px;
+    height: 150px;
+    background-color: grey;
+    border: solid 5px white;
+}
+main:hover {
+
+}
