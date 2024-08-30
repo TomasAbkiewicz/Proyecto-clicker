@@ -1,31 +1,42 @@
-let id = 0
-function crearUser(user) {
+import fs from "fs"
+function newUser(user) {
     let USERS = fs.readFileSync(JSON.parse("usersFile.json"), "utf-8");
-    let user = {
-        data = {        
-        username: user.username,
-        password: user.password,
-        id:0,
-        },
-    }
+    let GAMES = fs.readFileSync(JSON.parse("gamesFile.json"), "utf-8");
 
-    for (let i = 0; i < USERS.length; i++) {
-        let n = USERS[i].user.data.username
-        let tf = true
-        if(n === user.data.username){
-            tf = false
+    for (let i = 0; index < USERS.length; i++) {
+        let usuarioExistente = false;
+        let n = USERS[i].username;
+        if (n === user.username){
+            usuarioExistente = true;
+            return false
         } else{
-            tf = true
-            break 
-        } 
-        if (tf = false){
-            if(USERS.length <0){
-                id = USERS[USERS.length - 1].user.data.id + 1
-            }
-            USERS.user.data.id = id
-            USERS.push(user);
-            fs.writeFileSync("usersFile.json", JSON.stringify(USERS))
+            usuarioExistente = false
         }
     }
 
+    let userdata = {     
+        username: user.username,
+        password: user.password,
+        id: USERS.length() + 1,
+    }    
+    USERS.push(userdata);    
+
+    let game = {
+        userId: userdata.id,
+        monedas: 0,
+    }
+    GAMES.push(game);
+
+    fs.writeFileSync("usersFile.json", JSON.stringify(USERS));
+    fs.writeFileSync("gamesFile.json", JSON.stringify(GAMES));
+
+}
+
+function save(game) {
+    let GAMES = fs.readFileSync(JSON.parse("gamesFile.json"), "utf-8");
+    let id = game.userId;
+    let savedGame = GAMES[id];
+    savedGame = game;
+    GAMES[id]= savedGame;
+    fs.writeFileSync("gamesFile.json", JSON.stringify(GAMES));
 }
