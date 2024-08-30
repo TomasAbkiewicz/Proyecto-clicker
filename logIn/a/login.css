@@ -1,0 +1,49 @@
+body{
+    background-image: url(fondo_login.jpg);
+    opacity: 0.8;
+}
+
+.inicio{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border: solid black 3px;
+    gap: 50px;
+    flex-direction: column;
+    background-color: white;
+    
+}
+
+.welcome{
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iniciar-sesion{
+    font-weight: bold;
+    font-size: x-large;
+}
+
+#ingresar{
+    background-color: lightblue;
+    border:  solid lightskyblue 2px;
+    border-radius: 25px;
+    width: 250px;
+}
+
+.segunda{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+

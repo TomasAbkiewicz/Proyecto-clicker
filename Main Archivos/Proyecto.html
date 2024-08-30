@@ -8,53 +8,58 @@
     <link rel="stylesheet" href="Proyecto.css">
 </head>
 <body>
-  
-    <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Log In</h2>
-            <form id="loginForm">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-                <br><br>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-                <br><br>
-                <button type="submit">Log In</button>
-            </form>
+    <div class="screen1">
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Log In</h2>
+                <form id="loginForm">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                    <br><br>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <br><br>
+                    <button type="submit">Log In</button>
+                </form>
+            </div>
+        </div>
+    
+        <div class="high">
+            <p id="time">Tiempo Jugado</p>
+            <img src="../IMAGENES/info-Photoroom.png" alt="" id="informacion">
+            <p id="currency">Monedas: 0</p>
+            <p id="gnomeCounter">Poblacion: 0</p>
+            <p id="login">Log In</p>
+            <p id="config">Configuracion, Contador de monedas</p>
+        </div>
+        <div>
+            <div class="vent-container" id="vent">
+                <p id="ventajas">Ventajas Activas</p>
+            </div>
+
+            <div class="containerGnomo">
+                <img src="../IMAGENES/gnomo-removebg-preview.png" alt="" id="gnomo">
+            </div>
+            <div id="goldenElf" class="golden-elf">
+                <p class="golden-elf-text">Golden Elf</p>
+            </div>
+            <div class="derecha">
+                <button id="shop">Tienda</button>
+                <div id="upgrade-buttons">
+                    <button id="upgrade1">Plantar Gnomo: 10</button>
+                    <button id="upgradeP1">Regar Jardin: 30</button>
+                    <button id="upgradePer1">Sacrificar Gnomo: 2000</button>
+                    <button id="rebirthButton">Rebirth: 300000</button>
+                </div>
+                <p id="modos">Modos de juego alternativo</p>
+            </div>
         </div>
     </div>
     
-    <div class="high">
-         <p id="time">Tiempo Jugado</p>
-         <img src="IMAGENES\info-Photoroom.png" alt="" srcset="" id="informacion">
-        <p id="currency">Monedas: 0</p>
-        <p id="gnomeCounter">Poblacion: 0</p>
-        <p id="login">Log In</p>
-        <p id="config">Configuracion, Contador de monedas</p>
-    </div>
-    <div>
-    <div class="vent-container" id="vent">
-        <p id="ventajas">Ventajas Activas</p>
-    </div class="franja">
-
-    <div class="containerGnomo">
-<img src="IMAGENES\gnomo-removebg-preview.png" alt="" srcset="" id="gnomo">
-    </div>
-    <div id="goldenElf" class="golden-elf">
-        <p class="golden-elf-text">Golden Elf</p>
-    </div>
-<div class="derecha">
-    <button id="shop">Tienda</button>
-    <div id="upgrade-buttons">
-        <button id="upgrade1">Plantar Gnomo: 10</button>
-        <button id="upgradeP1">Regar Jardin: 30</button>
-        <button id="upgradePer1">Sacrificar Gnomo: 2000</button>
-        <button id="rebirthButton">Rebirth: 300000</button>
-    </div>
-    <p id="modos">Modos de juego alternativo</p>.
-</div>
+    <div id="helloScreen" style="display: none;">Tree.png</div>   
+    <img src="../IMAGENES/arbol.png" alt="" id="arbol">
+    
     <script src="main.js"></script>
-    </div>
 </body>
 </html>
