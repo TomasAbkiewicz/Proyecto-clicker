@@ -18,9 +18,14 @@ body {
 }
 .grid-container {
     display: flex;
-    flex-direction: row;
-    width: 100%;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+
+}
+.column {
+    display: flex;
+    flex-direction: column;
 }
 main {
     width: 150px;
@@ -28,6 +33,8 @@ main {
     background-color: grey;
     border: solid 5px white;
 }
-main:hover {
 
+.body:hover {
+    height: 90vw;
+    width: 90vw;
 }
