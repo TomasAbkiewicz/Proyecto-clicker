@@ -1,30 +1,9 @@
-.titulo{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    }
-    
-    .usuario{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        gap: 35px;
-    }
-
-.inicio{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.inicio {
     width: 300px;
-    height: 300px;
-    border: solid black 3px;
-    gap: 50px;
-    flex-direction: column;
-}
-
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
