@@ -13,6 +13,14 @@
     font-size: 48px;
     font-family: Arial, sans-serif;
 }
+
+#config{
+    background-color: lightgrey;
+}
+
+#login{
+    background-color: lightgrey;
+}
 .high{
     display: flex;
     padding: 20px;

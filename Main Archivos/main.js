@@ -292,4 +292,6 @@ setInterval(passiveCoins,10);
 setInterval(updateTime,1000);
 randomGoldenElfAppearance()
 
-
+function(){
+    getElementById()
+}

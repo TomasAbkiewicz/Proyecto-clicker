@@ -11,18 +11,18 @@
 #body{
     overflow-y: hidden;
 }
-#Banana{
+#bananContainer{
     position: relative;
     width: 50px;
     height: 25px;
     position: absolute;
     top: 50;
-    left: 0%;
+    left: 0;
     transform: translate(560px, -440px);
 
 }
 
-#Frutilla{
+#frutilla{
     position: relative;
     width: 50px;
     height: 25px;
@@ -31,7 +31,7 @@
     left: 0%;
     transform: translate(460px, -340px);
 }
-#FrutaDragon{
+#frutaDragon{
     position: relative;
     width: 50px;
     height: 25px;
@@ -40,7 +40,7 @@
     left: 0%;
     transform: translate(840px, -350px);
 }
-#Uva{
+#uva{
     position: relative;
     width: 60px;
     height: 25px;
@@ -49,7 +49,7 @@
     left: 0%;
     transform: translate(827px, -550px);
 }
-#Gelatina{
+#gelatina{
     position: relative;
     width: 60px;
     height: 25px;
