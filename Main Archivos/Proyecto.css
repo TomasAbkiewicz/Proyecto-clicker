@@ -5,21 +5,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #282c34;
+
     color: white;
     
     justify-content: center;
-    align-items: center;
-    font-size: 48px;
-    font-family: Arial, sans-serif;
-}
-
-#config{
-    background-color: lightgrey;
-}
-
-#login{
-    background-color: lightgrey;
+    
 }
 .high{
     display: flex;
@@ -49,16 +39,15 @@
     align-items: center;
 }
 
-#arbol{
+#Arbol{
     display: none;
-    position: absolute;
-    bottom: 0px;
-
-    right: 400px;
-    width: 30%;
-    height: 85%;
-    background-color: #282c34;
-    color: white;
+    margin-left: auto;
+    margin-right: auto;
+  
+    clip-path: inset(0px 0px 50px 0px);
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 #gnomo{
     position: absolute;
