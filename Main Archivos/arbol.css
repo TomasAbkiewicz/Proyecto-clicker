@@ -8,21 +8,20 @@
     align-items: center;
     height: 100vh;
 }
-#body{
-    overflow-y: hidden;
-}
-#Banana{
+
+#banana{
     position: relative;
     width: 50px;
     height: 25px;
     position: absolute;
     top: 50;
-    left: 0%;
+    left: 0;
     transform: translate(560px, -440px);
+    display: none;
 
 }
 
-#Frutilla{
+#frutilla{
     position: relative;
     width: 50px;
     height: 25px;
@@ -30,8 +29,9 @@
     top: 50;
     left: 0%;
     transform: translate(460px, -340px);
+    overflow: hidden;
 }
-#FrutaDragon{
+#frutaDragon{
     position: relative;
     width: 50px;
     height: 25px;
@@ -39,8 +39,9 @@
     top: 50;
     left: 0%;
     transform: translate(840px, -350px);
+    overflow: hidden;
 }
-#Uva{
+#uva{
     position: relative;
     width: 60px;
     height: 25px;
@@ -48,8 +49,9 @@
     top: 50;
     left: 0%;
     transform: translate(827px, -550px);
+    overflow: hidden;
 }
-#Gelatina{
+#gelatina{
     position: relative;
     width: 60px;
     height: 25px;
@@ -57,5 +59,6 @@
     top: 50;
     left: 0%;
     transform: translate(475px, -550px);
+    overflow: hidden;
 }
 

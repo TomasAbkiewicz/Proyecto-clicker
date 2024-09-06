@@ -1,0 +1,207 @@
+<html>
+<head>
+    <title>Mines Game</title>
+    <style>
+        body {
+            background-color: #1a1a3d;
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .header {
+            font-size: 48px;
+            color: white;
+            margin-bottom: 20px;
+        }
+        .header span {
+            display: block;
+            font-size: 24px;
+            margin-top: -10px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        .cell {
+            width: 60px;
+            height: 60px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.5s, transform 0.5s;
+        }
+        .cell img {
+            width: 40px;
+            height: 40px;
+            display: none;
+        }
+        .cell.revealed img {
+            display: block;
+        }
+        .cell.revealed {
+            transform: rotateY(180deg);
+        }
+        .odds {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .odds div {
+            color: white;
+            font-size: 18px;
+            background-color: #2a2a5a;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            MINES
+            <span>Game</span>
+        </div>
+        <div class="odds">
+            <div>1.44x</div>
+            <div>1.55x</div>
+            <div>1.67x</div>
+            <div>1.80x</div>
+            <div>1.94x</div>
+        </div>
+        <div class="grid">
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+            <div class="cell" onclick="reveal(this)">
+                <img alt="Diamond icon" class="diamond" src="https://placehold.co/40x40/00ffcc/00ffcc.png" />
+                <img alt="Bomb icon" class="bomb" src="https://placehold.co/40x40/ff4d4d/ff4d4d.png" />
+            </div>
+        </div>
+    </div>
+    <script>
+        function reveal(cell) {
+            if (cell.classList.contains('revealed')) return;
+            cell.classList.add('revealed');
+            const isDiamond = Math.random() < 0.3;
+            if (isDiamond) {
+                cell.style.backgroundColor = '#00ffcc';
+                cell.querySelector('.diamond').style.display = 'block';
+            } else {
+                cell.style.backgroundColor = '#ff4d4d';
+                cell.querySelector('.bomb').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
