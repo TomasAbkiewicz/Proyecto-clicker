@@ -8,13 +8,25 @@
     <title><Arbol-html></Arbol-html></title>
 </head>
 <body>
-<img src="../IMAGENES/arbol.png" alt="" id="Arbol">
-<div class="bananContainer">
+<button onclick="intentarMostrar()"><img src="../IMAGENES/arbol.png" alt="" id="Arbol"></button>
 <img src="../IMAGENES/BANANA PNG.png" alt="" id="banana">
-</div>
 <img src="../IMAGENES/FRUTILLA.png" alt="" id="frutilla">
 <img src="../IMAGENES/FRUTA DEL DRAGON.png" alt="" id="frutaDragon">
 <img src="../IMAGENES/UVA.png" alt="" id="uva">
 <img src="../IMAGENES/Gelatina.png" alt="" id="gelatina">
+
+<script>
+    function intentarMostrar() {
+      var probabilidad = Math.random();
+
+      if (probabilidad <= 0.2) {
+        var mostrarBanana = document.getElementById("banana");
+        banana.style.display = "block";
+        alert("¡Clickea Las Frutas!");
+      } else {
+        alert("El contenido no apareció. Intenta de nuevo.");
+      }
+    }
+</script>
 </body>
 </html>
