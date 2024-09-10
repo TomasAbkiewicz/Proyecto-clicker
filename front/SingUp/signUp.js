@@ -19,7 +19,7 @@ function enviarUsuario() {
       postData("signup", { username,password }, (response) => {
         if (response.ok) {
           alert("usuario cargado");
-          limpiarPedido();
+          
         } else {
           alert("error al guardar el usuario");
         }
