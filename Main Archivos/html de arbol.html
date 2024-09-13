@@ -19,12 +19,22 @@
     function intentarMostrar() {
       var probabilidad = Math.random();
 
-      if (probabilidad <= 0.2) {
+      if (probabilidad <= 0.3) {
         var mostrarBanana = document.getElementById("banana");
         banana.style.display = "block";
         alert("¡Clickea Las Frutas!");
       } else {
-        alert("El contenido no apareció. Intenta de nuevo.");
+        alert("El contenido no apareció.");
+      }
+      if (probabilidad <= 0.2) {
+        var mostrarFrutilla = document.getElementById("frutilla");
+        frutilla.style.display = "block";
+        alert("¡Clickea Las Frutas!");
+      }
+      if (probabilidad <= 0.1) {
+        var mostrarDragon = document.getElementById("frutaDragon");
+        frutaDragon.style.display = "block";
+        alert("¡Clickea Las Frutas!");
       }
     }
 </script>
