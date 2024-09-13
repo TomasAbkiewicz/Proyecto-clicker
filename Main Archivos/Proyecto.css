@@ -31,6 +31,12 @@
 #informacion{
     height: 30px;
     width: 30px;
+    transition: transform 0.3s ease; 
+    cursor: pointer; 
+}
+
+.informacion:hover {
+    transform: scale(3); 
 }
 
 .containerGnomo{
@@ -69,7 +75,14 @@
     align-items: center;
     justify-content: center;
     display: flex;
+    transition: transform 0.3s ease; 
+    cursor: pointer; 
 }
+
+.shop:hover {
+    transform: scale(3); 
+}
+
 #upgrade1{
     position: relative;
     bottom: 220px;
