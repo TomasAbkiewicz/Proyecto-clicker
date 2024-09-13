@@ -2,14 +2,16 @@ import fs from "fs";
 let filePathU = './data/users.json';
 let filePathG = "./data/gamesFile.json";
 
+let USERS = fs.readFileSync(filePathU, "utf-8");
+USERS = USERS ? JSON.parse(USERS) : []; 
+
+
+let GAMES = fs.readFileSync(filePathG, "utf-8");
+GAMES = GAMES ? JSON.parse(GAMES) : [];
+
+
 export function newUser(user) {
 
-    let USERS = fs.readFileSync(filePathU, "utf-8");
-    USERS = USERS ? JSON.parse(USERS) : []; 
-
-
-    let GAMES = fs.readFileSync(filePathG, "utf-8");
-    GAMES = GAMES ? JSON.parse(GAMES) : [];
 
 
     let usuarioExistente = USERS.some(u => u.username === user.username);
@@ -384,4 +386,17 @@ export function save(game) {
     fs.writeFileSync(filePathG, JSON.stringify(GAMES, null, 2));
 
     return { ok: true };
+}
+
+export function login(input){
+    for (const user of USERS) {
+        if (user.username === input.username) {     
+            if (user.password === input.password) {
+               
+                return({ok:true})
+            }else{
+                return({ok:false})
+            }
+        }
+    }
 }
