@@ -4,14 +4,19 @@ let contraseñaInput= document.getElementById("contraseñaLogIn");
 let login= document.getElementById("ingresar")
 
 function enviarUsuario() {
-    let username = nombreInput.value;
-    let password = contraseñaInput.value;
-    postData("login", { username,password },(response) => {
-        if (response.ok) {
-          alert("usuario cargado");
-        } else {
-          alert("error al guardar el usuario");
-        }
-    });
+  let user = {
+    username : nombreInput.value,
+    password : contraseñaInput.value,
+}
+  postData("login", user,(userId) => {
+      if (userId) {
+        console.log("llego a login")
+        postData("loadGame", userId)
+        alert("sesion iniciada correctamente")
+        window.location.href= "http://127.0.0.1:5500/Main%20Archivos/Proyecto.html"
+      } else {
+        alert("error al cargar el usuario");
+      }
+  });
 }
 login.addEventListener("click",enviarUsuario)

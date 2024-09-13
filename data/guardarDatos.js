@@ -356,12 +356,12 @@ export function newUser(user) {
                     },
                     }
                 }
-            }    
+        }    
         GAMES.push(game);
         fs.writeFileSync(filePathU, JSON.stringify(USERS, null, 2));
         fs.writeFileSync(filePathG, JSON.stringify(GAMES, null, 2));
         return { ok: true };
-    }
+}
             
 
    
@@ -392,11 +392,15 @@ export function login(input){
     for (const user of USERS) {
         if (user.username === input.username) {     
             if (user.password === input.password) {
-               
-                return({ok:true})
-            }else{
-                return({ok:false})
+                let userId = user.id
+                return userId;
+        }else{
+            return false
             }
         }
     }
+}
+export function loadGame(userId){
+    let game  = GAMES[userId]
+    return game;
 }
