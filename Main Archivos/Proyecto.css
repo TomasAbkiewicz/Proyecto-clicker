@@ -12,11 +12,13 @@
     
 }
 .high{
-    display: flex;
-    padding: 20px;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: baseline;
+    display: inline-block;
+    width: 20%;
+    height: 50px;
+    background-color: #ddd;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: lime;
 }
 
 .derecha{
@@ -28,9 +30,8 @@
     align-items: flex-end;
 }
 
-#informacion{
-    height: 30px;
-    width: 30px;
+#save{
+    border: 1px solid #ccc;
     transition: transform 0.3s ease; 
     cursor: pointer; 
 }
@@ -133,16 +134,23 @@
 }
 #gnomeCounter{
     background-color: lightgray;
-    height: 50px;
-    width: 180px;
+    border: 1px solid #ccc;
     font-weight: bold;
     position: relative;
     display: flex;
+
    
     align-items: center;
     justify-content: center;
 }
 
+#config{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+
+}
 
 #modos{
     position: relative;
@@ -157,24 +165,15 @@
     display: flex;
 }
 
-#time{
-    background-color: lightgray;
-    height: 50px;
-    width: 180px;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
+
 
 #currency{
     background-color: lightgray;
-    height: 50px;
-    width: 150px;
+    border: 1px solid #ccc;
     font-weight: bold;
     align-items: center;
     justify-content: center;
-    display: flex;
+
 }
 
 #vent{
@@ -286,4 +285,10 @@
 .golden-elf-text {
     font-size: 18px;
     font-weight: bold;
+}
+
+#login{
+    background-color: lightgrey;
+    border: 1px solid #ccc;
+
 }
