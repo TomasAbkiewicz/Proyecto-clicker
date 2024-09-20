@@ -12,13 +12,14 @@
     
 }
 .high{
-    display: inline-block;
-    width: 20%;
+    width: 100%;
     height: 50px;
-    background-color: #ddd;
-    margin: 5px;
-    border-radius: 5px;
-    background-color: lime;
+    background-color: #256082;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .derecha{
@@ -31,9 +32,11 @@
 }
 
 #save{
-    border: 1px solid #ccc;
+    border: 0px solid #ccc;
     transition: transform 0.3s ease; 
     cursor: pointer; 
+    background-color: #256082;
+    color: white;
 }
 
 .informacion:hover {
@@ -61,8 +64,12 @@
     bottom: 10px;
     height: 400px;
     width: 300px;
-    transition: transform 2s ease-in-out;
+    transition: transform(0.2);
     cursor: pointer;
+}
+
+#gnomo:active{
+    transform: scale(0.9)
 }
 
 #shop{
@@ -124,7 +131,7 @@
     position: relative;
     bottom: 160px;
     right: 50px;
-    background-color: lightgray;
+    background-color: lime;
     height: 50px;
     width: 150px;
     font-weight: bold;
@@ -133,7 +140,7 @@
     display: flex;
 }
 #gnomeCounter{
-    background-color: lightgray;
+    background-color: #256082;
     border: 1px solid #ccc;
     font-weight: bold;
     position: relative;
@@ -149,6 +156,7 @@
     align-items: center;
     justify-content: center;
     border: 1px solid #ccc;
+    background-color: #256082;
 
 }
 
@@ -168,7 +176,7 @@
 
 
 #currency{
-    background-color: lightgray;
+    background-color: #256082;
     border: 1px solid #ccc;
     font-weight: bold;
     align-items: center;
@@ -256,7 +264,7 @@
   }
 
 .close {
-    color: #aaa;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
@@ -288,7 +296,8 @@
 }
 
 #login{
-    background-color: lightgrey;
+    background-color: #256082;
     border: 1px solid #ccc;
+    cursor: pointer; 
 
 }
