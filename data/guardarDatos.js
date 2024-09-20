@@ -12,8 +12,6 @@ GAMES = GAMES ? JSON.parse(GAMES) : [];
 
 export function newUser(user) {
 
-
-
     let usuarioExistente = USERS.some(u => u.username === user.username);
     if (usuarioExistente) {
         return false;
@@ -369,20 +367,12 @@ export function newUser(user) {
 
 
 export function save(game) {
-    
+
     let GAMES = fs.readFileSync(filePathG, "utf-8");
     GAMES = GAMES ? JSON.parse(GAMES) : [];
 
-    
     let id = game.userId;
-    let savedGameIndex = GAMES.findIndex(g => g.userId === id);
-
-    if (savedGameIndex >= 0) {
-        GAMES[savedGameIndex] = game;
-    } else {
-        return { error: "Game not found" };
-    }
-
+    GAMES[id] = game
     fs.writeFileSync(filePathG, JSON.stringify(GAMES, null, 2));
 
     return { ok: true };
@@ -401,6 +391,6 @@ export function login(input){
     }
 }
 export function loadGame(userId){
-    let game  = GAMES[userId]
+    let game  = GAMES[userId-1]
     return game;
 }
