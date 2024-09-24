@@ -13,24 +13,6 @@ let goldenElf = document.getElementById('goldenElf');
 let helloScreen = document.getElementById("helloScreen");
 let hmodos = document.getElementById("modos");
 let progressBar = document.getElementById('progressBar');
-let arbol= document.getElementById('Arbol');
-
-function goToHelloScreen() {
-    // Apply zoom in effect
-    
-    personaje.style.transform = "scale(2.5)"; // Adjust the scale as needed
-
-    // Wait for the transition to complete, then change the screen
-    setTimeout(() => {
-        // Hide current content
-        document.querySelector('.screen1').style.display = 'none';
-
-        // Display the hello screen
-        helloScreen.style.display = 'flex';
-        arbol.style.display = 'flex'
-    }, 1500); // Match this timing with your transition duration
-}
-// Add event listener for the transition
 
 
 
@@ -48,9 +30,12 @@ let coinPerSec = 0
 let gnomos= 0
 let rebirtExtra= 1
 let progress = 0;
+let mostrarMonedas
 
+function modosCambio() {
+    window.location.href = ("Proyecto-clicker/front/principal/buscaminas.html");
+}
 
-// Function to handle the click event
 
 let rebirtStages = [
     { price: 300000, extra:2},
@@ -280,7 +265,7 @@ mejoraPassiva.addEventListener("click", addPStr); // Correctly add the reference
 logInBtn.addEventListener("click", displayLog);
 sacrificio.addEventListener("click", sacrifice);
 rebirth.addEventListener("click", rebirt);
-modos.addEventListener("click", goToHelloScreen);
+modos.addEventListener("click", modosCambio);
 clickableImage.addEventListener('click', function() {
     if (progress < 100) {
         progress += 10; // Increment the progress by 10% on each click

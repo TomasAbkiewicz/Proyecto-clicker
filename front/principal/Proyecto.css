@@ -141,7 +141,7 @@
 }
 #gnomeCounter{
     background-color: #256082;
-    border: 1px solid #ccc;
+    border: 1px solid #256082;
     font-weight: bold;
     position: relative;
     display: flex;
@@ -155,7 +155,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #ccc;
+    border: 1px solid #256082;
     background-color: #256082;
 
 }
@@ -177,7 +177,7 @@
 
 #currency{
     background-color: #256082;
-    border: 1px solid #ccc;
+    border: 1px solid #256082;
     font-weight: bold;
     align-items: center;
     justify-content: center;
@@ -297,7 +297,7 @@
 
 #login{
     background-color: #256082;
-    border: 1px solid #ccc;
+    border: 1px solid #256082;
     cursor: pointer; 
 
 }
