@@ -33,8 +33,9 @@ let progress = 0;
 let mostrarMonedas
 
 function modosCambio() {
-    window.location.href = ("buscaminas.html");
+    document.getElementById('miIframe').src = "https://www.wikipedia.org";
 }
+
 
 
 let rebirtStages = [
