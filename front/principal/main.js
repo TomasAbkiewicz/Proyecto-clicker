@@ -33,7 +33,7 @@ let progress = 0;
 let mostrarMonedas
 
 function modosCambio() {
-    window.location.href = ("Proyecto-clicker/front/principal/buscaminas.html");
+    window.location.href = ("buscaminas.html");
 }
 
 
