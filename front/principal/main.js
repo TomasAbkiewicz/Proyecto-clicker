@@ -32,28 +32,7 @@ let rebirtExtra= 1
 let progress = 0;
 let mostrarMonedas
 
-function modosCambio() {
-    document.getElementById('miIframe').src = "https://www.wikipedia.org";
-}
 
-const miIframe = document.getElementById('miIframe');
-const iframeContainer = document.getElementById('iframe-container');
-
-// Create the iframe element, but set its display to none initially
-const iframe = document.createElement('iframe');
-iframe.src = 'https://www.wikipedia.org'; // Replace with your desired URL
-iframe.frameBorder = '0';
-iframe.width = '100%';
-iframe.height = '500px'; // Adjust the height as needed
-iframe.style.display = 'none'; // Hide the iframe initially
-
-// Add the iframe to the container
-iframeContainer.appendChild(iframe);
-
-miIframe.addEventListener('click', function() {
-  // Show the iframe when the button is clicked
-  iframe.style.display = 'block';
-});
 
 
 let rebirtStages = [
@@ -296,4 +275,7 @@ setInterval(passiveCoins,10);
 setInterval(updateTime,1000);
 randomGoldenElfAppearance()
 
+function redirect(){
+    window.location.href = "prueba_buscaminas.html";
+}
 

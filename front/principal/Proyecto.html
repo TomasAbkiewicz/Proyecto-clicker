@@ -30,7 +30,7 @@
     
         <div class="high">
             <button id="save">Guardar</button>
-            <p id="currency">Monedas: 0</p>
+            <p id="currency" onclick="updateCoins"> Monedas= </p>
             <p id="gnomeCounter">Poblacion: 0</p>
             <p id="login">Log In</p>
             <p id="config">Configuracion</p>
@@ -41,7 +41,7 @@
             </div>
 
             <div class="containerGnomo">
-                <img src="../../data/IMAGENES/gnomo-removebg-preview.png" onclick="passiveCoins()" alt="" id="gnomo">
+                <img src="../../data/IMAGENES/gnomo-removebg-preview.png" alt="" id="gnomo">
             </div>
             <div id="goldenElf" class="golden-elf">
                 <p class="golden-elf-text">Golden Elf</p>
@@ -54,9 +54,10 @@
                     <button id="upgradePer1">Sacrificar Gnomo: 2000</button>
                     <button id="rebirthButton">Rebirth: 300000</button>
                 </div>
-                <button onclick="modosCambio()" id="modos">Modos de juego alternativo</button>
+                <button onclick="redirect()" id="modos">Modos de juego alternativo</button>
             </div>
             <div id="iframe-container">
+                <iframe src="prueba buscaminas.html" frameborder="0" id="iframe"></iframe>
             </div>
         </div>
     </div>
