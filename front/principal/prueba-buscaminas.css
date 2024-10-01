@@ -8,6 +8,33 @@ body {
     margin: 0;
 }
 
+.cross-button {
+    position: absolute;
+    top: 20px; /* Alinea el botón 20px desde la parte superior */
+    left: 20px; /* Alinea el botón 20px desde el lado izquierdo */
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .cross-button span {
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: white;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+  .cross-button .line1 {
+    transform: rotate(45deg);
+  }
+  
+  .cross-button .line2 {
+    transform: rotate(-45deg);
+  }
+
 .container {
     text-align: center;
 }

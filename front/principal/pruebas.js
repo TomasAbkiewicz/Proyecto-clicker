@@ -58,8 +58,7 @@ function flipCell(cell) {
         } else {
             isBomb = Math.random() < (bombProbabilities[gridSize] + currentMultiplierIndex * 0.1);
         }
-        img.src = isBomb ? 'https://placehold.co/40x40?text=Bomb&bg=ff0000&color=ffffff' : 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Diamond_icon.svg/1024px-Diamond_icon.svg.png';
-        img.alt = isBomb ? 'Bomb' : 'Diamond';
+
         cell.classList.add(isBomb ? 'bomb' : 'diamond');
         if (!isBomb) {
             score += multipliers[gridSize][currentMultiplierIndex];
@@ -101,3 +100,7 @@ function withdraw() {
 
 // Initialize the board
 resetBoard();
+
+function goBack() {
+  window.history.back();
+}
