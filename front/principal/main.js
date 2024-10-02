@@ -279,3 +279,9 @@ function redirect(){
     window.location.href = "prueba_buscaminas.html";
 }
 
+function showBalance() {
+    const balance = getBalance();
+    console.log(`El saldo actual es: ${balance}`);
+    // o puedes mostrar el saldo en un elemento HTML, por ejemplo:
+    document.getElementById('currency').innerText = `Saldo: ${balance} + ${passiveCoins}`;
+  }
