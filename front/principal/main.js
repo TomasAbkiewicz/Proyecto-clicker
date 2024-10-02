@@ -271,11 +271,15 @@ clickableImage.addEventListener('click', function() {
     }
 });
 
-setInterval(passiveCoins,10);
-setInterval(updateTime,1000);
+function monedas(){
+    console.log(contadorMonedas);
+    contador.textContent = "Monedas: " + Math.floor(contadorMonedas);
+    console.log(contadorMonedas);
+}
+
+setInterval(monedas, 1000);
 randomGoldenElfAppearance()
 
 function redirect(){
     window.location.href = "prueba_buscaminas.html";
 }
-
