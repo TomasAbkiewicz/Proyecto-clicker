@@ -278,7 +278,7 @@ function monedas(){
 }
 
 setInterval(monedas, 1000);
-randomGoldenElfAppearance()
+randomGoldenElfAppearance();
 
 function redirect(){
     window.location.href = "prueba_buscaminas.html";
