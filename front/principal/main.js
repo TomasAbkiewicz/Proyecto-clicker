@@ -283,3 +283,7 @@ randomGoldenElfAppearance();
 function redirect(){
     window.location.href = "prueba_buscaminas.html";
 }
+
+import { score } from './pruebas';
+
+document.getElementById("currency").textContent = `${passiveCoins} + ${score}`
