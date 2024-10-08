@@ -101,9 +101,6 @@ function withdraw() {
 // Initialize the board
 resetBoard();
 
-export {score};
-
-
 function goBack() {
   window.history.back();
 }
