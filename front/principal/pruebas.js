@@ -101,6 +101,8 @@ function withdraw() {
 // Initialize the board
 resetBoard();
 
+
 function goBack() {
   window.history.back();
 }
+

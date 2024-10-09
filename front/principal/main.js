@@ -283,3 +283,5 @@ randomGoldenElfAppearance();
 function redirect(){
     window.location.href = "prueba_buscaminas.html";
 }
+
+document.getElementById("currency").innerText = ` ${monedas}`
