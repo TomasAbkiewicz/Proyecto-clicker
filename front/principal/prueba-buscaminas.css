@@ -15,6 +15,7 @@ body {
     width: 40px;
     height: 40px;
     cursor: pointer;
+    border-radius: 50%;
   }
   
   .cross-button span {

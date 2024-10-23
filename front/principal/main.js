@@ -285,3 +285,12 @@ function redirect(){
 }
 
 document.getElementById("currency").innerText = ` ${monedas}`
+
+window.onload = function() {
+    const winnings = sessionStorage.getItem('winnings');
+    if (winnings) {
+        document.getElementById('currency').innerText = `Tus ganancias son: ${winnings} monedas`;
+        document.getElementById("currency").innerText = `${winnings + passiveCoins}`;
+    } 
+}
+
