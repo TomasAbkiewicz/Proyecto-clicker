@@ -1,3 +1,11 @@
+
+document.body.onload = function() {
+    let userId = sessionStorage.getItem("userId")
+    postData("loadGame", userId, (game))
+    return game;
+}
+
+
 let mejora = document.getElementById("upgrade1");
 let mejoraPassiva = document.getElementById("upgradeP1");
 let personaje = document.getElementById("gnomo")
