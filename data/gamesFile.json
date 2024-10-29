@@ -1,15 +1,25 @@
 [
   {
+<<<<<<< HEAD
     "userId": 2,
     "currency": {
       "sunflowers": 100099,
+=======
+    "userId": 1,
+    "currency": {
+      "sunflowers": 0,
+>>>>>>> 912a321923eadeb2f458173b5fb92d8387216fc3
       "clovers": {
         "cloverPetal": 0,
         "clover3": 0,
         "clover4": 0
       },
       "fruits": {
+<<<<<<< HEAD
         "banana": 1,
+=======
+        "banana": 0,
+>>>>>>> 912a321923eadeb2f458173b5fb92d8387216fc3
         "apple": 0,
         "grapes": 0,
         "pineapple": 0,

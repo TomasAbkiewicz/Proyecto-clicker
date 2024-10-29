@@ -96,13 +96,16 @@ function withdraw() {
     document.getElementById('balance').innerText = balance.toFixed(2);
     document.getElementById('popup-message').innerText = `¡Felicidades por tu premio de ${winnings.toFixed(2)} monedas!`;
     document.getElementById('popup').style.display = 'block';
+
+    sessionStorage.setItem('winnings', balance.toFixed(2));
+
 }
 
 // Initialize the board
 resetBoard();
 
 
-
 function goBack() {
   window.history.back();
 }
+

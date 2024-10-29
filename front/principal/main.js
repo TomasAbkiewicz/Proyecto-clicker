@@ -1,4 +1,18 @@
+<<<<<<< HEAD
 let mejora = document.getElementById("upgrade1")
+=======
+
+document.body.onload = function() {
+    let userId = sessionStorage.getItem("userId")
+    postData("loadGame", userId, (game))
+    console.log(game)
+    return game;
+}
+
+
+let mejora = document.getElementById("upgrade1");
+let mejoraPassiva = document.getElementById("upgradeP1");
+>>>>>>> 912a321923eadeb2f458173b5fb92d8387216fc3
 let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
 let closeBtn = document.getElementsByClassName("close")[0];
@@ -172,10 +186,26 @@ rebirth.addEventListener("click", rebirt);
 modos.addEventListener("click", modosCambio);
 
 
+<<<<<<< HEAD
 
 setInterval(updateCoins, 1000);
 
+=======
+setInterval(monedas, 1000);
+randomGoldenElfAppearance();
+>>>>>>> 912a321923eadeb2f458173b5fb92d8387216fc3
 
 function redirect(){
     window.location.href = "prueba_buscaminas.html";
 }
+
+document.getElementById("currency").innerText = ` ${monedas}`
+
+window.onload = function() {
+    const winnings = sessionStorage.getItem('winnings');
+    if (winnings) {
+        document.getElementById('currency').innerText = `Tus ganancias son: ${winnings} monedas`;
+        document.getElementById("currency").innerText = `${winnings + passiveCoins}`;
+    } 
+}
+

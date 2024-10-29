@@ -1,7 +1,13 @@
 [
   {
+<<<<<<< HEAD
     "username": "Tomas",
     "password": "Tomas123!",
     "id": 2
+=======
+    "username": "joaco",
+    "password": "Joaco12344%",
+    "id": 1
+>>>>>>> 912a321923eadeb2f458173b5fb92d8387216fc3
   }
 ]

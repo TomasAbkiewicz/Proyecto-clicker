@@ -22,14 +22,12 @@ export function newUser(user) {
         return false;
     }
 
-
     let userdata = {     
         username: user.username,
         password: user.password,
-        id: USERS.length + 1,
+        id: USERS.length+1,
     };
     USERS.push(userdata); 
-
 
     let game = {
         userId: userdata.id,
@@ -364,13 +362,7 @@ export function newUser(user) {
         fs.writeFileSync(filePathU, JSON.stringify(USERS, null, 2));
         fs.writeFileSync(filePathG, JSON.stringify(GAMES, null, 2));
         return { ok: true };
-}
-            
-
-   
-
-
-
+    }
 export function save(game) {
 
     let GAMES = fs.readFileSync(filePathG, "utf-8");
