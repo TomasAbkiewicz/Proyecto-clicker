@@ -5,25 +5,25 @@
     left: 0;
     width: 100%;
     height: 100%;
-
     color: white;
-    
     justify-content: center;
 }
 
 html, body {
-    height: 100%;
-    min-height: 100vh; /* Ensures the body is at least the full height of the viewport */
-}
-body{
-    background-image: url("fondo1.png"); /* Replace with your image path */
-    background-size: cover; /* Cover the entire screen */
-    background-position: center; /* Center the image */
-    background-repeat: no-repeat; /* Prevent repeating */
+    height: 100%; /* Ensure body takes full height of the viewport */
+    margin: 0; /* Remove default margin */
 }
 
+body {
+    background-image: url('fondo1.png');
+    background-size: 100% 100%; /* Stretches the image to cover the full height and width */
+    background-position: center top; /* Aligns the image to the top center */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    overflow: hidden; /* Prevent scrolling */
+    height: 100vh; /* Ensure body takes full height of the viewport */
+}
 
-.high{
+.high {
     width: 100%;
     height: 50px;
     background-color: #256082;
@@ -34,26 +34,24 @@ body{
     align-items: center;
 }
 
-.column{
-    width: 220px;                /* Ancho de la columna */
-    height: 100vh;               /* Ocupar toda la altura de la pantalla */
-    position: fixed;             /* Fijar el menú en su posición */
-    right: 0;                    /* Posicionar en el lado derecho */
-    top: 0;                      /* Alinear al borde superior */
-    background-color: #256082;   /* Color de fondo oscuro */
-    padding: 20px 15px;          /* Espaciado interno */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+.column {
+    width: 220px; /* Column width */
+    height: 100vh; /* Occupy full height of the viewport */
+    position: fixed; /* Fix the menu in position */
+    right: 0; /* Position to the right */
+    top: 0; /* Align to the top */
+    background-color: #256082; /* Dark background color */
+    padding: 20px 15px; /* Internal spacing */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribuir espacio entre lista y botones */
-    overflow-y: auto;  
-    align-items: center;         /* Centrar los botones horizontalmente */
-    justify-content: space-between; /* Distribuir espacio entre los botones */
-    gap: 10px;                   /* Espacio entre los botones */              
-  }
+    justify-content: space-between; /* Distribute space between list and buttons */
+    overflow-y: auto; /* Allow vertical scrolling for the column */
+    align-items: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between buttons */
+}
 
-
-#save{
+#save {
     border: 0px solid #ccc;
     transition: transform 0.3s ease; 
     cursor: pointer; 
@@ -65,159 +63,127 @@ body{
     transform: scale(3); 
 }
 
-.containerGnomo{
+.containerGnomo {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-#Arbol{
+#Arbol {
     display: none;
     margin-left: auto;
     margin-right: auto;
-  
     clip-path: inset(0px 0px 50px 0px);
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100vh; /* Ensures it doesn't exceed viewport height */
+    overflow: hidden; /* Prevent overflowing */
 }
-#gnomo{
+
+#gnomo {
     position: absolute;
     bottom: 10px;
     height: 400px;
     width: 300px;
-    transition: transform(0.2);
+    transition: transform 0.2s;
     cursor: pointer;
 }
 
-#gnomo:active{
-    transform: scale(0.9)
+#gnomo:active {
+    transform: scale(0.9);
 }
 
-
-
-#upgrade1{
+#upgrade1,
+#upgradeP1,
+#upgradePer1,
+#rebirthButton {
     position: relative;
-    bottom: 220px;
+    bottom: 220px; /* Adjust if needed */
     right: 50px;
     background-color: lightgray;
     height: 50px;
     width: 150px;
     font-weight: bold;
+    display: flex;
     align-items: center;
     justify-content: center;
-    display: flex;
 }
-#upgradeP1{
-    position: relative;
-    bottom: 200px;
-    right: 50px;
-    background-color: lightgray;
-    height: 50px;
-    width: 150px;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-#upgradePer1{
-    position: relative;
-    bottom: 180px;
-    right: 50px;
-    background-color: lightgray;
-    height: 50px;
-    width: 150px;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-#rebirthButton{
-    position: relative;
-    bottom: 160px;
-    right: 50px;
-    background-color: lime;
-    height: 50px;
-    width: 150px;
-    font-weight: bold;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-}
-#gnomeCounter{
+
+#gnomeCounter {
     background-color: #256082;
     border: 1px solid #256082;
     font-weight: bold;
-    position: relative;
     display: flex;
-
-   
     align-items: center;
     justify-content: center;
 }
 
-#config{
+#config {
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #256082;
     background-color: #256082;
-
 }
 
-.botones{
-    width: 100%;                 /* Botones ocupan todo el ancho del contenedor */
-    padding: 20px;               /* Espaciado interno (ajústalo si es necesario) */
-    background-color: #e74c3c;   /* Color del botón */
-    color: white;                /* Color del texto */
-    border: none;                /* Sin bordes */
-    border-radius: 5px;          /* Bordes redondeados */
-    font-size: 16px;             /* Tamaño de la letra */
+.botones {
+    width: 100%; /* Buttons occupy full width of container */
+    padding: 20px; /* Internal spacing (adjust if necessary) */
+    background-color: #e74c3c; /* Button color */
+    color: white; /* Text color */
+    border: none; /* No borders */
+    border-radius: 5px; /* Rounded borders */
+    font-size: 16px; /* Text size */
     cursor: pointer;
     transition: background-color 0.3s ease;
     flex-grow: 1; 
 }
 
-
-
-#currency{
+#currency {
     background-color: #256082;
     border: 1px solid #256082;
     font-weight: bold;
-    align-items: center;
-    justify-content: center;
-
-}
-
-#vent{
-    background-color: lightgray;
-    position: relative;
-    left: 50px;
-    top: 200px;
-}
-
-.vent-container{
-    position: absolute;
-    top: 20%;
-    left: 10%;
-    width: 200px;
-    height: 300px;
-    background-color: lightgray;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
 }
 
-.franja{
-    color: #000;
+.franja {
+    display: flex;
+    justify-content: space-around; /* Equal space between elements */
+    align-items: center; /* Center vertically */
+    background-color: #2c3e50; /* Menu background color */
+    padding: 10px 0; /* Top and bottom spacing */
+    width: 100%; /* Occupy full width of the screen */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
     position: absolute;
-    justify-content: space-between;
-    align-items: flex-start;
+    bottom: 0; /* Stick to the bottom */
 }
+
+.items {
+    padding: 10px 20px; /* Internal spacing of buttons */
+    background-color: #e74c3c; /* Button background color */
+    color: white; /* Text color */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded borders */
+    font-size: 16px; /* Text size */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.items:hover {
+    background-color: #c0392b; /* Hover effect on button */
+}
+
+.items:focus {
+    outline: none; /* Remove focus outline */
+}
+
 #upgrade-buttons {
     display: none; /* Initially hide the upgrade buttons */
     margin-top: 10px;
 }
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -232,7 +198,6 @@ body{
 }
 
 .modal-content {
-    
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
@@ -245,13 +210,14 @@ body{
     background-size: cover;
     background-color: white;
 }
+
 .irish-grover-regular {
     font-family: "Irish Grover", system-ui;
     font-weight: 400;
     font-style: normal;
-  }
+}
 
-  .ingresar{
+.ingresar {
     width: 100%;
     height: 30px;
     margin: 10px 0;
@@ -262,11 +228,12 @@ body{
     color: #fff;
     font-size: 14px;
     cursor: pointer;
-  }
-  .popUpCrear{
-      align-items: center;
-      justify-content: center;
-  }
+}
+
+.popUpCrear {
+    align-items: center;
+    justify-content: center;
+}
 
 .close {
     color: black;
@@ -281,6 +248,7 @@ body{
     text-decoration: none;
     cursor: pointer;
 }
+
 .golden-elf {
     position: absolute;
     display: none; /* Initially hidden */
@@ -300,19 +268,18 @@ body{
     font-weight: bold;
 }
 
-#login{
+#login {
     background-color: #256082;
     border: 1px solid #256082;
     cursor: pointer; 
-
 }
 
-#iframe{
+#iframe {
     height: 100%;
     width: 100%;
 }
 
-#iframe-container{
+#iframe-container {
     height: 100%;
     width: 100%;
 }
