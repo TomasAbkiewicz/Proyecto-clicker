@@ -1,6 +1,7 @@
 import fs from "fs";
 let filePathU = './data/users.json';
 let filePathG = "./data/gamesFile.json";
+let currentUserId;
 
 let USERS = fs.readFileSync(filePathU, "utf-8");
 USERS = USERS ? JSON.parse(USERS) : []; 
@@ -9,6 +10,10 @@ USERS = USERS ? JSON.parse(USERS) : [];
 let GAMES = fs.readFileSync(filePathG, "utf-8");
 GAMES = GAMES ? JSON.parse(GAMES) : [];
 
+export function sendData(){
+    let id= currentUserId;
+    return ({user: id, data: GAMES})
+}
 
 export function newUser(user) {
 
@@ -383,6 +388,7 @@ export function login(input){
         if (user.username === input.username) {     
             if (user.password === input.password) {
                 let userId = user.id
+                currentUserId = userId;
                 return userId;
         }else{
             return false
