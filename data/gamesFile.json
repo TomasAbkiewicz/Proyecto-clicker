@@ -2,14 +2,14 @@
   {
     "userId": 1,
     "currency": {
-      "sunflowers": 0,
+      "sunflowers": 100099,
       "clovers": {
         "cloverPetal": 0,
         "clover3": 0,
         "clover4": 0
       },
       "fruits": {
-        "banana": 0,
+        "banana": 1,
         "apple": 0,
         "grapes": 0,
         "pineapple": 0,
