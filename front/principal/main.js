@@ -1,18 +1,6 @@
-<<<<<<< HEAD
 let mejora = document.getElementById("upgrade1")
-=======
 
-document.body.onload = function() {
-    let userId = sessionStorage.getItem("userId")
-    postData("loadGame", userId, (game))
-    console.log(game)
-    return game;
-}
-
-
-let mejora = document.getElementById("upgrade1");
-let mejoraPassiva = document.getElementById("upgradeP1");
->>>>>>> 912a321923eadeb2f458173b5fb92d8387216fc3
+let partida;
 let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
 let closeBtn = document.getElementsByClassName("close")[0];
@@ -22,8 +10,7 @@ let rebirth = document.getElementById("rebirthButton");
 let goldenElf = document.getElementById('goldenElf'); 
 let hmodos = document.getElementById("modos");
 
-
-let isBoostActive= false;
+let isBoostActive = false;
 let sacriP= 2000
 let upgradeStage1 = 0; 
 let rebirtStage = 0; 
@@ -32,10 +19,24 @@ let contadorMonedas = 300000
 let extra= 0
 let gnomos= 0
 let rebirtExtra= 1
+console.log("hola")
+let userId = sessionStorage.getItem("userId")
+postData("loadGame", userId, (game) => {
+    partida = game;
+    contadorMonedas= game.currency.sunflowers
+    console.log(contadorMonedas)
+    console.log(game)
+    console.log(userId)
+    console.log(partida)
+    return game;
+    
+});
+   
+console.log(partida)
 
-
-
-
+console.log(partida)
+console.log(partida)
+console.log(partida)
 
 
 let rebirtStages = [
@@ -181,25 +182,19 @@ goldenElf.addEventListener('click', () => {
 });
 personaje.addEventListener("click",updateCoins)
 mejora.addEventListener("click", addStr);  // Correctly add the reference to the function
-sacrificio.addEventListener("click", sacrifice);
+
 rebirth.addEventListener("click", rebirt);
-modos.addEventListener("click", modosCambio);
 
 
-<<<<<<< HEAD
+
 
 setInterval(updateCoins, 1000);
 
-=======
-setInterval(monedas, 1000);
-randomGoldenElfAppearance();
->>>>>>> 912a321923eadeb2f458173b5fb92d8387216fc3
 
 function redirect(){
     window.location.href = "prueba_buscaminas.html";
 }
 
-document.getElementById("currency").innerText = ` ${monedas}`
 
 window.onload = function() {
     const winnings = sessionStorage.getItem('winnings');
@@ -209,3 +204,4 @@ window.onload = function() {
     } 
 }
 
+console.log(partida)
