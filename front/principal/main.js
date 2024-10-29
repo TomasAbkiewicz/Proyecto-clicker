@@ -2,6 +2,7 @@
 document.body.onload = function() {
     let userId = sessionStorage.getItem("userId")
     postData("loadGame", userId, (game))
+    console.log(game)
     return game;
 }
 

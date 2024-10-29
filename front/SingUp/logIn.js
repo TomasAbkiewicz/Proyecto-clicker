@@ -13,7 +13,7 @@ function enviarUsuario() {
         console.log("llego a login")
         sessionStorage.setItem("userId", userId)
         alert("sesion iniciada correctamente")
-        window.location.href= "http://127.0.0.1:5500/Main%20Archivos/Proyecto.html"
+        window.location.href= "http://127.0.0.1:5500/front/principal/Proyecto.html"
       } else {
         alert("error al cargar el usuario");
       }
