@@ -11,6 +11,17 @@
     justify-content: center;
 }
 
+html, body {
+    height: 100%;
+    min-height: 100vh; /* Ensures the body is at least the full height of the viewport */
+}
+body{
+    background-image: url("fondo1.png"); /* Replace with your image path */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent repeating */
+}
+
 
 .high{
     width: 100%;
@@ -198,8 +209,8 @@
 }
 
 .franja{
-    display: flex;
-    flex-direction: row;
+    color: #000;
+    position: absolute;
     justify-content: space-between;
     align-items: flex-start;
 }

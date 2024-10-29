@@ -1,6 +1,17 @@
+(function() {
+    let userId = sessionStorage.getItem("userId")
+    postData("loadGame", userId, (game) => {
+    window.partida = game;
+    window.contadorMonedas= game.currency.sunflowers;
+    console.log(userId)
+    console.log(partida)
+    return game; 
+});
+})();
+
 let mejora = document.getElementById("upgrade1")
 
-let partida;
+
 let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
 let closeBtn = document.getElementsByClassName("close")[0];
@@ -15,28 +26,15 @@ let sacriP= 2000
 let upgradeStage1 = 0; 
 let rebirtStage = 0; 
 let clickStrength= 0
-let contadorMonedas = 300000
 let extra= 0
 let gnomos= 0
 let rebirtExtra= 1
 console.log("hola")
-let userId = sessionStorage.getItem("userId")
-postData("loadGame", userId, (game) => {
-    partida = game;
-    contadorMonedas= game.currency.sunflowers
-    console.log(contadorMonedas)
-    console.log(game)
-    console.log(userId)
-    console.log(partida)
-    return game;
-    
-});
-   
-console.log(partida)
 
-console.log(partida)
-console.log(partida)
-console.log(partida)
+   
+
+
+
 
 
 let rebirtStages = [
@@ -204,4 +202,3 @@ window.onload = function() {
     } 
 }
 
-console.log(partida)
