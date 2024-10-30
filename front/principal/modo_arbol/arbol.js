@@ -113,6 +113,9 @@ fruit.addEventListener('click', () => {
 });
 
 function openPopUp(fruits) {
+    if (!fruit.classList.contains('hidden')){
+        fruit.classList.add('hidden');
+    }
     const overlay = document.createElement('div');
     overlay.className = 'overlay';
 
