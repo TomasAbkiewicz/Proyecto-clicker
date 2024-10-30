@@ -2,41 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="arbol.css">
-    <title><Arbol-html></Arbol-html></title>
+    <title>Árbol con Frutas</title>
+    <link rel="stylesheet" href="arbol.css">
 </head>
 <body>
-<button onclick="intentarMostrar()"><img src="../IMAGENES/arbol.png" alt="" id="Arbol"></button>
-<img src="../IMAGENES/BANANA PNG.png" alt="" id="banana">
-<img src="../IMAGENES/FRUTILLA.png" alt="" id="frutilla">
-<img src="../IMAGENES/FRUTA DEL DRAGON.png" alt="" id="frutaDragon">
-<img src="../IMAGENES/UVA.png" alt="" id="uva">
-<img src="../IMAGENES/Gelatina.png" alt="" id="gelatina">
-
-<script>
-    function intentarMostrar() {
-      var probabilidad = Math.random();
-
-      if (probabilidad <= 0.3) {
-        var mostrarBanana = document.getElementById("banana");
-        banana.style.display = "block";
-        alert("¡Clickea Las Frutas!");
-      } else {
-        alert("El contenido no apareció.");
-      }
-      if (probabilidad <= 0.2) {
-        var mostrarFrutilla = document.getElementById("frutilla");
-        frutilla.style.display = "block";
-        alert("¡Clickea Las Frutas!");
-      }
-      if (probabilidad <= 0.1) {
-        var mostrarDragon = document.getElementById("frutaDragon");
-        frutaDragon.style.display = "block";
-        alert("¡Clickea Las Frutas!");
-      }
-    }
-</script>
+    <div class="tree-container">
+        <div class="tree"></div>
+        <div class="gnomo" id="gnomo"></div>
+        <div class="fruit hidden" id="fruit1"></div>
+        <div class="fruit hidden" id="fruit2"></div>
+        <div class="fruit hidden" id="fruit3"></div>
+        <div class="fruit hidden" id="fruit4"></div>
+        <div class="fruit hidden" id="fruit5"></div>
+    </div>
+    <div id="counter">0</div>
+    <script src="arbol.js"></script>
 </body>
 </html>
