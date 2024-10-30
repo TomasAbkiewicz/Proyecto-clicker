@@ -3,11 +3,6 @@
     "userId": 1,
     "currency": {
       "sunflowers": 100,
-      "clovers": {
-        "cloverPetal": 0,
-        "clover3": 0,
-        "clover4": 0
-      },
       "fruits": {
         "banana": 1,
         "apple": 0,

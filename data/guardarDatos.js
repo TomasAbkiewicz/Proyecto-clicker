@@ -29,12 +29,7 @@ export function newUser(user) {
     let game = {
         userId: userdata.id,
         currency: {
-            sunflowers: 0,
-            clovers : {
-                cloverPetal: 0,
-                clover3:0,
-                clover4:0,
-            },
+            clovers: 0,
             fruits : {
                 banana: 0,
                 apple:0,

@@ -37,10 +37,6 @@ console.log("hola")
 
    
 
-
-
-
-
 let rebirtStages = [
     { price: 300000, extra:2},
     { price: 1000000, extra:4},
@@ -194,10 +190,10 @@ setInterval(passiveUpdate, 100);
 
 
 function redirect(){
-    window.location.href = "http://127.0.0.1:5500/front/principal/modo_buscaminas/prueba_buscaminas.html";
+    window.location.href = "http://127.0.0.1:5500/Proyecto-clicker/front/principal/modo_buscaminas/prueba_buscaminas.html";
 }
 function redirect1(){
-    window.location.href = "http://127.0.0.1:5500/front/principal/modo_arbol/arbol.html";
+    window.location.href = "http://127.0.0.1:5500/Proyecto-clicker/front/principal/modo_arbol/arbol.html";
 }
 
 
