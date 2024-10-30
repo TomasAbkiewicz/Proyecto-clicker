@@ -139,10 +139,11 @@ function openPopUp(fruits) {
     popup.appendChild(fruitList);
 
     const closeButton = document.createElement('button');
-    closeButton.textContent = 'Cerrar';
+    closeButton.textContent = 'Volver al menu principal';
     closeButton.className = 'close-btn';
     closeButton.addEventListener('click', () => {
         overlay.remove();
+        goBack()
     });
     popup.appendChild(closeButton);
 

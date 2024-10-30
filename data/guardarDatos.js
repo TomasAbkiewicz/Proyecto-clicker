@@ -40,14 +40,7 @@ export function newUser(user) {
                 apple:0,
                 grapes:0,
                 pineapple:0,
-                dragonFruits : { 
-                    rottenDragonFruit: 0,
-                    dragonSeed:0,
-                    dragonFruit:0,
-                    agedDragonFruit:0,
-                    ancientDragonFruit:0,
-                    primordialDragonFruit:0,
-                },
+                dragonFruits : 0,
             },
         }
         }    
