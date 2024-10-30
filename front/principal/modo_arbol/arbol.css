@@ -16,6 +16,16 @@ body {
     font-weight: bold;
 }
 
+.cross-button {
+    position: absolute;
+    top: 20px; 
+    left: 20px; 
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
 .tree-container {
     position: relative;
     width: 20%;

@@ -69,4 +69,8 @@ fruit.addEventListener('click', () => {
         fruit.classList.add('hidden');
     }
 });
+
+function goBack() {
+    window.history.back();
+}
 setInterval(countdown,1000);

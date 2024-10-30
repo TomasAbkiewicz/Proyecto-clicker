@@ -1,16 +1,20 @@
 (function() {
     let userId = sessionStorage.getItem("userId")
-    postData("loadGame", userId, (game) => {
-    window.partida = game;
-    window.contadorMonedas= game.currency.sunflowers;
-    console.log(userId)
-    console.log(partida)
-    return game; 
-});
+    if (userId && userId !== "undefined"){
+        postData("loadGame", userId, (game) => {
+            window.partida = game;
+            window.contadorMonedas= game.currency.sunflowers;
+            console.log(userId)
+            console.log(partida)
+            return game; 
+        });
+    }else{
+        window.contadorMonedas= 10;
+    }
 })();
 
 let mejora = document.getElementById("upgrade1")
-
+let modeButtons = Array.from(document.getElementsByClassName('hidden'));
 
 let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
@@ -84,13 +88,12 @@ function rebirt(){
         precio =10;
         precioP1= 30;    
         extra= 0.1;
-        coinPerSec = 0;
+    
         gnomos= 0;
         sacriP= 2000;
         upgradeStage1 = 0; 
         upgradeStageP1 = 0; 
         mejora.textContent = "Plantar Gnomo: " + upgradeStages1[0].price;
-        mejoraPassiva.textContent = "Regar Jardin: " + upgradeStagesP1[0].price; 
        
         contadorGnomos.textContent = "Gnomos: " + gnomos;
         sacrificio.textContent = "Sacrificio: " + Math.floor(sacriP);
@@ -107,11 +110,14 @@ function updateCoins (){
     contadorMonedas += clickStrength  
     contador.textContent = "Monedas: "+ contadorMonedas
 }
+function passiveUpdate(){  
+    contador.textContent = "Monedas: "+ contadorMonedas
+}
 function addStr() {
     let currentStage = upgradeStages1[upgradeStage1];
     if (contadorMonedas >= currentStage.price) {
         contadorMonedas -= currentStage.price;  
-        
+        contador.textContent = "Monedas: "+ contadorMonedas
         clickStrength += (currentStage.clickStrength * currentStage.extra)* rebirtExtra; 
         gnomos +=1;
         contadorGnomos.textContent = "Gnomos: "+ gnomos;
@@ -140,17 +146,6 @@ function showGoldenElf() {
 function applyBoost() {
     isBoostActive=true;
     if (Math.random() < 0.5) { // Adjust probability as needed
-        clickStrength *= 777; // Double the click strength
-        setTimeout(() => {
-            isBoostActive=false;
-            clickStrength /= 777; // Revert click strength after 10 seconds
-        }, 10000); 
-    }else{
-        coinPerSec *= 777; // Double the click strength
-        setTimeout(() => {
-            isBoostActive=false;
-            coinPerSec /= 777; // Revert click strength after 10 seconds
-        }, 60000);
     }
     
 }
@@ -170,7 +165,16 @@ document.getElementById('shop').addEventListener('click', function() {
         upgradeButtons.style.display = 'none'; // Hide the upgrade buttons if already visible
     }
 });
-
+hmodos.addEventListener('click', function() {
+   
+    
+    for (const button of modeButtons) {
+        button.classList.toggle("hidden");
+        button.classList.toggle("show");
+    }
+    
+    
+});
 closeBtn.onclick = function() {
     modal.style.display = "none";
 }
@@ -186,11 +190,14 @@ rebirth.addEventListener("click", rebirt);
 
 
 
-setInterval(updateCoins, 1000);
+setInterval(passiveUpdate, 100);
 
 
 function redirect(){
-    window.location.href = "prueba_buscaminas.html";
+    window.location.href = "http://127.0.0.1:5500/Proyecto-clicker/front/principal/modo_buscaminas/prueba_buscaminas.html";
+}
+function redirect1(){
+    window.location.href = "http://127.0.0.1:5500/Proyecto-clicker/front/principal/modo_arbol/arbol.html";
 }
 
 
@@ -198,7 +205,10 @@ window.onload = function() {
     const winnings = sessionStorage.getItem('winnings');
     if (winnings) {
         document.getElementById('currency').innerText = `Tus ganancias son: ${winnings} monedas`;
-        document.getElementById("currency").innerText = `${winnings + passiveCoins}`;
+        document.getElementById("currency").innerText = `${winnings}`;
     } 
 }
 
+function goBack() {
+    window.history.back();
+  }
