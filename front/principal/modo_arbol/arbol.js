@@ -52,7 +52,7 @@ function showRandomFruit() {
 }
 
 document.getElementById('gnomo').addEventListener('click', () => {
-    if (Math.random() < 0.5) {
+    if (Math.random() < 0.1) {
         showRandomFruit();
     }
 });
