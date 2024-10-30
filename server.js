@@ -8,5 +8,3 @@ onEvent("save",save);
 onEvent("login",login);
 onEvent("loadGame", loadGame)
 onEvent("pruebaSave", save)
-
-startServer();
