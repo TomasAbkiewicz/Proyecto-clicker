@@ -194,10 +194,10 @@ setInterval(passiveUpdate, 100);
 
 
 function redirect(){
-    window.location.href = "http://127.0.0.1:5500/Proyecto-clicker/front/principal/modo_buscaminas/prueba_buscaminas.html";
+    window.location.href = "http://127.0.0.1:5500/front/principal/modo_buscaminas/prueba_buscaminas.html";
 }
 function redirect1(){
-    window.location.href = "http://127.0.0.1:5500/Proyecto-clicker/front/principal/modo_arbol/arbol.html";
+    window.location.href = "http://127.0.0.1:5500/front/principal/modo_arbol/arbol.html";
 }
 
 
