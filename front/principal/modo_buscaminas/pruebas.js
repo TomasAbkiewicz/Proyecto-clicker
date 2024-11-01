@@ -2,11 +2,11 @@ let score = 0.00;
 let balance = 500;
 let gridSize = 5;
 let multipliers = {
-    2: [2.00],
-    3: [3.00],
-    4: [4.00],
-    5: [5.00],
-    6: [6.00]
+    2: [1.00],
+    3: [2.00],
+    4: [3.00],
+    5: [4.00],
+    6: [5.00]
 };
 let bombProbabilities = {
     2: 0.7,

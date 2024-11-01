@@ -10,6 +10,7 @@ window.onload= function() {
         window.contadorMonedas= 10;
     }
 }
+
 let modeButtons = Array.from(document.getElementsByClassName('hidden'));
 let personaje = document.getElementById("gnomo");
 let contador= document.getElementById("currency");
@@ -37,7 +38,9 @@ function redirectArbol(){
         window.location.href = "http://127.0.0.1:5500/Proyecto-clicker/front/principal/modo_arbol/arbol.html";
     }
 }
-
+function save(game) {
+    postData("save",game)
+}
 personaje.addEventListener("click", gnomeClick)
 botonArbol.addEventListener("click", redirectArbol)
 botonBuscaminas.addEventListener("click", redirectBuscaminas)

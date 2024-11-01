@@ -11,7 +11,6 @@ function enviarUsuario() {
   postData("login", user,(userId) => {
       if (userId) {
         console.log("llego a login")
-        alert("login")
         sessionStorage.setItem("userId", userId)
         alert("sesion iniciada correctamente")
         window.location.href= "http://127.0.0.1:5500/front/principal/Proyecto.html"
