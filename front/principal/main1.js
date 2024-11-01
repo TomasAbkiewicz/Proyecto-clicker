@@ -10,6 +10,7 @@ window.onload= function() {
         window.contadorMonedas= 10;
     }
 }
+
 let modeButtons = Array.from(document.getElementsByClassName('hidden'));
 let personaje = document.getElementById("gnomo");
 let contador= document.getElementById("currency");

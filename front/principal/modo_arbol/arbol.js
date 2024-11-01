@@ -1,6 +1,6 @@
 let fruitExist = false;
 let timer = document.getElementById("counter");
-let time = 10;
+let time = 60;
 let startGame = false;
 timer.textContent = time;
 let countdownInterval;
@@ -84,8 +84,24 @@ function showRandomFruit() {
         fruit.style.left = randomPosition.left;
 
         const fruitKeys = Object.keys(fruits);
-        const randomTypeKey = fruitKeys[Math.floor(Math.random() * fruitKeys.length)];
+        let odd = Math.floor(Math.random() * 101);
+        
+        let randomTypeKey;
+        if (odd <= 50) {
+            randomTypeKey = 1;
+        } else if (odd <= 75) {
+            randomTypeKey = 2;
+        } else if (odd <= 87.5) {
+            randomTypeKey = 3;
+        } else if (odd <= 95) {
+            randomTypeKey = 4;
+        } else if (odd <= 100) {
+            randomTypeKey = 5;
+        }
+        
+        randomTypeKey = fruitKeys[randomTypeKey];
         currentFruitType = randomTypeKey;
+        console.log(odd, currentFruitType)
 
         fruit.className = `fruit ${fruits[randomTypeKey].class}`;
         fruit.classList.remove('hidden');
@@ -94,7 +110,7 @@ function showRandomFruit() {
 }
 
 document.getElementById('gnomo').addEventListener('click', () => {
-    if (Math.random() < 0.1) {
+    if (Math.random() < .20) {
         showRandomFruit();
     }
 });
@@ -158,7 +174,7 @@ function openPopUp(fruits) {
 
     startButton.addEventListener("click", () => {
         clearInterval(countdownInterval);
-        time = 10;
+        time = 60;
         timer.textContent = time;
         startGame = true;
         overlay.remove();
