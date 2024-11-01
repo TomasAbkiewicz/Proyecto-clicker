@@ -1,6 +1,6 @@
 let fruitExist = false;
 let timer = document.getElementById("counter");
-let time = 10;
+let time = 60;
 let startGame = false;
 timer.textContent = time;
 let countdownInterval;
@@ -110,7 +110,7 @@ function showRandomFruit() {
 }
 
 document.getElementById('gnomo').addEventListener('click', () => {
-    if (Math.random() < 1) {
+    if (Math.random() < .20) {
         showRandomFruit();
     }
 });
