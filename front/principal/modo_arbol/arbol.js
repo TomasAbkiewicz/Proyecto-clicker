@@ -174,7 +174,7 @@ function openPopUp(fruits) {
 
     startButton.addEventListener("click", () => {
         clearInterval(countdownInterval);
-        time = 10;
+        time = 60;
         timer.textContent = time;
         startGame = true;
         overlay.remove();
