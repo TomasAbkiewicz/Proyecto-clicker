@@ -118,3 +118,14 @@ window.onload = function() {
 function goBack() {
     window.history.back();
 }
+function save(game) {
+    postData("save",game,(ok) => {
+        if (ok){
+            let overlay = document.createElement("div");
+            
+        }
+    })
+
+}
+let saveButton = getElementById("save");
+saveButton.addEventListener("click", save)
