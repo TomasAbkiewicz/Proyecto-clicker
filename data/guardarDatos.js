@@ -29,25 +29,13 @@ export function newUser(user) {
     let game = {
         userId: userdata.id,
         currency: {
-            sunflowers: 0,
-            clovers : {
-                cloverPetal: 0,
-                clover3:0,
-                clover4:0,
-            },
+            clovers: 0,
             fruits : {
                 banana: 0,
                 apple:0,
                 grapes:0,
                 pineapple:0,
-                dragonFruits : { 
-                    rottenDragonFruit: 0,
-                    dragonSeed:0,
-                    dragonFruit:0,
-                    agedDragonFruit:0,
-                    ancientDragonFruit:0,
-                    primordialDragonFruit:0,
-                },
+                dragonFruits : 0,
             },
         }
         }    

@@ -37,10 +37,6 @@ console.log("hola")
 
    
 
-
-
-
-
 let rebirtStages = [
     { price: 300000, extra:2},
     { price: 1000000, extra:4},
