@@ -13,6 +13,7 @@
     }
 })();
 
+let botonesDerecha= Array.from(document.getElementsByClassName("column"))
 let overlay= document.getElementById("overlay");
 let closeButton = document.getElementById('closeButton');
 let mejora = document.getElementById("upgrade1")
@@ -20,10 +21,7 @@ let modeButtons = Array.from(document.getElementsByClassName('btn'));
 let tiendaPopup = document.getElementById('tiendaPopup');
 let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
-<<<<<<< HEAD
 let sacrificio =document.getElementById("upgradePer1");
-=======
->>>>>>> 5f3d4661b899ca5b34929d646893edacf9e75f37
 let contadorGnomos =document.getElementById("gnomeCounter");
 let hmodos = document.getElementById("modos");
 
@@ -78,12 +76,19 @@ function randomGoldenElfAppearance() {
 document.getElementById('shop').addEventListener('click', function() {
     tiendaPopup.style.display = 'block';
     closeButton.style.display = 'block';    
-    overlay.classList.remove("hidden1")
+    overlay.classList.remove("hidden")
+    for (const button of botonesDerecha) {
+        button.classList.add("hidden");   
+    }
+    
 });
 closeButton.addEventListener('click', function() {
     tiendaPopup.style.display = 'none';
     closeButton.style.display = 'none';
-    overlay.classList.add("hidden1")
+    overlay.classList.add("hidden")
+    for (const button of botonesDerecha) {
+        button.classList.remove("hidden");   
+    }
 });
 
 hmodos.addEventListener('click', function() {
