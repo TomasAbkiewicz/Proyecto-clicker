@@ -13,12 +13,13 @@
     }
 })();
 
+let overlay= document.getElementById("overlay");
+let closeButton = document.getElementById('closeButton');
 let mejora = document.getElementById("upgrade1")
-let modeButtons = Array.from(document.getElementsByClassName('hidden'));
-
+let modeButtons = Array.from(document.getElementsByClassName('btn'));
+let tiendaPopup = document.getElementById('tiendaPopup');
 let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
-let closeBtn = document.getElementsByClassName("close")[0];
 let sacrificio =document.getElementById("upgradePer1");
 let contadorGnomos =document.getElementById("gnomeCounter");
 let rebirth = document.getElementById("rebirthButton");
@@ -153,14 +154,18 @@ function randomGoldenElfAppearance() {
         }
     }, 600); // Check every 1000 milliseconds = 1 second
 }
+
 document.getElementById('shop').addEventListener('click', function() {
-    var upgradeButtons = document.getElementById('upgrade-buttons');
-    if (upgradeButtons.style.display === 'none' || upgradeButtons.style.display === '') {
-        upgradeButtons.style.display = 'block'; // Show the upgrade buttons
-    } else {
-        upgradeButtons.style.display = 'none'; // Hide the upgrade buttons if already visible
-    }
+    tiendaPopup.style.display = 'block';
+    closeButton.style.display = 'block';    
+    overlay.classList.remove("hidden1")
 });
+closeButton.addEventListener('click', function() {
+    tiendaPopup.style.display = 'none';
+    closeButton.style.display = 'none';
+    overlay.classList.add("hidden1")
+});
+
 hmodos.addEventListener('click', function() {
    
     
@@ -171,9 +176,7 @@ hmodos.addEventListener('click', function() {
     
     
 });
-closeBtn.onclick = function() {
-    modal.style.display = "none";
-}
+
 goldenElf.addEventListener('click', () => {
     applyBoost();
     goldenElf.style.display = 'none'; // Hide the elf after being clicked
@@ -194,7 +197,7 @@ function redirect(){
 }
 function redirect1(){
     window.location.href = "http://127.0.0.1:5500/front/principal/modo_arbol/arbol.html";
-}
+}   
 
 
 window.onload = function() {
