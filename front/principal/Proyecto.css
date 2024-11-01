@@ -83,22 +83,6 @@ body {
     transform: scale(0.9);
 }
 
-#upgrade1,
-#upgradeP1,
-#upgradePer1,
-#rebirthButton {
-    position: relative;
-    bottom: 220px; /* Adjust if needed */
-    right: 50px;
-    background-color: lightgray;
-    height: 50px;
-    width: 150px;
-    font-weight: bold;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 
 
 #gnomeCounter {
