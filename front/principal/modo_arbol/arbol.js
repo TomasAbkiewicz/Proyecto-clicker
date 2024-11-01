@@ -88,15 +88,15 @@ function showRandomFruit() {
         
         let randomTypeKey;
         if (odd <= 50) {
-            randomTypeKey = 1;
+            randomTypeKey = 0;
         } else if (odd <= 75) {
-            randomTypeKey = 2;
+            randomTypeKey = 1;
         } else if (odd <= 87.5) {
-            randomTypeKey = 3;
+            randomTypeKey = 2;
         } else if (odd <= 95) {
-            randomTypeKey = 4;
+            randomTypeKey = 3;
         } else if (odd <= 100) {
-            randomTypeKey = 5;
+            randomTypeKey = 4;
         }
         
         randomTypeKey = fruitKeys[randomTypeKey];
