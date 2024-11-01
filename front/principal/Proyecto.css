@@ -69,16 +69,6 @@ body {
     align-items: center;
 }
 
-#Arbol {
-    display: none;
-    margin-left: auto;
-    margin-right: auto;
-    clip-path: inset(0px 0px 50px 0px);
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ensures it doesn't exceed viewport height */
-    overflow: hidden; /* Prevent overflowing */
-}
 
 #gnomo {
     position: absolute;
@@ -109,6 +99,8 @@ body {
     justify-content: center;
 }
 
+
+
 #gnomeCounter {
     background-color: #256082;
     border: 1px solid #256082;
@@ -118,6 +110,28 @@ body {
     justify-content: center;
 }
 
+#Arbol, #Buscaminas {
+    position: absolute;
+    background-color: lightgray;
+    height: 50px;
+    width: 150px;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+#Arbol {
+    bottom: 120px; /* Adjust this to position it on top of "Modos de juego alternativo" */
+    left: -70px; /* Adjust for horizontal positioning */
+}
+
+#Buscaminas {
+    bottom: 180px; /* Position it above the "Arbol" button */
+    left: -70px; /* Adjust for horizontal positioning */
+}
+
+
 #config {
     display: flex;
     align-items: center;
@@ -125,7 +139,12 @@ body {
     border: 1px solid #256082;
     background-color: #256082;
 }
-
+.hidden{
+    display:none;
+}
+.show{
+    display: block;
+}
 .botones {
     width: 100%; /* Buttons occupy full width of container */
     padding: 20px; /* Internal spacing (adjust if necessary) */
