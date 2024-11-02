@@ -54,9 +54,9 @@ export function save(game) {
 
     let GAMES = fs.readFileSync(filePathG, "utf-8");
     GAMES = GAMES ? JSON.parse(GAMES) : [];
-
     let id = game.userId;
-    GAMES[id] = game
+    GAMES[id-1] = game
+
     fs.writeFileSync(filePathG, JSON.stringify(GAMES, null, 2));
 
     return { ok: true };
@@ -76,6 +76,7 @@ export function login(input){
     }
 }
 export function loadGame(userId){
-    let game  = GAMES[userId-1]
-    return game;
+    let games = JSON.parse(fs.readFileSync(filePathG, "utf-8"))
+    
+    return games[userId-1];
 }

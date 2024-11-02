@@ -1,39 +1,62 @@
 (function() {
     let userId = sessionStorage.getItem("userId")
-    if (userId && userId !== "undefined"){
+    window.partida = JSON.parse(sessionStorage.getItem("partida"))
+    if (userId !== "undefined" && userId && partida === null){
         postData("loadGame", userId, (game) => {
-            window.partida = game;
-            window.contadorMonedas= game.currency.sunflowers;
+            partida = game;
+            console.log(game)
+            window.contadorMonedas= partida.currency.sunflowers;
             console.log(userId)
             console.log(partida)
+            window.upgradeStage1 = partida.upgrades.up1;
+            window.clickStrength = 0;
+            if (window.upgradeStage1 !== 0){
+                for (i=0; i<upgradeStage1; i++){
+                    
+                    let currentStage= upgradeStages1[i];
+                    window.clickStrength *=   rebirtExtra
+                    window.clickStrength *=   currentStage.extra
+                    window.clickStrength +=   currentStage.clickStrength
+                    
+                }
+                mejora.textContent = "Plantar Gnomo: " + upgradeStages1[window.upgradeStage1].price;
+                console.log(upgradeStage1 + "upgstg1")
+            }else{
+                console.log("first time huh")
+            }
             return game; 
         });
+    }else if (partida !== null){
+        window.contadorMonedas= partida.currency.sunflowers;
+
     }else{
         window.contadorMonedas= 10;
+        alert ("estas jugando sin cuenta, tu progreso no sera guardado y se reiniciara al salir de la pagina o entrar a cualquier modo de juego. Para no perder el progress, crea una cuenta con el boton log in ubicado en la esquina derecha de la pantalla")
     }
+    
+    
 })();
 
-let mejora = document.getElementById("upgrade1")
+let mejora = document.getElementById("clickStr")
 let modeButtons = Array.from(document.getElementsByClassName('btn'));
-
+let botonesDerecha= Array.from(document.getElementsByClassName("botones"))
 let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
 let closeBtn = document.getElementsByClassName("close")[0];
 let sacrificio =document.getElementById("upgradePer1");
 let contadorGnomos =document.getElementById("gnomeCounter");
-let rebirth = document.getElementById("rebirthButton");
+let rebirth = document.getElementById("rebirth");
 let goldenElf = document.getElementById('goldenElf'); 
 let hmodos = document.getElementById("modos");
 
 let isBoostActive = false;
-let sacriP= 2000
-let upgradeStage1 = 0; 
+let sacriP= 2000;
+
 let rebirtStage = 0; 
-let clickStrength= 0
+
 let extra= 0
 let gnomos= 0
 let rebirtExtra= 1
-console.log("hola")
 
    
 
@@ -157,14 +180,7 @@ function randomGoldenElfAppearance() {
         }
     }, 600); // Check every 1000 milliseconds = 1 second
 }
-document.getElementById('shop').addEventListener('click', function() {
-    var upgradeButtons = document.getElementById('upgrade-buttons');
-    if (upgradeButtons.style.display === 'none' || upgradeButtons.style.display === '') {
-        upgradeButtons.style.display = 'block'; // Show the upgrade buttons
-    } else {
-        upgradeButtons.style.display = 'none'; // Hide the upgrade buttons if already visible
-    }
-});
+
 hmodos.addEventListener('click', function() {
    
     
@@ -193,14 +209,38 @@ closeButton.addEventListener('click', function() {
 
 goldenElf.addEventListener('click', () => {
     applyBoost();
-    goldenElf.style.display = 'none'; // Hide the elf after being clicked
+    goldenElf.style.display = 'none'; 
 });
 personaje.addEventListener("click",updateCoins)
-mejora.addEventListener("click", addStr);  // Correctly add the reference to the function
+mejora.addEventListener("click", addStr);  
+//rebirth.addEventListener("click", rebirt);
 
-rebirth.addEventListener("click", rebirt);
+document.getElementById("save").addEventListener("click",(save)=> {
+    
+    if (partida !== null && partida){
+        console.log(partida)
+        partida.currency.sunflowers = contadorMonedas;
+        partida.currency.fruits.banana = 0;
+        partida.currency.fruits.apple = 0;
+        partida.currency.fruits.grapes = 0;
+        partida.currency.fruits.pineapple = 0;
+        partida.currency.fruits.dragonFruits = 0;
+        partida.upgrades.up1= upgradeStage1;
+        partida.upgrades.up2= 0;
+        partida.upgrades.up3=0;
+        partida.upgrades.up4=0;
+        sessionStorage.setItem("partida",JSON.stringify(partida))
+        postData("save", partida, (ok)=>{
+            if (ok.ok){
+                alert("guardado correctamente")
+            }
 
+        })
+    }
+    
+   
 
+})
 
 
 
