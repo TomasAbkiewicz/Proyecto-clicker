@@ -56,7 +56,7 @@ body {
     width: 100px; /* Ajusta el tamaño según sea necesario */
     height: 100px;
     position: absolute;
-    top: 50%; /* Ajusta la posición para centrar en la pantalla si es necesario */
+    top: 65%; /* Ajusta la posición para centrar en la pantalla si es necesario */
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -146,7 +146,7 @@ body {
 
 
 .fruit1 { background-color: #FF6347; top: 5%; left: 5%; }
-.fruit2 { background-color: #FFD700; top: 15%; right: 5%; }
+.fruit2 { background-color: #FFD700; top: 15%; right: 5%;}
 .fruit3 { background-color: #32CD32; top: 30%; left: 3%; }
 .fruit4 { background-color: #FF4500; top: 45%; right: 10%; }
 .fruit5 { background-color: #8A2BE2; top: 12.5%; left: 50%; transform: translateX(-50%); }
