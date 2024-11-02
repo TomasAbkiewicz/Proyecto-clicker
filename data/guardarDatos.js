@@ -37,6 +37,12 @@ export function newUser(user) {
                 pineapple:0,
                 dragonFruits : 0,
             },
+        },
+        upgrades:{
+            up1: 0,
+            up2: 0,
+            up3: 0,
+            up4: 0,
         }
         }    
         GAMES.push(game);

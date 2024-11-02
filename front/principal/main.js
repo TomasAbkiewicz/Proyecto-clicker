@@ -9,34 +9,48 @@
             console.log(userId)
             console.log(partida)
             window.upgradeStage1 = partida.upgrades.up1;
+            window.upgradeStage2 = partida.upgrades.up2;
             window.clickStrength = 0;
+            window.passiveStrength= 0;
             if (window.upgradeStage1 !== 0){
                 for (i=0; i<upgradeStage1; i++){
-                    
                     let currentStage= upgradeStages1[i];
                     window.clickStrength *=   rebirtExtra
                     window.clickStrength *=   currentStage.extra
                     window.clickStrength +=   currentStage.clickStrength
                     
                 }
-                mejora.textContent = "Plantar Gnomo: " + upgradeStages1[window.upgradeStage1].price;
-                console.log(upgradeStage1 + "upgstg1")
-            }else{
-                console.log("first time huh")
+            
+                
+                
             }
+            if (window.upgradeStage2 !==0){
+                for (i=0; i<upgradeStage2; i++){
+                    let currentStage= upgradeStages2[i];
+                    window.passiveStrength *=   rebirtExtra 
+                    window.passiveStrength *=   currentStage.extra
+                    window.passiveStrength +=   currentStage.clickStrength
+                    
+                }
+            }
+            mejora.textContent = "Regar Jardin: " + upgradeStages1[window.upgradeStage1].price;
+            pMejora.textContent = "Trebol de 4 hojas: " + upgradeStages2[window.upgradeStage2].price;
+            setInterval(passiveUpdate,100);
             return game; 
         });
-    }else if (partida !== null){
-        window.contadorMonedas= partida.currency.sunflowers;
-
     }else{
-        window.contadorMonedas= 10;
+        window.contadorMonedas= 10; 
+        window.upgradeStage1= 0;
+        window.upgradeStage1= 0;
+        window.clickStrength= 0;
+        window.passiveStrength=0;
         alert ("estas jugando sin cuenta, tu progreso no sera guardado y se reiniciara al salir de la pagina o entrar a cualquier modo de juego. Para no perder el progress, crea una cuenta con el boton log in ubicado en la esquina derecha de la pantalla")
     }
     
     
 })();
 
+let pMejora = document.getElementById("passiveStr")
 let mejora = document.getElementById("clickStr")
 let modeButtons = Array.from(document.getElementsByClassName('btn'));
 let botonesDerecha= Array.from(document.getElementsByClassName("botones"))
@@ -51,18 +65,40 @@ let hmodos = document.getElementById("modos");
 
 let isBoostActive = false;
 let sacriP= 2000;
-
 let rebirtStage = 0; 
-
 let extra= 0
 let gnomos= 0
 let rebirtExtra= 1
-
    
 
 
 
-
+let upgradeStages2 = [
+    {price:100, clickStrength:1 , extra:1},
+    {price:200,clickStrength:2,extra:1},
+    {price:400, clickStrength:4 , extra:1},
+    {price:1000,clickStrength:0,extra: 2},
+    {price:2000, clickStrength:0 , extra:2},
+    {price:3500,clickStrength:2,extra:2},
+    {price:7000, clickStrength:4 , extra:2},
+    {price:10000,clickStrength:0,extra: 3},
+    {price:14000, clickStrength:29 , extra:1},
+    {price:19000,clickStrength:0,extra:2},
+    {price:23000, clickStrength:0 , extra:4},
+    {price:30000,clickStrength:100,extra: 1.5},
+    {price:55000, clickStrength: 50, extra:2},
+    {price:88000,clickStrength:150,extra:1.2},
+    {price:100000, clickStrength:0 , extra:4},
+    {price:254000,clickStrength:200,extra: 2},
+    {price:459000, clickStrength:1 , extra: 2},
+    {price:661000,clickStrength:200,extra:1},
+    {price:980000, clickStrength:0 , extra:1.5},
+    {price:1890000,clickStrength:0,extra: 1.2},
+    {price:2500000, clickStrength:0 , extra:1.5},
+    {price:40130000,clickStrength:2,extra:2},
+    {price:88180000, clickStrength:4 , extra:1.5},
+    {price:100000000,clickStrength:0,extra: 3},
+]
 
 let rebirtStages = [
     { price: 300000, extra:2},
@@ -131,17 +167,20 @@ function rebirt(){
 }
 function updateCoins (){
     contadorMonedas += clickStrength  
-    contador.textContent = "Monedas: "+ contadorMonedas
+    contador.textContent = "Monedas: "+ Math.floor(contadorMonedas)
 }
-function passiveUpdate(){  
-    contador.textContent = "Monedas: "+ contadorMonedas
+function passiveUpdate(){ 
+    contadorMonedas += passiveStrength/10; 
+    contador.textContent = "Monedas: "+ Math.floor(contadorMonedas)
 }
 function addStr() {
     let currentStage = upgradeStages1[upgradeStage1];
     if (contadorMonedas >= currentStage.price) {
         contadorMonedas -= currentStage.price;  
         contador.textContent = "Monedas: "+ contadorMonedas
-        clickStrength += (currentStage.clickStrength * currentStage.extra)* rebirtExtra; 
+        clickStrength *=   rebirtExtra
+        clickStrength *=   currentStage.extra
+        clickStrength +=   currentStage.clickStrength
         gnomos +=1;
         contadorGnomos.textContent = "Gnomos: "+ gnomos;
         upgradeStage1 += 1; // Move to the next stage
@@ -154,7 +193,24 @@ function addStr() {
         }
     }
 }
+function addPStr() {
+    let currentStage = upgradeStages2[upgradeStage2];
+    if (contadorMonedas >= currentStage.price) {
+        contadorMonedas -= currentStage.price;  
+        contador.textContent = "Monedas: "+ contadorMonedas
+        passiveStrength *=   rebirtExtra 
+        passiveStrength *=   currentStage.extra
+        passiveStrength +=   currentStage.clickStrength 
+        upgradeStage2 += 1; // Move to the next stage
 
+        // Update button text to reflect the next stage price
+        if (upgradeStage2 < upgradeStages2.length) {
+            pMejora.textContent = "Trebol de 4 hojas: " + upgradeStages2[upgradeStage2].price;
+        } else {
+            pMejora.textContent = "Max Upgrade Reached";
+        }
+    }
+}
 
 function showGoldenElf() {
     goldenElf.style.display = 'block';
@@ -213,23 +269,24 @@ goldenElf.addEventListener('click', () => {
 });
 personaje.addEventListener("click",updateCoins)
 mejora.addEventListener("click", addStr);  
+pMejora.addEventListener("click", addPStr)
 //rebirth.addEventListener("click", rebirt);
 
 document.getElementById("save").addEventListener("click",(save)=> {
     
     if (partida !== null && partida){
         console.log(partida)
-        partida.currency.sunflowers = contadorMonedas;
+        partida.currency.sunflowers = Math.floor(contadorMonedas);
         partida.currency.fruits.banana = 0;
         partida.currency.fruits.apple = 0;
         partida.currency.fruits.grapes = 0;
         partida.currency.fruits.pineapple = 0;
         partida.currency.fruits.dragonFruits = 0;
         partida.upgrades.up1= upgradeStage1;
-        partida.upgrades.up2= 0;
+        partida.upgrades.up2= upgradeStage2;
         partida.upgrades.up3=0;
         partida.upgrades.up4=0;
-        sessionStorage.setItem("partida",JSON.stringify(partida))
+        
         postData("save", partida, (ok)=>{
             if (ok.ok){
                 alert("guardado correctamente")
@@ -264,3 +321,4 @@ window.onload = function() {
 function goBack() {
     window.history.back();
 }
+
