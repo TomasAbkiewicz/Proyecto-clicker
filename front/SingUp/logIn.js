@@ -8,7 +8,12 @@ function enviarUsuario() {
     username : nombreInput.value,
     password : contraseñaInput.value,
   }
+  let partida = sessionStorage.getItem("partida");
+      if (partida !== null){
+        sessionStorage.removeItem("partida")
+  }
   postData("login", user,(userId) => {
+      
       if (userId) {
         console.log("llego a login")
         sessionStorage.setItem("userId", userId)
