@@ -6,31 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Gnome</title>
     <link rel="stylesheet" href="login.css">
-   
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 </head>
 <body>
-
-
-    <header>Gnome Clicker - Acerca de - Mas Sobre nosotros</header>
-    <h1 class="welcome" style="font-style: oblique;">¡Bienvenido a Gnome Clicker!</h1>
-    <h2 class="welcome">Instrucciones del juego/ explicación breve</h2>
-       <div class="container">
-        <div class="inicio">
-    <p class="iniciar-sesion">Iniciar Sesion</p>
-    <input id="usuarioLogIn" class="user" placeholder="Usuario"></input>
-    <input id="contraseñaLogIn" placeholder="Contraseña"></input>
-    <button id="ingresar">Ingresar</button>
+    <div class="login-container">
+        <h1>¡Bienvenido a Gnome Clicker!</h1>
+        <input type="text" placeholder="Usuario">
+        <input type="password" placeholder="Contraseña">
+        <button>Ingresar</button>
+        <div class="create-account">
+            <p>¿No tienes una cuenta?</p>
+            <p><a href="CrearCuenta.html" target="_blank">Crea una</a></p>
         </div>
     </div>
-
-<div class="segunda">
-    <p> ¿No tienes una cuenta?</p>
-
-    <p class="crear"><a href="CrearCuenta.html" target= "_blank">Crea una</a></p>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
-<script src="../../data/socket.js"></script>
-<script src="logIn.js"></script>
+    <div class="right-half"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="../../data/socket.js"></script>
+    <script src="logIn.js"></script>
 </body>
 </html>
