@@ -34,15 +34,9 @@ body {
 }
 
 .tree-container {
-    width: 300px; /* Ajusta el ancho según tus necesidades */
-    height: 300px; /* Ajusta el alto según tus necesidades */
     display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
-    top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
 }
 
 .tree {
@@ -52,11 +46,12 @@ body {
     transform: translateX(-50%);
 }
 
+
 .gnomo {
     width: 100px; /* Ajusta el tamaño según sea necesario */
     height: 100px;
     position: absolute;
-    top: 65%; /* Ajusta la posición para centrar en la pantalla si es necesario */
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
@@ -64,12 +59,12 @@ body {
 }
 
 #imagen{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50px; /* Ajusta el tamaño del gnomo */
-    height: 50px;
+    width: 75px; /* Ajusta el tamaño del gnomo */
+    height: 100px;
+}
+
+#imagen:active {
+    transform: scale(0.9);
 }
 
 .fruit {
@@ -94,6 +89,11 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 1000;
+}
+
+#counter{
+    color: #fff;
+    font-weight: bold;
 }
 
 .popup {
