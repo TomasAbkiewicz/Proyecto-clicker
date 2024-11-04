@@ -300,7 +300,14 @@ document.getElementById("save").addEventListener("click",(save)=> {
 })
 
 
+function redirectLogin(){
+    window.location.href = "http://127.0.0.1:5500/front/SingUp/login.html";
+}
 
+function toggleModes() {
+    const modesContainer = document.getElementById("modesContainer");
+    modesContainer.classList.toggle("hidden");
+}
 
 function redirect(){
     window.location.href = "http://127.0.0.1:5500/front/principal/modo_buscaminas/prueba_buscaminas.html";

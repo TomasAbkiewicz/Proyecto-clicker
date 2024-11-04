@@ -35,20 +35,20 @@ body {
 }
 
 .column {
-    width: 220px; /* Column width */
-    height: 100vh; /* Occupy full height of the viewport */
-    position: fixed; /* Fix the menu in position */
-    right: 0; /* Position to the right */
-    top: 0; /* Align to the top */
-    background-color: #256082; /* Dark background color */
-    padding: 20px 15px; /* Internal spacing */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #256082;
+    padding: 20px 15px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space between list and buttons */
-    overflow-y: auto; /* Allow vertical scrolling for the column */
-    align-items: center; /* Center buttons horizontally */
-    gap: 10px; /* Space between buttons */
+    justify-content: space-between;
+    overflow-y: auto;
+    align-items: center;
+    gap: 10px;
 }
 
 #save {
@@ -130,18 +130,21 @@ body {
     display: block;
 }
 .botones {
-    width: 100%; /* Buttons occupy full width of container */
-    padding: 20px; /* Internal spacing (adjust if necessary) */
+    width: 100%;
+    padding: 20px;
     background-image: url(madera.jpg);
-    color: white; /* Text color */
-    border: none; /* No borders */
-    border-radius: 5px; /* Rounded borders */
-    font-size: 16px; /* Text size */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
-
+.btn{
+    height: 50%;
+    width: 100%;
+}
 #currency {
     background-color: #256082;
     border: 1px solid #256082;

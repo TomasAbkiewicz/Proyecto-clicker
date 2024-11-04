@@ -34,7 +34,7 @@
             <button id="save" class="items">Guardar</button>
             <p id="currency" class="items">Monedas: </p>
             <p id="gnomeCounter" class="items">Poblacion: 0</p>
-            <p id="login" class="items">Log In</p>
+            <p id="login" class="items" onclick="redirectLogin()">Log In</p>
             <p id="config" class="items">Configuracion</p>
         </div>
         <div>
@@ -49,7 +49,7 @@
                 <button id="shop" class="botones">Tienda</button>
                 
                 
-                <button id="modos" class="botones">Modos de juego alternativo</button>
+                <button id="modos" class="botones" onclick="toggleModes()">Modos de juego alternativo</button>
                 <div style="position: relative;">
                     <button onclick="redirect()" class= "hidden btn" id="Buscaminas">Buscaminas</button>
                     <button onclick="redirect1()" class= "hidden btn" id="Arbol">Arbol</button>
