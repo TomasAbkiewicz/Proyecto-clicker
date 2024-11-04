@@ -2,33 +2,24 @@
   {
     "userId": 1,
     "currency": {
-      "sunflowers": 40,
-      "fruits": {
-        "banana": 0,
-        "apple": 0,
-        "grapes": 0,
-        "pineapple": 0,
-        "dragonFruits": 0
-      }
+      "sunflowers": 40
     },
     "upgrades": {
-      "up1": 10,
-      "up2": 0,
-      "up3": 0,
-      "up4": 0
+      "up1": 0,
+      "up2": 1,
+      "up3": 2
+
     }
   },
   {
     "userId": 2,
     "currency": {
-      "sunflowers": 423,
-      "fruits": {
-        "banana": 0,
-        "apple": 0,
-        "grapes": 0,
-        "pineapple": 0,
-        "dragonFruits": 0
-      }
+      "sunflowers": 423
+    },
+    "upgrades": {
+      "up1": 4,
+      "up2": 0,
+      "up3": 0
     }
   }
 ]

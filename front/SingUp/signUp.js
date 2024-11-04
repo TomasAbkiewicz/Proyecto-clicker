@@ -18,8 +18,11 @@ function enviarUsuario() {
     if ( username !== "" ) {
       postData("signup", { username,password }, (response) => {
         if (response.ok) {
-          alert("usuario cargado");
-          window.location.href= "http://127.0.0.1:5500/Main%20Archivos/login.html"
+         
+          window.location.href= "http://127.0.0.1:5500/front/SingUp/login.html"
+          
+          
+          
         } else {
           alert("error al guardar el usuario");
         }

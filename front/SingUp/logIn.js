@@ -5,8 +5,8 @@ let login= document.getElementById("ingresar")
 
 function enviarUsuario() {
   let user = {
-    username : nombreInput.value,
     password : contraseñaInput.value,
+    username : nombreInput.value,
   }
   let partida = sessionStorage.getItem("partida");
       if (partida !== null){

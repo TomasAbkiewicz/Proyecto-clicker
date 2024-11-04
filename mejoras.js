@@ -9,10 +9,3 @@ export function autoclicker(element, cps, time) {
         clearInterval(clickInterval);
     }, time);
 }
-export function multi(clickStrength,multi,time) {
-    let click = clickStrength
-    clickStrength *= multi;
-    setTimeout(()=>{
-        clickStrength = click;
-    },time)
-}
