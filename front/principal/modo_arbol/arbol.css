@@ -63,10 +63,6 @@ body {
     height: 100px;
 }
 
-#imagen:active {
-    transform: scale(0.9);
-}
-
 .fruit {
     position: absolute;
     width: 15%;

@@ -315,7 +315,15 @@ function redirect(){
 function redirect1(){
     window.location.href = "http://127.0.0.1:5500/front/principal/modo_arbol/arbol.html";
 }
-
+let pop1 = document.getElementById("popup1")
+infor.addEventListener("mouseenter", () => {
+    pop1.classList.remove("hidden")
+    pop1.style.display = 'block';
+} )
+infor.addEventListener("mouseleave", () =>{
+    pop1.classList.add("hidden")
+    pop1.style.display = "none"
+})
 
 window.onload = function() {
     const winnings = sessionStorage.getItem('winnings');
