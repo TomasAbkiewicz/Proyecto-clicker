@@ -33,10 +33,17 @@
         <div class="high">
             <button id="save" class="items">Guardar</button>
             <p id="currency" class="items">Monedas: </p>
-            <p id="gnomeCounter" class="items">Poblacion: 0</p>
-            <p id="login" class="items">Log In</p>
+            <p class="items"><img src="info-Photoroom.png" alt="" srcset="" id="infor"></p>
+            <p id="login" class="items" onclick="redirectLogin()">Log In</p>
             <p id="config" class="items">Configuracion</p>
         </div>
+
+        <div class="popupContainer">
+            <div class="popup1" id="popup1"> 
+                ¡Bienvenido a Gnome Clicker! Aquí, te embarcarás en una divertida aventura en la que, al hacer clic en un gnomo, ganarás monedas mágicas. Cada moneda que consigas puede ser usada para desbloquear mejoras especiales, como objetos mágicos o habilidades, que te ayudarán a ganar monedas más rápido y en mayor cantidad.
+                A medida que avanzas, podrás aumentar tu colección de gnomos y obtener poderes únicos que harán que tu ganancia de monedas sea cada vez mayor. Sumérgete en este bosque encantado y disfruta de la satisfacción de acumular riquezas, mejorar tus habilidades y descubrir todas las sorpresas que los gnomos tienen preparadas para ti. ¡Empieza a hacer clic y deja que la magia suceda!
+            </div>  
+            </div>
         <div>
 
             <div class="containerGnomo">
@@ -50,10 +57,7 @@
                 
                 
                 
-                <div style="position: relative;">
-                    <button onclick="redirect()" class= "hidden btn" id="Buscaminas">Buscaminas</button>
-                    
-                </div>
+                
             </div>
             <div id="tiendaPopup" class="popup">
                 <button id="closeButton" class="closeButton" style="display: none;">X</button>
@@ -62,14 +66,12 @@
                   <button id="clickStr" class="upgrade">Regar Jardin</button>
                   <button id="passiveStr" class="upgrade">Trebol de 4 ojas</button>
                   <button id="dualStr" class="upgrade">Olla de Oro</button>
-                 
                 </div>
 
                 <div class="descriptions">
                     <div class="info">Aumenta la cantidad de monedas Ganadas por Click</div>
                     <div class="info">Aumenta la cantidad de monedas Ganadas por Segundo</div>
                     <div class="info">Mayor aumento de la cantidad de monedas por Click y por Segundo</div>
-                    <div class="info">¿¿??</div>
                     
                 </div>
                     <h1>Autoclickers:</h1>
@@ -77,8 +79,12 @@
                     <button class="clickers">Autoclicker 1</button>
                     <button class="clickers">Autoclicker 2</button>
                     <button class="clickers">Autoclicker 3</button>
-                    <button class="clickers">Autoclicker 4</button>
-                    <button class="clickers">Autoclicker 5</button>
+                </div>
+
+                <div class="imagenes">
+                    <div class="manos"><img src="auto clicker madera (1).png" alt="" srcset=""></div>
+                    <div class="manos"><img src="clicker oro (1).png" alt="" srcset=""></div>
+                    <div class="manos"><img src="clicker diamante.png" alt="" srcset=""></div>
                 </div>
             </div>
             <div id="overlay" class="hidden overlay"></div>

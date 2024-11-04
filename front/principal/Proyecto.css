@@ -34,21 +34,55 @@ body {
     align-items: center;
 }
 
+#infor{
+    background-color: #256082;
+    width: 50px;
+    height: 50px;
+}
+
+.popupContainer {
+    position: relative;
+    display: inline-block; /* Para que el pop-up se posicione en relación con el contenedor */
+}
+
+.popup1{
+    display: none; /* Oculta el pop-up inicialmente */
+    position: fixed; /* Para que cubra la pantalla */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(37, 96, 130, 0.97); /* Fondo semi-transparente */
+    color: white;
+    padding: 50px; /* Espaciado interno amplio */
+    border-radius: 10px;
+    width: 80vw; /* Anchura del pop-up en viewport width */
+    height: 80vh; /* Altura del pop-up en viewport height */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    z-index: 1000;
+    text-align: center;
+    font-weight: bold;
+    font-size: x-large;
+}
+
+.popupContainer:hover .popup {
+    display: block;
+}
 .column {
-    width: 220px; /* Column width */
-    height: 100vh; /* Occupy full height of the viewport */
-    position: fixed; /* Fix the menu in position */
-    right: 0; /* Position to the right */
-    top: 0; /* Align to the top */
-    background-color: #256082; /* Dark background color */
-    padding: 20px 15px; /* Internal spacing */
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+    width: 220px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: #256082;
+    padding: 20px 15px;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Distribute space between list and buttons */
-    overflow-y: auto; /* Allow vertical scrolling for the column */
-    align-items: center; /* Center buttons horizontally */
-    gap: 10px; /* Space between buttons */
+    justify-content: space-between;
+    overflow-y: auto;
+    align-items: center;
+    gap: 10px;
 }
 
 #save {
@@ -127,18 +161,21 @@ body {
     display: block;
 }
 .botones {
-    width: 100%; /* Buttons occupy full width of container */
-    padding: 20px; /* Internal spacing (adjust if necessary) */
+    width: 100%;
+    padding: 20px;
     background-image: url(madera.jpg);
-    color: white; /* Text color */
-    border: none; /* No borders */
-    border-radius: 5px; /* Rounded borders */
-    font-size: 16px; /* Text size */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    flex-grow: 1; 
+    flex-grow: 1;
 }
-
+.btn{
+    height: 50%;
+    width: 100%;
+}
 #currency {
     background-color: #256082;
     border: 1px solid #256082;
@@ -162,17 +199,13 @@ body {
 
 .items {
     padding: 10px 20px; /* Internal spacing of buttons */
-    background-color: #e74c3c; /* Button background color */
+    background-color: #256082; /* Button background color */
     color: white; /* Text color */
     border: none; /* No border */
     border-radius: 5px; /* Rounded borders */
     font-size: 16px; /* Text size */
     cursor: pointer;
     transition: background-color 0.3s ease;
-}
-
-.items:hover {
-    background-color: #c0392b; /* Hover effect on button */
 }
 
 .items:focus {
@@ -246,24 +279,8 @@ body {
     cursor: pointer;
 }
 
-.golden-elf {
-    position: absolute;
-    display: none; /* Initially hidden */
-    width: 100px; /* Adjust size as needed */
-    height: 100px; /* Adjust size as needed */
-    background-color: gold; /* Placeholder background color */
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid #000; /* Optional border for better visibility */
-    border-radius: 10px; /* Rounded corners */
-}
 
-.golden-elf-text {
-    font-size: 18px;
-    font-weight: bold;
-}
+
 
 #login {
     background-color: #256082;
@@ -292,9 +309,9 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-image: url(madera.jpg);
-    background-size: 100% 100%; /* Stretches the image to cover the full height and width */
-    background-position: center top; /* Aligns the image to the top center */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: 100% 100%; 
+    background-position: center top; 
+    background-repeat: no-repeat; 
     padding: 20px;
     border: 2px solid #333;
     border-radius: 8px;
@@ -304,7 +321,6 @@ body {
     z-index: 10;
   }
   
-  /* Button container to space buttons evenly */
   .buttons {
     display: flex;
     justify-content: space-around;
@@ -344,7 +360,7 @@ body {
     justify-content: center;
     align-items: center;
   }
-  
+
   .upgrade:hover {
     background-color: #0056b3;
   }
@@ -372,6 +388,23 @@ body {
   .clickers:hover{
     background-color: #256082;
   }
+
+  .imagenes{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .manos{
+    padding: 10px 15px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+  }
   
   #openTienda {
     margin: 20px;
@@ -397,8 +430,8 @@ body {
 
 .closeButton{
     position: absolute;
-    top: 20px; /* Alinea el botón 20px desde la parte superior */
-    left: 20px; /* Alinea el botón 20px desde el lado izquierdo */
+    top: 20px; 
+    left: 20px; 
     width: 40px;
     height: 40px;
     cursor: pointer;

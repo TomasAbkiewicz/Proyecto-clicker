@@ -272,7 +272,14 @@ document.getElementById("save").addEventListener("click",(save)=> {
 })
 
 
+function redirectLogin(){
+    window.location.href = "http://127.0.0.1:5500/front/SingUp/login.html";
+}
 
+function toggleModes() {
+    const modesContainer = document.getElementById("modesContainer");
+    modesContainer.classList.toggle("hidden");
+}
 
 function redirect(){
     window.location.href = "http://127.0.0.1:5500/front/principal/modo_buscaminas/prueba_buscaminas.html";
@@ -280,7 +287,15 @@ function redirect(){
 function redirect1(){
     window.location.href = "http://127.0.0.1:5500/front/principal/modo_arbol/arbol.html";
 }
-
+let pop1 = document.getElementById("popup1")
+infor.addEventListener("mouseenter", () => {
+    pop1.classList.remove("hidden")
+    pop1.style.display = 'block';
+} )
+infor.addEventListener("mouseleave", () =>{
+    pop1.classList.add("hidden")
+    pop1.style.display = "none"
+})
 
 window.onload = function() {
     const winnings = sessionStorage.getItem('winnings');
