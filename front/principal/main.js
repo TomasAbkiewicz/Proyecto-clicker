@@ -1,3 +1,5 @@
+import { autoclicker, multi } from "../../mejoras";
+
 (function() {
     let userId = sessionStorage.getItem("userId")
     window.partida = JSON.parse(sessionStorage.getItem("partida"))
@@ -5,7 +7,7 @@
         postData("loadGame", userId, (game) => {
             partida = game;
             console.log(game)
-            window.contadorMonedas= partida.currency.sunflowers;
+            contadorMonedas= partida.currency.sunflowers;
             console.log(userId)
             console.log(partida)
             window.upgradeStage1 = partida.upgrades.up1;
@@ -20,10 +22,7 @@
                     window.clickStrength *=   currentStage.extra
                     window.clickStrength +=   currentStage.clickStrength
                     
-                }
-            
-                
-                
+                }  
             }
             if (window.upgradeStage3 !== 0){
                 for (i=0; i<upgradeStage3; i++){
@@ -33,10 +32,7 @@
                     passiveStrength *=   currentStage.extra
                     passiveStrength +=   currentStage.passiveStrength
                     
-                }
-            
-                
-                
+                }  
             }
             if (window.upgradeStage2 !==0){
                 for (i=0; i<upgradeStage2; i++){
@@ -61,12 +57,11 @@
         window.clickStrength= 0;
         window.passiveStrength=0;
         setInterval(passiveUpdate,100);
-        alert ("estas jugando sin cuenta, tu progreso no sera guardado y se reiniciara al salir de la pagina o entrar a cualquier modo de juego. Para no perder el progress, crea una cuenta con el boton log in ubicado en la esquina derecha de la pantalla")
-        
+        alert ("estas jugando sin cuenta, tu progreso no sera guardado y se reiniciara al salir de la pagina o entrar a cualquier modo de juego. Para no perder el progress, crea una cuenta con el boton log in ubicado en la esquina derecha de la pantalla") 
     }
     
     
-})();
+});
 
 let pMejora = document.getElementById("passiveStr")
 let mejora = document.getElementById("clickStr")
@@ -267,9 +262,6 @@ document.getElementById("save").addEventListener("click",(save)=> {
 
         })
     }
-    
-   
-
 })
 
 
