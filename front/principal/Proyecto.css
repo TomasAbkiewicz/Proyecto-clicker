@@ -21,6 +21,7 @@ body {
     background-repeat: no-repeat; /* Prevents the image from repeating */
     overflow: hidden; /* Prevent scrolling */
     height: 100vh; /* Ensure body takes full height of the viewport */
+    font-family: 'MedievalSharp', sans-serif;
 }
 
 .high {
@@ -179,7 +180,6 @@ body {
 #currency {
     background-color: #256082;
     border: 1px solid #256082;
-    font-weight: bold;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -319,6 +319,7 @@ body {
     aspect-ratio: 2/1;
     text-align: center;
     z-index: 10;
+    color: #fff;
   }
   
   .buttons {
@@ -436,4 +437,16 @@ body {
     height: 40px;
     cursor: pointer;
     border-radius: 50%;
+}
+
+#login, #save, .upgrade, .clickers {
+    font-family: 'Cinzel Decorative', sans-serif;
+}
+
+#currency, .golden-elf-text, .info {
+    font-family: 'Special Elite', sans-serif;
+}
+
+h1, h2, .popup1, .high .items .botones{
+    font-family: 'Cormorant Unicase', sans-serif;
 }
