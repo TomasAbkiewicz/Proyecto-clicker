@@ -31,7 +31,7 @@ function enviarUsuario() {
       alert("Complete todos los campos");
     }
   } else{
-    alert("contraña invalida")
+    alert("contraseña invalida")
   }
 }
 signup.addEventListener("click",enviarUsuario)
