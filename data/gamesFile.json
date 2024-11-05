@@ -8,7 +8,6 @@
       "up1": 0,
       "up2": 1,
       "up3": 2
-
     }
   },
   {
@@ -18,6 +17,17 @@
     },
     "upgrades": {
       "up1": 4,
+      "up2": 0,
+      "up3": 0
+    }
+  },
+  {
+    "userId": 3,
+    "currency": {
+      "sunflowers": 0
+    },
+    "upgrades": {
+      "up1": 0,
       "up2": 0,
       "up3": 0
     }

@@ -1,3 +1,5 @@
+import { autoclicker, multi } from "../../mejoras";
+
 (function() {
     let userId = sessionStorage.getItem("userId")
     window.partida = JSON.parse(sessionStorage.getItem("partida"))
@@ -33,10 +35,7 @@
                     passiveStrength *=   currentStage.extra
                     passiveStrength +=   currentStage.passiveStrength
                     
-                }
-            
-                
-                
+                }  
             }
             if (window.upgradeStage2 !==0){
                 for (i=0; i<upgradeStage2; i++){
@@ -266,9 +265,6 @@ document.getElementById("save").addEventListener("click",(save)=> {
 
         })
     }
-    
-   
-
 })
 
 
