@@ -60,7 +60,9 @@
         window.upgradeStage3= 0;
         window.clickStrength= 0;
         window.passiveStrength=0;
+        setInterval(passiveUpdate,100);
         alert ("estas jugando sin cuenta, tu progreso no sera guardado y se reiniciara al salir de la pagina o entrar a cualquier modo de juego. Para no perder el progress, crea una cuenta con el boton log in ubicado en la esquina derecha de la pantalla")
+        
     }
     
     
@@ -79,7 +81,6 @@ let extra= 0
    
 
 let upgradeStages3 = [
-    {price:100, clickStrength:1, passiveStrength:1, extra:1},
     {price:200, clickStrength:2, passiveStrength:2, extra:1},
     {price:400, clickStrength:4, passiveStrength:4, extra:1},
     {price:1000, clickStrength:0, passiveStrength:1, extra:2},

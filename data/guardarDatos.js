@@ -29,7 +29,7 @@ export function newUser(user) {
     let game = {
         userId: userdata.id,
         currency: {
-            sunflowers: 0,
+            sunflowers: 10,
         },
         upgrades:{
             up1: 0,
