@@ -437,6 +437,7 @@ body {
     height: 40px;
     cursor: pointer;
     border-radius: 50%;
+    background-color: #256082;
 }
 
 #login, #save, .upgrade, .clickers {
