@@ -35,7 +35,8 @@ export function newUser(user) {
             up1: 0,
             up2: 0,
             up3: 0,
-            cs: 1
+            cs: 1,
+            ps:0,
         }
         }    
         GAMES.push(game);

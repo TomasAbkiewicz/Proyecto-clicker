@@ -1,34 +1,42 @@
-window.onload(()=>{
+window.onload = function(){
     const userId= sessionStorage.getItem("userId")
-    if (userId || userId !== undefined){
+    if (userId && userId !== undefined){
     postData("loadGame", userId, (game) => {
         return game;
     })} else{
         alert("modo sin sesion")
         game = {
+            id: undefined,
             currency: {
-              sunflowers: 1000000000000000000000000
+              sunflowers: 0
             },
             upgrades: {
               up1: 0,
               up2: 0,
               up3: 0,
-              cs: 1
+              cs: 1,
+              ps: 0,
             }
           }
         return game;
     }
-})
-const contador = document.getElementById("currency")
+}
+const contador = document.getElementById("currency");
+contador.innerHTML= game.currency.sunflowers;
 function updateCounter(element, clickStrenght) {
     element += clickStrenght
     contador.innerHTML= `Monedas: ${game.currency.sunflowers}`;
 }
-contador.innerHTML= game.currency.sunflowers;
+function updateCounterP(passiveStrenght) {
+    element += passiveStrenght;
+    contador.innerHTML= `Monedas: ${game.currency.sunflowers}`;
+}
+
 upgradeStage1 = game.upgrades.up1;
 upgradeStage2 = game.upgrades.up2;
 upgradeStage3 = game.upgrades.up3;
 clickStrength = game.upgrades.cs;
+passiveStrenght= game.upgrades.ps;
 
 let pMejora = document.getElementById("passiveStr")
 let mejora = document.getElementById("clickStr")
@@ -118,15 +126,11 @@ let upgradeStages1 = [
     {price:200000,clickStrength:0,extra: 3},
 ]
 
-function passiveUpdate(){ 
-    contador += passiveStrength/10; 
-    contador.innerHTML = "Monedas: "+ Math.floor(contadorMonedas)
-}
 function addStr() {
     let currentStage = upgradeStages1[upgradeStage1];
-    if (contadorMonedas >= currentStage.price) {
-        contadorMonedas -= currentStage.price;  
-        contador.textContent = "Monedas: "+ contadorMonedas
+    if (game.currency.sunflowers >= currentStage.price) {
+        game.currency.sunflowers -= currentStage.price;  
+        contador.innerHTML = `monedas:  ${game.currency.sunflowers}`
         
         clickStrength *=   currentStage.extra
         clickStrength +=   currentStage.clickStrength
@@ -199,22 +203,24 @@ closeButton.addEventListener('click', function() {
 });
 
 
-document.getElementById("save").addEventListener("click",(save)=> {
+document.getElementById("save").addEventListener("click",()=> {
     
-    if (game !== null && game){
+    if (game.id){
         console.log(game)
         game.currency.sunflowers = Math.floor(contadorMonedas);
         game.upgrades.up1= upgradeStage1;
         game.upgrades.up2= upgradeStage2;
         game.upgrades.up3= upgradeStages3;
-        game.upgrades.cs = clickStrenght;
-        
+        game.upgrades.cs = clickStrenght; 
+        game.upgrades.ps= passiveStrenght;
         postData("save", game, (ok)=>{
             if (ok.ok){
                 alert("guardado correctamente")
             }
 
         })
+    }else{
+        alert("crea una cuenta para poder guardar tu progreso")
     }
 })
 
@@ -259,3 +265,4 @@ personaje.addEventListener("click",updateCounter(game.currency.sunflowers, click
 mejora.addEventListener("click",        addStr)
 pMejora.addEventListener("click",      addPStr)
 mejora3.addEventListener("click",      addDStr)
+setInterval(1000, updateCounterP(passiveStrenght))
