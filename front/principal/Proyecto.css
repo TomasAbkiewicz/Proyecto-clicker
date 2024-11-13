@@ -452,3 +452,16 @@ body {
 h1, h2, .popup1, .high .items .botones{
     font-family: 'Cormorant Unicase', sans-serif;
 }
+
+
+.containerOlla {
+    position: absolute;
+    bottom: 20px; /* Adjusts the vertical position */
+    left: 70%; /* Centers horizontally */
+    transform: translateX(-50%); /* Centers precisely */
+    width: 10%; /* Adjust size based on preference */
+}
+
+.containerOlla img {
+    width: 100%; /* Ensure image fills the container */
+}
