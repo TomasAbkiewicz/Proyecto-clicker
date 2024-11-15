@@ -70,12 +70,12 @@ body {
     display: block;
 }
 .column {
-    width: 220px;
-    height: 100vh;
+    width: 350px;
+    height: 500px;
     position: fixed;
     right: 0;
     top: 0;
-    background-color: #256082;
+    background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
     padding: 20px 15px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
     display: flex;
@@ -164,14 +164,18 @@ body {
 .botones {
     width: 100%;
     padding: 20px;
-    background-image: url(madera.jpg);
     color: white;
+    background-image: url(fondoTienda.png);
     border: none;
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
     flex-grow: 1;
+    background-size: 100% 100%; /* Stretches the image to cover the full height and width */
+    background-position: center top; /* Aligns the image to the top center */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    overflow: hidden; /* Prevent scrolling */
 }
 .btn{
     height: 50%;
