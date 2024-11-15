@@ -80,7 +80,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 20px;
 }
 
 #save {
@@ -160,37 +160,62 @@ body {
 }
 
 #shop, #modosJuego {
-    width: 200px; /* Adjusted width to match proportions */
-    height: 50%; /* Adjusted height for proportion */
-    padding: 5px; /* Reduced padding for a tighter look */
-    border: 3px solid #7EAD30; /* Greenish border to match the theme */
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    width: 300px; 
+    height: 50%; 
+    padding: 5px; 
+    border: 6px solid #536D0A; 
+    background-color: rgba(0, 0, 0, 0.6); 
     color: white;
-    border-radius: 20px; /* Rounded corners */
-    font-size: 14px; /* Slightly smaller font size */
+    border-radius: 20px; 
+    font-size: 14px; 
     text-align: center;
     font-family: 'Press Start 2P', cursive;
-    text-shadow: 1px 1px 3px #7EAD30; /* Softer glow effect */
+    text-shadow: 1px 1px 3px #536D0A; 
     cursor: pointer;
     transition: transform 0.2s, box-shadow 0.2s;
 }
 
 /* Hover effect */
 #shop:hover, #modosJuego:hover {
-    transform: scale(1.03); /* Slightly smaller scale on hover */
-    box-shadow: 0 0 8px 4px #7EAD30; /* Glow effect on hover */
+    transform: scale(1.03); 
+    box-shadow: 0 0 8px 4px #536D0A; 
 }
 
-/* Specific styles for each button text if needed */
+
 #shop {
-    background-image: url('button_background.png'); /* Optional: Add a specific background image */
-    background-size: cover;
-    height: 20%;
+
+    height: 10%;
 }
 
 #modosJuego {
-    background-image: url('button_background.png'); /* Optional: Add a specific background image */
-    background-size: cover;
+    height: 60%;
+}
+
+#subButtons {
+    display: none; 
+    flex-direction: column;
+    gap: 10px;
+    position: absolute; 
+    top: 100%; 
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    border-radius: 10px;
+    padding: 10px;
+    z-index: 10;
+}
+
+#subButtons button {
+    background-color: #256082;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#subButtons button:hover {
+    background-color: #0056b3;
 }
 
 .btn{
