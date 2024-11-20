@@ -75,7 +75,7 @@ body {
     position: fixed;
     right: 0;
     top: 100px;
-    background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+    background-color: rgba(141, 55, 55, 0); /* Fully transparent background */
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
