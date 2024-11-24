@@ -1,5 +1,5 @@
 #helloScreen {
-    display: none; /* Initially hidden */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
@@ -10,17 +10,17 @@
 }
 
 html, body {
-    height: 100%; /* Ensure body takes full height of the viewport */
-    margin: 0; /* Remove default margin */
+    height: 100%; 
+    margin: 0; 
 }
 
 body {
     background-image: url('fondo1.png');
-    background-size: 100% 100%; /* Stretches the image to cover the full height and width */
-    background-position: center top; /* Aligns the image to the top center */
-    background-repeat: no-repeat; /* Prevents the image from repeating */
-    overflow: hidden; /* Prevent scrolling */
-    height: 100vh; /* Ensure body takes full height of the viewport */
+    background-size: 100% 100%; 
+    background-position: center top; 
+    background-repeat: no-repeat; 
+    overflow: hidden; 
+    height: 100vh; 
     font-family: 'MedievalSharp', sans-serif;
 }
 
@@ -32,32 +32,31 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(0,0,0.2)
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 #infor{
-    background-color: #256082;
     width: 50px;
     height: 50px;
 }
 
 .popupContainer {
     position: relative;
-    display: inline-block; /* Para que el pop-up se posicione en relación con el contenedor */
+    display: inline-block; 
 }
 
 .popup1{
-    display: none; /* Oculta el pop-up inicialmente */
-    position: fixed; /* Para que cubra la pantalla */
+    display: none; 
+    position: fixed; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgba(37, 96, 130, 0.97); /* Fondo semi-transparente */
+    background-color: rgba(37, 96, 130, 0.97); 
     color: white;
-    padding: 50px; /* Espaciado interno amplio */
+    padding: 50px; 
     border-radius: 10px;
-    width: 80vw; /* Anchura del pop-up en viewport width */
-    height: 80vh; /* Altura del pop-up en viewport height */
+    width: 80vw; 
+    height: 80vh; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
     font-size: 18px;
     z-index: 1000;
@@ -75,7 +74,7 @@ body {
     position: fixed;
     right: 0;
     top: 100px;
-    background-color: rgba(0, 0, 0, 0); /* Fully transparent background */
+    background-color: rgba(0, 0, 0, 0); 
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
@@ -140,18 +139,11 @@ body {
 
 
 #Buscaminas {
-    bottom: 180px; /* Position it above the "Arbol" button */
-    left: -70px; /* Adjust for horizontal positioning */
+    bottom: 180px; 
+    left: -70px; 
 }
 
 
-#config {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #256082;
-    background-color: #256082;
-}
 .hidden{
     display:none;
 }
@@ -162,7 +154,7 @@ body {
 #shop, #modosJuego {
     width: 250px; 
     height: 50%; 
-    padding: 5px; /* Reduced padding for a tighter look */
+    padding: 5px; 
     background-color: rgba(0, 0, 0, 0.0); 
     color: white;
     font-size: 14px; 
@@ -173,10 +165,10 @@ body {
     border: none;
 }
 
-/* Hover effect */
+
 #shop:hover, #modosJuego:hover {
-    transform: scale(1.03); /* Slightly smaller scale on hover */
-    box-shadow: 0 0 8px 4px #536D0A; /* Glow effect on hover */
+    transform: scale(1.03); 
+    box-shadow: 0 0 8px 4px #536D0A; 
     border: none;
 }
 
@@ -184,15 +176,15 @@ body {
 #shop {
     background-image: url('buttonBack.png'); 
     height: 20%;
-    background-size: 100% 100%; /* Stretches the image to cover the full height and width */
-    background-position: center top; /* Aligns the image to the top center */
+    background-size: 100% 100%; 
+    background-position: center top; 
     background-repeat: no-repeat; 
 }
 
 #modosJuego {
-    background-image: url('tienda.png'); /* Optional: Add a specific background image */
-    background-size: 100% 100%; /* Stretches the image to cover the full height and width */
-    background-position: center top; /* Aligns the image to the top center */
+    background-image: url('tienda.png'); 
+    background-size: 100% 100%; 
+    background-position: center top; 
     background-repeat: no-repeat; 
 }
 
@@ -200,62 +192,54 @@ body {
     height: 50%;
     width: 100%;
 }
-#currency {
-    background-color: #256082;
-    border: 1px solid #256082;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 .franja {
     display: flex;
-    justify-content: space-around; /* Equal space between elements */
-    align-items: center; /* Center vertically */
-    background-color: #2c3e50; /* Menu background color */
-    padding: 10px 0; /* Top and bottom spacing */
-    width: 100%; /* Occupy full width of the screen */
+    justify-content: space-around;  
+    align-items: center; 
+    background-color: #2c3e50;
+    padding: 10px 0; 
+    width: 100%; 
     position: absolute;
-    bottom: 0; /* Stick to the bottom */
+    bottom: 0; 
 }
 
 .items {
-    padding: 10px 20px; /* Internal spacing of buttons */                                                    
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded borders */
-    font-size: 16px; /* Text size */
+    padding: 10px 20px;                                                  
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    font-size: 16px; 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
 .items:focus {
-    outline: none; /* Remove focus outline */
+    outline: none; 
 }
 
 #upgrade-buttons {
-    display: none; /* Initially hide the upgrade buttons */
+    display: none; 
     margin-top: 10px;
 }
 
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
 }
 
 .modal-content {
-    margin: 15% auto; /* 15% from the top and centered */
+    margin: 15% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 20%; /* Could be more or less, depending on screen size */
+    width: 20%; 
     display: flex;
     justify-content: center;
     align-items: center;   
@@ -477,12 +461,98 @@ h1, h2, .popup1, .high .items .botones{
 
 .containerOlla {
     position: absolute;
-    bottom: 20px; /* Adjusts the vertical position */
-    left: 70%; /* Centers horizontally */
-    transform: translateX(-50%); /* Centers precisely */
-    width: 10%; /* Adjust size based on preference */
+    bottom: 20px; 
+    left: 70%; 
+    transform: translateX(-50%); 
+    width: 10%; 
 }
 
 .containerOlla img {
-    width: 100%; /* Ensure image fills the container */
+    width: 100%; 
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white;
+    font-family: 'MedievalSharp', sans-serif;
+    height: 80px; 
+}
+
+
+.header-left {
+    flex: 1;
+}
+
+#save {
+    background-image: url(itemBack.png);
+    background-color: #256082;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+#save:hover {
+    transform: scale(1.1);
+}
+
+
+.header-center {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.coin-icon {
+    width: 80px;
+    height: 70px;
+    margin-right: 10px;
+}
+
+#currency {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.header-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
+.info-icon:hover{
+    transform: scale(1.1);
+}
+
+#login {
+    background-image: url(itemBack.png);
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    background-color: #256082;
+}
+
+#login:hover {
+    transform: scale(1.1);
 }
