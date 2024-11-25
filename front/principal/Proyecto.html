@@ -17,32 +17,35 @@
 </head>
 <body>
     <div class="screen1">
-        <!-- High section -->
-        <div class="high">
-            <button id="save" class="items">Guardar</button>
-            <p id="currency" class="items"> Monedas: </p>
-            <p class="items"><img src="info-Photoroom.png" alt="Info" id="infor"></p>
-            
-            <p id="config" class="items">Configuracion</p>
+        <div class="header">
+            <div class="header-left">
+                <button id="save">💾 Guardar</button>
+            </div>
+            <div class="header-center">
+                <img src="currency.png" alt="Moneda" class="coin-icon">
+                <span id="currency">0.00</span>
+            </div>
+            <div class="header-right">
+                <img src="info-Photoroom.png" alt="Información" class="info-icon">
+                <button id="login" onclick="redirectLogin()">🔒 Log In</button>
+            </div>
         </div>
 
-        <!-- Center Container -->
+       
         <div class="containerGnomo">
-            <img src="tipo.png" alt="Gnome" id="gnomo">
+            <img src="gnomo.png" alt="Gnome" id="gnomo">
         </div>
         <div class="containerOlla">
             <img src="olla.png" alt="Pot of Gold">
         </div>
 
-        <!-- Right Column -->
+       
         <div class="column">
             <button id="shop" class="botones">Tienda</button>
-            <button id="modosJuego" class="botones">Modos de Juego
-                <div id="subButtons" class="hidden"></div>
-            </button>
+            <button id="modosJuego" class="botones" onclick="redirect()">Modos de Juego</button>
         </div>
 
-        <!-- Shop Popup -->
+
         <div id="tiendaPopup" class="popup">
             <button id="closeButton" class="closeButton">X</button>
             <h1>Upgrades:</h1>
@@ -59,7 +62,7 @@
             </div>
         </div>
 
-        <!-- Overlay -->
+ 
         <div id="overlay" class="hidden overlay"></div>
     </div>
 </body>
