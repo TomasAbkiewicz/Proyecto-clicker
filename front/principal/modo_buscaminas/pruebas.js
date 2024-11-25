@@ -1,106 +1,168 @@
-let score = 0.00;
-let balance = 500;
-let gridSize = 5;
-let multipliers = {
-    2: [1.00],
-    3: [2.00],
-    4: [3.00],
-    5: [4.00],
-    6: [5.00]
-};
-let bombProbabilities = {
-    2: 0.7,
-    3: 0.11,
-    4: 0.5,
-    5: 0.4,
-    6: 0.3
-};
-let currentMultiplierIndex = 0;
-let betAmount = 100;
-let gameStarted = false;
+const board = document.getElementById("game-board");
+const coinsDisplay = document.getElementById("coins");
+const multiplierDisplay = document.getElementById("multiplier");
+const currentWinningsDisplay = document.getElementById("current-winnings");
+const startButton = document.getElementById("start-btn");
+const withdrawButton = document.getElementById("withdraw-btn");
+const statusDisplay = document.getElementById("status");
+const gridSizeSelector = document.getElementById("grid-size");
 
-function createCell() {
-    const cell = document.createElement('div');
-    cell.className = 'cell';
-    cell.onclick = () => flipCell(cell);
-    const img = document.createElement('img');
-    img.alt = 'Hidden';
-    cell.appendChild(img);
-    return cell;
+let coins = 500000; // Monedas iniciales
+let currentWinnings = 0; // Ganancias actuales
+let multiplier = 1.0; // Multiplicador inicial
+let costPerGame = 0; // Costo del juego según el tamaño
+let rows = 0; // Número de filas
+let cols = 0; // Número de columnas
+let numGnomes = 0; // Número de gnomos
+let gameStarted = false; // Estado del juego
+let gameBoard = []; // Tablero del juego
+
+// Actualiza el HUD (interfaz de usuario)
+function updateHUD() {
+    coinsDisplay.textContent = coins.toLocaleString();
+    multiplierDisplay.textContent = `${multiplier.toFixed(2)}x`;
+    currentWinningsDisplay.textContent = currentWinnings.toLocaleString();
 }
 
-function resetBoard() {
-    const grid = document.getElementById('grid');
-    grid.innerHTML = '';
-    grid.style.gridTemplateColumns = `repeat(${gridSize}, 1fr)`;
-    grid.classList.toggle('small-gap', gridSize === 2);
-    const totalCells = gridSize === 2 ? 2 : gridSize * gridSize;
-    for (let i = 0; i < totalCells; i++) {
-        grid.appendChild(createCell());
-    }
-    score = 0.00;
-    currentMultiplierIndex = 0;
-    document.getElementById('score').innerText = score.toFixed(2);
-    document.getElementById('popup').style.display = 'none';
-    gameStarted = false;
-    document.getElementById('play-button').innerText = `Jugar (${betAmount} monedas)`;
-    document.querySelectorAll('.grid-size-selector button').forEach(button => button.disabled = false);
+// Calcula el costo según el tamaño seleccionado
+function calculateCost() {
+    const gridSize = gridSizeSelector.value;
+    if (gridSize === "2x2") return 50000;
+    if (gridSize === "3x3") return 100000;
+    if (gridSize === "5x5") return 250000;
+    if (gridSize === "6x6") return 500000;
 }
 
-function flipCell(cell) {
-    if (!cell.classList.contains('flipped') && gameStarted) {
-        cell.classList.add('flipped');
-        const img = cell.querySelector('img');
-        let isBomb;
-        if (gridSize === 2) {
-            const flippedCells = document.querySelectorAll('.cell.flipped.diamond').length;
-            isBomb = flippedCells === 0 ? Math.random() < 0.7 : true;
-        } else {
-            isBomb = Math.random() < (bombProbabilities[gridSize] + currentMultiplierIndex * 0.1);
-        }
+// Configura el tablero del juego
+function setupBoard() {
+    board.innerHTML = ""; // Limpia el tablero
+    const [gridRows, gridCols] = gridSizeSelector.value.split("x").map(Number);
+    rows = gridRows;
+    cols = gridCols;
+    numGnomes = Math.floor((rows * cols) / 4); // Un cuarto de las celdas son gnomos
+    gameBoard = Array.from({ length: rows }, () =>
+        Array.from({ length: cols }, () => ({ hasGnome: false, revealed: false }))
+    );
 
-        cell.classList.add(isBomb ? 'bomb' : 'diamond');
-        if (!isBomb) {
-            score += multipliers[gridSize][currentMultiplierIndex];
-            document.getElementById('score').innerText = score.toFixed(2);
-            currentMultiplierIndex = Math.min(currentMultiplierIndex + 1, multipliers[gridSize].length - 1);
-        } else {
-            document.getElementById('popup-message').innerText = '¡Explotó la bomba, perdiste el juego!';
-            document.getElementById('popup').style.display = 'block';
+    // Coloca los gnomos aleatoriamente
+    let gnomesPlaced = 0;
+    while (gnomesPlaced < numGnomes) {
+        const row = Math.floor(Math.random() * rows);
+        const col = Math.floor(Math.random() * cols);
+        if (!gameBoard[row][col].hasGnome) {
+            gameBoard[row][col].hasGnome = true;
+            gnomesPlaced++;
         }
     }
+
+    // Genera las celdas del tablero
+    board.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
+    board.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            const cell = document.createElement("div");
+            cell.classList.add("cell");
+            cell.dataset.row = i;
+            cell.dataset.col = j;
+            cell.addEventListener("click", () => revealCell(i, j, cell));
+            board.appendChild(cell);
+        }
+    }
 }
 
-function setGridSize(size) {
-    gridSize = size;
-    betAmount = 100 * gridSize;
-    document.getElementById('play-button').innerText = `Jugar (${betAmount} monedas)`;
-}
+// Revela una celda seleccionada
+function revealCell(row, col, cell) {
+    if (gameBoard[row][col].revealed || !gameStarted) return;
 
-function playGame() {
-    if (balance >= betAmount) {
-        balance -= betAmount;
-        document.getElementById('balance').innerText = balance.toFixed(2);
-        resetBoard();
-        gameStarted = true;
-        document.querySelectorAll('.grid-size-selector button').forEach(button => button.disabled = true);
-        document.getElementById('play-button').innerText = 'Jugando...';
+    gameBoard[row][col].revealed = true;
+
+    if (gameBoard[row][col].hasGnome) {
+        cell.classList.add("gnome", "revealed");
+        cell.textContent = "🧙";
+        statusDisplay.textContent = "¡Te atrapó un gnomo! Juego terminado.";
+        withdrawButton.disabled = true;
+        gameStarted = false;
+        revealAll();
     } else {
-        alert('No tienes suficiente saldo para jugar.');
+        cell.classList.add("revealed");
+        cell.textContent = "💰";
+        multiplier += 0.25; // Incrementa el multiplicador
+        currentWinnings = Math.floor(costPerGame * multiplier);
+        withdrawButton.disabled = false;
+        updateHUD();
+
+        // Verifica si el jugador ganó al revelar todas las celdas seguras
+        if (checkWinCondition()) {
+            statusDisplay.textContent = "¡Has encontrado todos los tesoros!";
+            gameStarted = false;
+        }
     }
 }
 
-function withdraw() {
-    const winnings = betAmount * score;
-    balance += winnings;
-    document.getElementById('balance').innerText = balance.toFixed(2);
-    document.getElementById('popup-message').innerText = `¡Felicidades por tu premio de ${winnings.toFixed(2)} monedas!`;
-    document.getElementById('popup').style.display = 'block';
+// Revela todas las celdas al terminar el juego
+function revealAll() {
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            const cell = document.querySelector(
+                `.cell[data-row="${i}"][data-col="${j}"]`
+            );
+            if (gameBoard[i][j].hasGnome) {
+                cell.classList.add("gnome", "revealed");
+                cell.textContent = "🧙";
+            } else if (!gameBoard[i][j].revealed) {
+                cell.classList.add("revealed");
+                cell.textContent = "💰";
+            }
+        }
+    }
 }
 
-// Initialize the board
-resetBoard();
-
-function goBack() {
-  window.history.back();
+// Verifica si todas las celdas seguras han sido reveladas
+function checkWinCondition() {
+    let revealedCells = 0;
+    for (let i = 0; i < rows; i++) {
+        for (let j = 0; j < cols; j++) {
+            if (!gameBoard[i][j].hasGnome && gameBoard[i][j].revealed) {
+                revealedCells++;
+            }
+        }
+    }
+    return revealedCells === rows * cols - numGnomes;
 }
+
+// Retira las ganancias actuales
+function withdrawWinnings() {
+    coins += currentWinnings;
+    updateHUD();
+    statusDisplay.textContent = `¡Has retirado ${currentWinnings.toLocaleString()} monedas!`;
+    currentWinnings = 0;
+    withdrawButton.disabled = true;
+    gameStarted = false;
+    board.innerHTML = "";
+}
+
+// Inicia el juego
+function startGame() {
+    costPerGame = calculateCost();
+
+    if (coins < costPerGame) {
+        statusDisplay.textContent = "No tienes suficientes monedas para jugar.";
+        return;
+    }
+
+    coins -= costPerGame;
+    multiplier = 1.0;
+    currentWinnings = 0;
+    updateHUD();
+    setupBoard();
+    gameStarted = true;
+    statusDisplay.textContent = "¡Buena suerte!";
+    withdrawButton.disabled = true;
+}
+
+// Agrega event listeners a los botones
+startButton.addEventListener("click", startGame);
+withdrawButton.addEventListener("click", withdrawWinnings);
+
+// Actualiza el HUD inicial
+updateHUD();

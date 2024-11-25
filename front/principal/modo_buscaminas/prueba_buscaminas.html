@@ -3,32 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mines Game</title>
+    <title>Buscaminas</title>
     <link rel="stylesheet" href="prueba-buscaminas.css">
 </head>
 <body>
-    <button class="cross-button" onclick="goBack()">X</button>
-    <div class="container">
-        <div class="title">MINES</div>
-        <div class="balance">Balance: <span id="balance">500</span> monedas</div>
-        <div class="score">Score: <span id="score">0.00</span>x</div>
-        <div class="grid-size-selector">
-            <button onclick="setGridSize(2)">2x1</button>
-            <button onclick="setGridSize(3)">3x3</button>
-            <button onclick="setGridSize(4)">4x4</button>
-            <button onclick="setGridSize(5)">5x5</button>
-            <button onclick="setGridSize(6)">6x6</button>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Aventura Mágica</h1>
+            <p>Descubre cofres de oro, evita a los gnomos y multiplica tus ganancias.</p>
+        </header>
+        <div class="hud">
+            <p><strong>Monedas:</strong> <span id="coins">500,000</span></p>
+            <p><strong>Multiplicador:</strong> <span id="multiplier">1.00x</span></p>
+            <p><strong>Ganancias Actuales:</strong> <span id="current-winnings">0</span></p>
         </div>
-        <button class="play-button" id="play-button" onclick="playGame()">Jugar (100 monedas)</button>
-        <div class="grid" id="grid">
-            <!-- Cells will be generated here -->
+        <div class="controls">
+            <div class="game-options">
+                <label for="grid-size">Tamaño del tablero:</label>
+                <select id="grid-size">
+                    <option value="2x2">2x2 - 50,000 monedas</option>
+                    <option value="3x3">3x3 - 100,000 monedas</option>
+                    <option value="5x5">5x5 - 250,000 monedas</option>
+                    <option value="6x6">6x6 - 500,000 monedas</option>
+                </select>
+            </div>
+            <button id="start-btn">Iniciar Juego</button>
         </div>
-        <button class="withdraw-button" onclick="withdraw()">Retirar</button>
+        <div id="game-board"></div>
+        <div class="controls">
+            <button id="withdraw-btn" disabled>Retirar Ganancias</button>
+            <p id="status"></p>
+        </div>
     </div>
-    <div class="popup" id="popup">
-        <div id="popup-message"></div>
-        <button onclick="resetBoard()">Continuar</button>
-    </div>
-    <script src="pruebas.js"></script>
 </body>
+<script src="pruebas.js"></script>
 </html>

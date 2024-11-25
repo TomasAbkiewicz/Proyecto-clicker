@@ -309,3 +309,54 @@ window.onload = function() {
 function goBack() {
     window.history.back();
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const modosJuego = document.getElementById("modosJuego");
+    const subButtons = document.getElementById("subButtons");
+
+   
+    const btn1 = document.createElement("button");
+    btn1.textContent = "Modo 1";
+    btn1.onclick = () => alert("Modo 1 seleccionado");
+
+    const btn2 = document.createElement("button");
+    btn2.textContent = "Modo 2";
+    btn2.onclick = () => alert("Modo 2 seleccionado");
+
+    subButtons.appendChild(btn1);
+    subButtons.appendChild(btn2);
+
+    
+    modosJuego.addEventListener("click", () => {
+        if (subButtons.style.display === "flex") {
+            subButtons.style.display = "none";
+        } else {
+            subButtons.style.display = "flex";
+        }
+    });
+});
+document.addEventListener("DOMContentLoaded", () => {
+    const modosJuego = document.getElementById("modosJuego");
+    const subButtons = document.getElementById("subButtons");
+
+   
+    const btn1 = document.createElement("button");
+    btn1.textContent = "Modo 1";
+    btn1.onclick = () => alert("Modo 1 seleccionado");
+
+    const btn2 = document.createElement("button");
+    btn2.textContent = "Modo 2";
+    btn2.onclick = () => alert("Modo 2 seleccionado");
+
+    subButtons.appendChild(btn1);
+    subButtons.appendChild(btn2);
+
+    
+    modosJuego.addEventListener("click", () => {
+        if (subButtons.style.display === "flex") {
+            subButtons.style.display = "none";
+        } else {
+            subButtons.style.display = "flex";
+        }
+    });
+});
