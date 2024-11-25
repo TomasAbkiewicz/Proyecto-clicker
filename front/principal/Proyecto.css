@@ -96,7 +96,7 @@ body {
 #gnomo {
     position: absolute;
     height: 50%;
-    width: 20%;
+    width: 22.5%;
     bottom: 10px;
     transition: transform 0.2s;
     cursor: pointer;
@@ -517,7 +517,7 @@ h1, h2, .popup1, .high .items .botones{
 
 .coin-icon {
     width: 80px;
-    height: 70px;
+    height: 80px;
     margin-right: 10px;
 }
 
@@ -559,4 +559,13 @@ h1, h2, .popup1, .high .items .botones{
 
 #login:hover {
     transform: scale(1.1);
+}
+
+.tienda {
+    position: absolute; /* Para poder ajustar su posición con top y left */
+    left: 5%;
+    bottom: 0%; /* Mueve la imagen hacia abajo (puedes ajustar el valor según necesites) */
+    width: 250px; 
+    height: auto;
+    cursor: pointer; 
 }
