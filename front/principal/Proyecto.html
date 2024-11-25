@@ -2,68 +2,105 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gnome</title>
-    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="Proyecto.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="../../data/socket.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase&display=swap" rel="stylesheet">
-    <script src="main.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
-    <script src="../../data/socket.js"></script>
 </head>
 <body>
     <div class="screen1">
-        <div class="header">
-            <div class="header-left">
-                <button id="save">💾 Guardar</button>
-            </div>
-            <div class="header-center">
-                <img src="currency.png" alt="Moneda" class="coin-icon">
-                <span id="currency">0.00</span>
-            </div>
-            <div class="header-right">
-                <img src="info-Photoroom.png" alt="Información" class="info-icon">
-                <button id="login" onclick="redirectLogin()">🔒 Log In</button>
-            </div>
-        </div>
+        <div id="loginModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Log In</h2>
+                <form id="loginForm">
+                    <input type="text" id="username" name="username"  placeholder="Usuario" required>
+                    <br><br>
+                    <input type="password" id="password" name="password" placeholder="Contraseña" required>
+                    <br><br>
+                    <button type="submit" class="ingresar">Log In</button>
+                    <div class="popUpCrear">
+                        <p> ¿No tienes una cuenta?</p>
 
-       
-        <div class="containerGnomo">
-            <img src="gnomo.png" alt="Gnome" id="gnomo">
-        </div>
-        <div class="containerOlla">
-            <img src="olla.png" alt="Pot of Gold">
-        </div>
-
-       
-        <div class="column">
-            <button id="shop" class="botones">Tienda</button>
-            <button id="modosJuego" class="botones" onclick="redirect()">Modos de Juego</button>
-        </div>
-
-
-        <div id="tiendaPopup" class="popup">
-            <button id="closeButton" class="closeButton">X</button>
-            <h1>Upgrades:</h1>
-            <div class="buttons">
-                <button id="clickStr" class="upgrade">Regar Jardin: 10</button>
-                <button id="passiveStr" class="upgrade">Trebol de 4 hojas: 100</button>
-                <button id="dualStr" class="upgrade">Olla de Oro: 200</button>
-            </div>
-            <h1>Autoclickers:</h1>
-            <div class="autoclickers">
-                <button class="clickers">Autoclicker 1</button>
-                <button class="clickers">Autoclicker 2</button>
-                <button class="clickers">Autoclicker 3</button>
+                    <p class="crear"><a href="CrearCuenta.html" target= "_blank">Crea una</a></p>
+                </div>
+                </form>
             </div>
         </div>
+    
+        <div class="high">
+            <button id="save" class="items">Guardar</button>
+            <p id="currency" class="items">Monedas: </p>
+            <p class="items"><img src="info-Photoroom.png" alt="" srcset="" id="infor"></p>
+            <p id="login" class="items" onclick="redirectLogin()">Log In</p>
+            <p id="config" class="items">Configuracion</p>
+        </div>
 
- 
-        <div id="overlay" class="hidden overlay"></div>
+        <div class="popupContainer">
+            <div class="popup1" id="popup1"> 
+                ¡Bienvenido a Gnome Clicker! Aquí, te embarcarás en una divertida aventura en la que, al hacer clic en un gnomo, ganarás monedas mágicas. Cada moneda que consigas puede ser usada para desbloquear mejoras especiales, como objetos mágicos o habilidades, que te ayudarán a ganar monedas más rápido y en mayor cantidad.
+                A medida que avanzas, podrás aumentar tu colección de gnomos y obtener poderes únicos que harán que tu ganancia de monedas sea cada vez mayor. Sumérgete en este bosque encantado y disfruta de la satisfacción de acumular riquezas, mejorar tus habilidades y descubrir todas las sorpresas que los gnomos tienen preparadas para ti. ¡Empieza a hacer clic y deja que la magia suceda!
+            </div>  
+            </div>
+        <div>
+
+            <div class="containerGnomo">
+                <img src="gnomo.png" alt="" id="gnomo">
+            </div>
+            <div id="goldenElf" class="golden-elf">
+                <p class="golden-elf-text">Golden Elf</p>
+            </div>
+            <div class="column">
+                <button id="shop" class="botones">Tienda</button>
+                
+                
+                
+                
+            </div>
+            <div id="tiendaPopup" class="popup">
+                <button id="closeButton" class="closeButton" style="display: none;">X</button>
+                <h1>Upgrades:</h2>
+                <div class="buttons">
+                  <button id="clickStr" class="upgrade">Regar Jardin: 10</button>
+                  <button id="passiveStr" class="upgrade">Trebol de 4 ojas: 100</button>
+                  <button id="dualStr" class="upgrade">Olla de Oro: 200</button>
+                </div>
+
+                <div class="descriptions">
+                    <div class="info">Aumenta la cantidad de monedas Ganadas por Click</div>
+                    <div class="info">Aumenta la cantidad de monedas Ganadas por Segundo</div>
+                    <div class="info">Mayor aumento de la cantidad de monedas por Click y por Segundo</div>
+                    
+                </div>
+                    <h1>Autoclickers:</h1>
+                <div class="autoclickers">
+                    <button class="clickers">Autoclicker 1</button>
+                    <button class="clickers">Autoclicker 2</button>
+                    <button class="clickers">Autoclicker 3</button>
+                </div>
+
+                <div class="imagenes">
+                    <div class="manos"><img src="auto clicker madera (1).png" alt="" srcset=""></div>
+                    <div class="manos"><img src="clicker oro (1).png" alt="" srcset=""></div>
+                    <div class="manos"><img src="clicker diamante.png" alt="" srcset=""></div>
+                </div>
+            </div>
+            <div id="overlay" class="hidden overlay"></div>
+        </div>
     </div>
+    
+    <div id="helloScreen" style="display: none;"></div>   
+   
+    
+    <script src="main.js"></script>
+
 </body>
 </html>
+    
