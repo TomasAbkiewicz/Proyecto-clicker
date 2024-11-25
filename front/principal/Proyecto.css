@@ -74,11 +74,8 @@ body {
     position: fixed;
     right: 0;
     top: 100px;
-<<<<<<< HEAD
     background-color: rgba(141, 55, 55, 0); /* Fully transparent background */
-=======
     background-color: rgba(0, 0, 0, 0); 
->>>>>>> bd18555c812914d7361df8824c22b51b95d100d3
     padding: 20px 15px;
     display: flex;
     flex-direction: column;
