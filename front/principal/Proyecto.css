@@ -86,7 +86,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 10%;
 }
 
 
@@ -146,8 +145,8 @@ body {
 }
 
 #shop{
-    width:15%;
-    height:auto;
+    width: 15%; 
+    height: auto; 
     padding: 5px; 
     background-color: rgba(0, 0, 0, 0.0); 
     color: white;
@@ -160,7 +159,7 @@ body {
 }
 
 
-#shop:hover, #modosJuego:hover {
+#shop:hover{
     transform: scale(1.03); 
     box-shadow: 0 0 8px 4px #536D0A; 
     border: none;
@@ -168,13 +167,14 @@ body {
 
 
 #shop {
-    background-image: url('buttonBack.png');
+    background-image: url('buttonBack.png'); 
     background-size: 100% 100%; 
     background-position: center top; 
     background-repeat: no-repeat; 
 }
 
-#modosJuego { 
+#modosJuego {
+    background-image: url('tienda.png'); 
     background-size: 100% 100%; 
     background-position: center top; 
     background-repeat: no-repeat; 
@@ -475,7 +475,7 @@ h1, h2, .popup1, .high .items .botones{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.0); 
+    background-color: rgba(0, 0, 0, 0.7); 
     color: white;
     font-family: 'MedievalSharp', sans-serif;
     height: 80px; 
