@@ -1,3 +1,4 @@
+
 (function() {
     let userId = sessionStorage.getItem("userId")
     window.partida = JSON.parse(sessionStorage.getItem("partida"))
@@ -221,7 +222,22 @@ function addDStr() {
 
 
 
-
+function save(partida) {
+    if (partida !== null && partida){
+        console.log(partida)
+        partida.currency.sunflowers = Math.floor(contadorMonedas);
+        partida.upgrades.up1= upgradeStage1;
+        partida.upgrades.up2= upgradeStage2;
+        partida.upgrades.up3= upgradeStages3;
+        partida.upgrades.up4=0;
+        
+        postData("save", partida, (ok)=>{
+            if (ok.ok){
+                alert("guardado correctamente")
+            }
+        })
+    }
+}
 
 
 document.getElementById('shop').addEventListener('click', function() {
@@ -247,27 +263,7 @@ mejora.addEventListener("click",        addStr)
 pMejora.addEventListener("click",      addPStr)
 mejora3.addEventListener("click",      addDStr)
 
-document.getElementById("save").addEventListener("click",(save)=> {
-    
-    if (partida !== null && partida){
-        console.log(partida)
-        partida.currency.sunflowers = Math.floor(contadorMonedas);
-        partida.upgrades.up1= upgradeStage1;
-        partida.upgrades.up2= upgradeStage2;
-        partida.upgrades.up3= upgradeStages3;
-        partida.upgrades.up4=0;
-        
-        postData("save", partida, (ok)=>{
-            if (ok.ok){
-                alert("guardado correctamente")
-            }
-
-        })
-    }
-    
-   
-
-})
+document.getElementById("save").addEventListener("click",save())
 
 
 function redirectLogin(){
@@ -280,9 +276,11 @@ function toggleModes() {
 }
 
 function redirect(){
+    save(partida)
     window.location.href = "http://127.0.0.1:5500/front/principal/modo_buscaminas/prueba_buscaminas.html";
 }
 function redirect1(){
+    save(partida)
     window.location.href = "http://127.0.0.1:5500/front/principal/modo_arbol/arbol.html";
 }
 let pop1 = document.getElementById("popup1")
@@ -313,8 +311,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
    
     const btn1 = document.createElement("button");
-    btn1.textContent = "Modo 1";
-    btn1.onclick = () => alert("Modo 1 seleccionado");
+    btn1.textContent = "Buscaminas";
+    btn1.onclick = () => redirect();
 
     const btn2 = document.createElement("button");
     btn2.textContent = "Modo 2";
