@@ -475,7 +475,7 @@ h1, h2, .popup1, .high .items .botones{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.0); 
     color: white;
     font-family: 'MedievalSharp', sans-serif;
     height: 80px; 
