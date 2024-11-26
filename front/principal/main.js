@@ -4,10 +4,7 @@
     if (userId !== "undefined" && userId && partida === null){
         postData("loadGame", userId, (game) => {
             partida = game;
-            console.log(game)
             window.contadorMonedas= partida.currency.sunflowers;
-            console.log(userId)
-            console.log(partida)
             window.upgradeStage1 = partida.upgrades.up1;
             window.upgradeStage2 = partida.upgrades.up2;
             window.upgradeStage3 = partida.upgrades.up3;
@@ -335,29 +332,3 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
-document.addEventListener("DOMContentLoaded", () => {
-    const modosJuego = document.getElementById("modosJuego");
-    const subButtons = document.getElementById("subButtons");
-
-   
-    const btn1 = document.createElement("button");
-    btn1.textContent = "Modo 1";
-    btn1.onclick = () => alert("Modo 1 seleccionado");
-
-    const btn2 = document.createElement("button");
-    btn2.textContent = "Modo 2";
-    btn2.onclick = () => alert("Modo 2 seleccionado");
-
-    subButtons.appendChild(btn1);
-    subButtons.appendChild(btn2);
-
-    
-    modosJuego.addEventListener("click", () => {
-        if (subButtons.style.display === "flex") {
-            subButtons.style.display = "none";
-        } else {
-            subButtons.style.display = "flex";
-        }
-    });
-});
-console.log("adw")

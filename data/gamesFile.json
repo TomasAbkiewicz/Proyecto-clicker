@@ -20,5 +20,16 @@
       "up2": 0,
       "up3": 0
     }
+  },
+  {
+    "userId": 3,
+    "currency": {
+      "sunflowers": 10
+    },
+    "upgrades": {
+      "up1": 0,
+      "up2": 0,
+      "up3": 0
+    }
   }
 ]

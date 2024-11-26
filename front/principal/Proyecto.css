@@ -70,10 +70,6 @@ body {
 .popupContainer:hover .popup {
     display: block;
 }
-#shop{
-    display: none;
-
-}
 #save {
     border: 0px solid #ccc;
     transition: transform 0.3s ease; 
@@ -149,9 +145,9 @@ body {
     display: block;
 }
 
-#shop, #modosJuego {
-    width: 250px; 
-    height: 50%; 
+#shop{
+    width:15%;
+    height:auto;
     padding: 5px; 
     background-color: rgba(0, 0, 0, 0.0); 
     color: white;
@@ -172,15 +168,13 @@ body {
 
 
 #shop {
-    background-image: url('buttonBack.png'); 
-    height: 20%;
+    background-image: url('buttonBack.png');
     background-size: 100% 100%; 
     background-position: center top; 
     background-repeat: no-repeat; 
 }
 
-#modosJuego {
-    background-image: url('tienda.png'); 
+#modosJuego { 
     background-size: 100% 100%; 
     background-position: center top; 
     background-repeat: no-repeat; 
