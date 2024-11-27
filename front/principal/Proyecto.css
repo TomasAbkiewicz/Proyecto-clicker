@@ -146,8 +146,8 @@ body {
 }
 
 #shop{
-    width: 15%; 
-    height: auto; 
+    width: 10%; 
+    height: 30%; 
     padding: 5px; 
     background-color: rgba(0, 0, 0, 0.0); 
     color: white;
@@ -160,10 +160,12 @@ body {
 }
 .autoclickButtons {
     display: flex;
-    gap: 10px; /* Adds spacing between buttons */
+    flex-direction: column;
+    gap: 63px; 
     position: absolute; 
-    left: 25%;
-    bottom: 0%; 
+    left: 9.5%;
+    bottom: 33%; 
+    z-index: 500;
 }
 .container {
     display: flex;
@@ -313,7 +315,7 @@ body {
 }
 
 #tiendaPopup{  
-    z-index: 10;
+    z-index: 10000;
 }
 
 .popup {
@@ -333,8 +335,9 @@ body {
     aspect-ratio: 2/1;
     max-height: 80%;
     text-align: center;
-    z-index: 10;
+    z-index: 20000;
     color: #fff;
+
   }
   
   .buttons {
@@ -351,7 +354,7 @@ body {
   }
   
   .upgrade {
-    background-color: #256082;
+    background-color: rgba(0, 0, 0, 0.0);
     color: #fff;
     padding: 10px 15px;
     border: none;
@@ -428,7 +431,7 @@ body {
     font-size: 16px;
     cursor: pointer;
   }
-  .overlay {
+#overlay {
     position: fixed;
     top: 0;
     left: 0;
@@ -556,7 +559,6 @@ h1, h2, .popup1, .high .items .botones{
 }
 
 #login {
-    background-image: url(itemBack.png);
     color: white;
     border: none;
     padding: 10px;
@@ -564,7 +566,7 @@ h1, h2, .popup1, .high .items .botones{
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
-    background-color: #256082;
+    background-color: rgba(0, 0, 0, 0.0)
 }
 
 #login:hover {
@@ -573,11 +575,12 @@ h1, h2, .popup1, .high .items .botones{
 
 .tienda {
     position: absolute; 
-    left: 5%;
+    left: 7.5%;
     bottom: 0%; 
     width: 250px; 
     height: auto;
     cursor: pointer; 
+    z-index: 100;
 }
 
 .portalContainer {
@@ -593,7 +596,7 @@ h1, h2, .popup1, .high .items .botones{
 .portal {
     position: absolute;
     width: 25%; 
-    bottom: 15%; 
+    bottom: 50%; 
     cursor: pointer;
     z-index: 5;
     text-align: center;
@@ -620,6 +623,30 @@ h1, h2, .popup1, .high .items .botones{
         opacity: 0.8; 
     }
 }
+
+.containerCarteles {
+    position: absolute; /* Se asegura de que esté flotando sobre el fondo */
+    bottom: 10px; /* Ajusta la posición vertical */
+    left: 10px; /* Centra horizontalmente */
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end; /* Alinea los carteles al centro */
+    gap: 10px; /* Espacio entre los carteles */
+    
+    height: 80%;
+}
+
+.carteles {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+#candado{
+    height: 90px;
+    width: 90px;
+}
+
 
 
 
