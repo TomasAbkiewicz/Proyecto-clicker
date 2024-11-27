@@ -7,11 +7,13 @@
     <link rel="stylesheet" href="prueba-buscaminas.css">
 </head>
 <body>
+    <div class="custom-container">
     <div class="game-container">
         <header class="game-header">
-            <h1>Aventura Mágica</h1>
+            <h1>Gnome Mines</h1>
             <p>Descubre cofres de oro, evita a los gnomos y multiplica tus ganancias.</p>
         </header>
+        <button id="back-button" onclick="goBack()">Volver</button>
         <div class="hud">
             <p><strong>Monedas:</strong> <span id="coins">500,000</span></p>
             <p><strong>Multiplicador:</strong> <span id="multiplier">1.00x</span></p>
@@ -35,6 +37,7 @@
             <p id="status"></p>
         </div>
     </div>
+</div>
 </body>
 <script src="pruebas.js"></script>
 </html>
