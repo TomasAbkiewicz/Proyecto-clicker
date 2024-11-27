@@ -18,10 +18,7 @@
                     window.clickStrength *=   currentStage.extra
                     window.clickStrength +=   currentStage.clickStrength
                     
-                }
-            
-                
-                
+                }  
             }
             if (window.upgradeStage3 !== 0){
                 for (i=0; i<upgradeStage3; i++){
@@ -32,9 +29,6 @@
                     passiveStrength +=   currentStage.passiveStrength
                     
                 }
-            
-                
-                
             }
             if (window.upgradeStage2 !==0){
                 for (i=0; i<upgradeStage2; i++){
@@ -74,8 +68,7 @@ let personaje = document.getElementById("gnomo")
 let contador= document.getElementById("currency")
 let mejora3 =document.getElementById("dualStr");
 let extra= 0
-
-
+let tiendaPopUp = document.getElementById("tiendaPopUp")
    
 
 let upgradeStages3 = [
@@ -161,17 +154,17 @@ let upgradeStages1 = [
 
 function updateCoins (){
     contadorMonedas += clickStrength  
-    contador.textContent = "Monedas: "+ Math.floor(contadorMonedas)
+    contador.textContent = Math.floor(contadorMonedas)
 }
 function passiveUpdate(){ 
     contadorMonedas += passiveStrength/10; 
-    contador.textContent = "Monedas: "+ Math.floor(contadorMonedas)
+    contador.textContent = Math.floor(contadorMonedas)
 }
 function addStr() {
     let currentStage = upgradeStages1[upgradeStage1];
     if (contadorMonedas >= currentStage.price) {
         contadorMonedas -= currentStage.price;  
-        contador.textContent = "Monedas: "+ contadorMonedas
+        contador.textContent = contadorMonedas
         
         clickStrength *=   currentStage.extra
         clickStrength +=   currentStage.clickStrength
@@ -233,7 +226,7 @@ function save(partida) {
         
         postData("save", partida, (ok)=>{
             if (ok.ok){
-                alert("guardado correctamente")
+                return ok
             }
         })
     }
@@ -241,7 +234,7 @@ function save(partida) {
 
 
 document.getElementById('shop').addEventListener('click', function() {
-    tiendaPopup.style.display = 'block'; 
+    tiendaPopUp.style.display = 'block'; 
     closeButton.style.display = 'block'; 
     overlay.classList.remove("hidden") 
     for (const button of botonesDerecha) { 
@@ -249,7 +242,7 @@ document.getElementById('shop').addEventListener('click', function() {
     } }); 
 
 closeButton.addEventListener('click', function() { 
-    tiendaPopup.style.display = 'none'; 
+    tiendaPopUp.style.display = 'none'; 
     closeButton.style.display = 'none'; 
     overlay.classList.add("hidden") 
     for (const button of botonesDerecha) {
@@ -263,7 +256,7 @@ mejora.addEventListener("click",        addStr)
 pMejora.addEventListener("click",      addPStr)
 mejora3.addEventListener("click",      addDStr)
 
-document.getElementById("save").addEventListener("click",save())
+document.getElementById("save").addEventListener("click",() => save(partida))
 
 
 function redirectLogin(){

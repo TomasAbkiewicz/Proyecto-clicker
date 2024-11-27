@@ -2,12 +2,152 @@
   {
     "userId": 1,
     "currency": {
-      "sunflowers": 245
+      "sunflowers": 273
     },
     "upgrades": {
       "up1": 4,
       "up2": 1,
-      "up3": 0
+      "up3": [
+        {
+          "price": 200,
+          "clickStrength": 2,
+          "passiveStrength": 2,
+          "extra": 1
+        },
+        {
+          "price": 400,
+          "clickStrength": 4,
+          "passiveStrength": 4,
+          "extra": 1
+        },
+        {
+          "price": 1000,
+          "clickStrength": 0,
+          "passiveStrength": 1,
+          "extra": 2
+        },
+        {
+          "price": 2000,
+          "clickStrength": 0,
+          "passiveStrength": 2,
+          "extra": 2
+        },
+        {
+          "price": 3500,
+          "clickStrength": 2,
+          "passiveStrength": 2,
+          "extra": 2
+        },
+        {
+          "price": 7000,
+          "clickStrength": 4,
+          "passiveStrength": 4,
+          "extra": 2
+        },
+        {
+          "price": 10000,
+          "clickStrength": 0,
+          "passiveStrength": 3,
+          "extra": 3
+        },
+        {
+          "price": 14000,
+          "clickStrength": 29,
+          "passiveStrength": 29,
+          "extra": 1
+        },
+        {
+          "price": 19000,
+          "clickStrength": 0,
+          "passiveStrength": 2,
+          "extra": 2
+        },
+        {
+          "price": 23000,
+          "clickStrength": 0,
+          "passiveStrength": 4,
+          "extra": 4
+        },
+        {
+          "price": 30000,
+          "clickStrength": 100,
+          "passiveStrength": 100,
+          "extra": 1.5
+        },
+        {
+          "price": 55000,
+          "clickStrength": 50,
+          "passiveStrength": 50,
+          "extra": 2
+        },
+        {
+          "price": 88000,
+          "clickStrength": 150,
+          "passiveStrength": 150,
+          "extra": 1.2
+        },
+        {
+          "price": 100000,
+          "clickStrength": 0,
+          "passiveStrength": 4,
+          "extra": 4
+        },
+        {
+          "price": 254000,
+          "clickStrength": 200,
+          "passiveStrength": 200,
+          "extra": 2
+        },
+        {
+          "price": 459000,
+          "clickStrength": 1,
+          "passiveStrength": 1,
+          "extra": 2
+        },
+        {
+          "price": 661000,
+          "clickStrength": 200,
+          "passiveStrength": 200,
+          "extra": 1
+        },
+        {
+          "price": 980000,
+          "clickStrength": 0,
+          "passiveStrength": 1.5,
+          "extra": 1.5
+        },
+        {
+          "price": 1890000,
+          "clickStrength": 0,
+          "passiveStrength": 1.2,
+          "extra": 1.2
+        },
+        {
+          "price": 2500000,
+          "clickStrength": 0,
+          "passiveStrength": 1.5,
+          "extra": 1.5
+        },
+        {
+          "price": 40130000,
+          "clickStrength": 2,
+          "passiveStrength": 2,
+          "extra": 2
+        },
+        {
+          "price": 88180000,
+          "clickStrength": 4,
+          "passiveStrength": 4,
+          "extra": 1.5
+        },
+        {
+          "price": 100000000,
+          "clickStrength": 0,
+          "passiveStrength": 3,
+          "extra": 3
+        }
+      ],
+      "up4": 0
     }
   },
   {
