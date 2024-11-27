@@ -647,6 +647,18 @@ h1, h2, .popup1, .high .items .botones{
     width: 90px;
 }
 
+.imgMejoras{
+    height: 90px;
+    width: 90px;
+}
+
+.imgTienda{
+    background-color: rgba(0, 0, 0, 0.0);
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
 
 
 
