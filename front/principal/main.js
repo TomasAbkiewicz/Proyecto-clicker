@@ -364,3 +364,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 setInterval(save(partida), 300000)
+
+function portalClicked() {
+    const portal = document.getElementById("portal");
+
+  
+    setTimeout(() => {
+        console.log("Portal completado"); 
+    }, 1000); 
+}

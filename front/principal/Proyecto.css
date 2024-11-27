@@ -173,8 +173,6 @@ body {
 }
 #shop:hover{
     transform: scale(1.03); 
-    box-shadow: 0 0 8px 4px #536D0A; 
-    border: none;
 }
 
 
@@ -353,7 +351,8 @@ body {
   }
   
   .upgrade {
-    color: #2c3e50;
+    background-color: #256082;
+    color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 4px;
@@ -400,10 +399,11 @@ body {
     align-items: center;
     cursor: pointer;
   }
-
-  .clickers:hover{
-    background-color: #256082;
+  .clickers:hover {
+    background-color: #0056b3;
   }
+
+
 
   .imagenes{
     display: flex;
@@ -467,6 +467,12 @@ h1, h2, .popup1, .high .items .botones{
     font-family: 'Cormorant Unicase', sans-serif;
 }
 
+.clickers, .info, .descriptions, .upgrade, .shopTitle{
+    font-family: 'Press Start 2P', sans-serif;
+    color: #fff;
+    text-shadow: 2px 2px 0px #000;
+}
+
 
 .containerOlla {
     position: absolute;
@@ -485,7 +491,7 @@ h1, h2, .popup1, .high .items .botones{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.7); 
+    background-color: rgba(0, 0, 0, 0.0); 
     color: white;
     font-family: 'MedievalSharp', sans-serif;
     height: 80px; 
@@ -573,3 +579,48 @@ h1, h2, .popup1, .high .items .botones{
     height: auto;
     cursor: pointer; 
 }
+
+.portalContainer {
+    position: relative;
+    width: 60%; 
+    height: 60%; 
+    display: flex;
+    justify-content: center; 
+    align-items: flex-end; 
+    left: 60%;
+    margin-top: 40%;
+}
+.portal {
+    position: absolute;
+    width: 25%; 
+    bottom: 15%; 
+    cursor: pointer;
+    z-index: 5;
+    text-align: center;
+    color: #ffffff; 
+}
+
+#portal:hover {
+    transform: scale(1.03); 
+    text-shadow: 0 0 10px #5cdbff, 0 0 20px #5cdbff, 0 0 30px #5cdbff, 0 0 40px #0088ff, 0 0 70px #0088ff;
+}
+
+#portal:active {
+    animation: growToFullScreen 1s ease-in-out forwards;
+}
+
+
+@keyframes growToFullScreen {
+    0% {
+        transform: scale(1); 
+        opacity: 1; 
+    }
+    100% {
+        transform: scale(100); 
+        opacity: 0.8; 
+    }
+}
+
+
+
+
