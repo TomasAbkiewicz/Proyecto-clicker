@@ -1,3 +1,4 @@
+
 const board = document.getElementById("game-board");
 const coinsDisplay = document.getElementById("coins");
 const multiplierDisplay = document.getElementById("multiplier");
@@ -7,7 +8,7 @@ const withdrawButton = document.getElementById("withdraw-btn");
 const statusDisplay = document.getElementById("status");
 const gridSizeSelector = document.getElementById("grid-size");
 
-let coins = 500000; // Monedas iniciales
+let coins = sessionStorage.getItem("coins"); // Monedas iniciales
 let currentWinnings = 0; // Ganancias actuales
 let multiplier = 1.0; // Multiplicador inicial
 let costPerGame = 0; // Costo del juego según el tamaño
@@ -167,6 +168,29 @@ withdrawButton.addEventListener("click", withdrawWinnings);
 // Actualiza el HUD inicial
 updateHUD();
 
+
+let userId = sessionStorage.getItem("userId")
+console.log(userId)
+postData("loadGame", userId, (game)=>{
+    console.log(game)
+    window.game= game;
+    return game
+})
+
+function save(games) {
+    console.log(games)
+    if (games !== null && games){
+        console.log(games)
+        games.currency.sunflowers = coins
+        postData("save", games, (ok)=>{
+            if (ok.ok){
+                return ok
+            }
+        })
+    }
+}
 function goBack() {
+    save(game)
+    console.log("ñe")
     window.history.back(); // Regresa a la página anterior
 }

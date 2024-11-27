@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Buscaminas</title>
     <link rel="stylesheet" href="prueba-buscaminas.css">
+   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.js"></script>
+    <script src="../../../data/socket.js"></script>
 </head>
 <body>
     <div class="custom-container">
@@ -23,10 +26,10 @@
             <div class="game-options">
                 <label for="grid-size">Tamaño del tablero:</label>
                 <select id="grid-size">
-                    <option value="2x2">2x2 - 50,000 monedas</option>
-                    <option value="3x3">3x3 - 100,000 monedas</option>
-                    <option value="5x5">5x5 - 250,000 monedas</option>
-                    <option value="6x6">6x6 - 500,000 monedas</option>
+                    <option value="2x2">2x2 - 50 monedas</option>
+                    <option value="3x3">3x3 - 100 monedas</option>
+                    <option value="5x5">5x5 - 250 monedas</option>
+                    <option value="6x6">6x6 - 500 monedas</option>
                 </select>
             </div>
             <button id="start-btn">Iniciar Juego</button>
@@ -39,5 +42,5 @@
     </div>
 </div>
 </body>
-<script src="pruebas.js"></script>
+    <script src="pruebas.js"></script>
 </html>

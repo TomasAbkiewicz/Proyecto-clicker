@@ -39,8 +39,9 @@
                     
                 }
             }
+            
             mejora.textContent = "Regar Jardin: " + upgradeStages1[window.upgradeStage1].price;
-            pMejora.textContent = "Trebol de 4 hojas: " + upgradeStages2[window.upgradeStage2].price;
+            pMejora.textContent = "Plantar Gnomo: " + upgradeStages2[window.upgradeStage2].price;
             mejora3.textContent = "Olla de Oro: " + upgradeStages3[window.upgradeStage3].price;
             setInterval(passiveUpdate,100);
             return game; 
@@ -71,7 +72,10 @@ let contador= document.getElementById("currency")
 let mejora3 =document.getElementById("dualStr");
 let extra= 0
 let tiendaPopUp = document.getElementById("tiendaPopUp")
-   
+let useAc1 = document.getElementById("auto1")
+let useAc2 = document.getElementById("auto2")
+let useAc3 = document.getElementById("auto3")
+
 let autoclickers = {
     ac1 : {price: 20000, cps: 30},
     ac2 : {price: 500000, cps: 80},
@@ -195,7 +199,7 @@ function addPStr() {
         passiveStrength +=   currentStage.clickStrength 
         upgradeStage2 += 1; 
         if (upgradeStage2 < upgradeStages2.length) {
-            pMejora.textContent = "Trebol de 4 hojas: " + upgradeStages2[upgradeStage2].price;
+            pMejora.textContent = "Plantar Gnomo: " + upgradeStages2[upgradeStage2].price;
         } else {
             pMejora.textContent = "Max Upgrade Reached";
         }
@@ -227,7 +231,7 @@ function save(partida) {
         partida.currency.sunflowers = Math.floor(contadorMonedas);
         partida.upgrades.up1= upgradeStage1;
         partida.upgrades.up2= upgradeStage2;
-        partida.upgrades.up3= upgradeStages3;
+        partida.upgrades.up3= upgradeStage3;
         partida.upgrades.up4=0;
         
         postData("save", partida, (ok)=>{
@@ -238,7 +242,7 @@ function save(partida) {
     }
 }
 
-
+let autoActive = false
 document.getElementById('shop').addEventListener('click', function() {
     tiendaPopUp.style.display = 'block'; 
     closeButton.style.display = 'block'; 
@@ -279,15 +283,51 @@ function buyAc3(){
         console.log(partida.upgrades.ac3);
     }
 }
-function usarAc(ac) {
-    const cps = 1000 / ac.cps;
-    const intervalId = setInterval(updateCoins, cps);
-
-    setTimeout(() => {
-        clearInterval(intervalId); 
-    }, 30000);
-}
-
+function usarAc1() {
+    console.log("actuvo!")
+    if (!autoActive){
+        console.log("sigue activo")
+        partida.upgrades.ac1 -= 1
+        const cps = 1000 / 100;
+        const intervalId = setInterval(updateCoins, cps);
+        let autoActive= true
+        setTimeout(() => {
+            let autoActive = false
+            clearInterval(intervalId);
+            console.log("ya no") 
+        }, 30000);
+    }
+} 
+function usarAc2() {
+    console.log("actuvo!")
+    if (!autoActive){
+        console.log("sigue activo")
+        partida.upgrades.ac2 -= 1
+        const cps = 1000 / 250;
+        const intervalId = setInterval(updateCoins, cps);
+        let autoActive= true
+        setTimeout(() => {
+            let autoActive = false
+            clearInterval(intervalId);
+            console.log("ya no") 
+        }, 30000);
+    }
+} 
+function usarAc3() {
+    console.log("actuvo!")
+    if (!autoActive){
+        console.log("sigue activo")
+        partida.upgrades.ac3 -= 1
+        const cps = 1000 / 500;
+        const intervalId = setInterval(updateCoins, cps);
+        let autoActive= true
+        setTimeout(() => {
+            let autoActive = false
+            clearInterval(intervalId);
+            console.log("ya no") 
+        }, 30000);
+    }
+} 
 personaje.addEventListener("click",updateCoins)
 mejora.addEventListener("click",        addStr)
 pMejora.addEventListener("click",      addPStr)
@@ -295,6 +335,9 @@ mejora3.addEventListener("click",      addDStr)
 ac1.addEventListener("click",buyAc1)
 ac2.addEventListener("click",buyAc2)
 ac3.addEventListener("click",buyAc3)
+useAc1.addEventListener("click",usarAc1)
+useAc2.addEventListener("click",usarAc2)
+useAc3.addEventListener("click",usarAc3)
 document.getElementById("save").addEventListener("click",() => save(partida))
 
 
@@ -308,7 +351,9 @@ function toggleModes() {
 }
 
 function redirect(){
+    sessionStorage  .setItem("coins",contadorMonedas)
     save(partida)
+    
     window.location.href = "http://127.0.0.1:5500/front/principal/modo_buscaminas/prueba_buscaminas.html";
 }
 function redirect1(){
@@ -373,3 +418,39 @@ function portalClicked() {
         console.log("Portal completado"); 
     }, 1000); 
 }
+
+
+let clickCount = 0; // Contador de clics
+let lastClickTime = Date.now(); // Tiempo del último clic
+let cpsThreshold = 30; // Umbral de CPS
+let interval; // Intervalo para calcular CPS
+
+// Detectar clics en la página
+document.addEventListener("click", () => {
+  clickCount++;
+});
+
+// Función para calcular el CPS cada segundo
+function calculateCPS() {
+  let currentTime = Date.now();
+  let timeElapsed = currentTime - lastClickTime;
+
+  // Si ha pasado más de un segundo
+  if (timeElapsed >= 1000) {
+    let cps = clickCount / (timeElapsed / 1000); // Calcular CPS
+    console.log(`CPS: ${cps}`); // Mostrar el CPS en consola
+
+    if (cps > cpsThreshold) {
+      // Si el CPS es mayor al umbral, cerrar la ventana
+      alert("CPS mayor a 30. La página se cerrará.");
+      window.close(); // Cerrar la página
+    }
+
+    // Resetear el contador de clics y tiempo
+    clickCount = 0;
+    lastClickTime = currentTime;
+  }
+}
+
+// Ejecutar la función calculateCPS cada segundo
+interval = setInterval(calculateCPS, 1000);

@@ -195,7 +195,7 @@ body {
     width: 100%;
 }
 #currency {
-    
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
