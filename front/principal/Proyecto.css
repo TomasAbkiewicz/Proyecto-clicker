@@ -642,7 +642,7 @@ h1, h2, .popup1, .high .items .botones{
     z-index: 1;
 }
 
-#candado{
+.candado{
     height: 90px;
     width: 90px;
 }
