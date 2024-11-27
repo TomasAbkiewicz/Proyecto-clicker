@@ -279,7 +279,10 @@ function buyAc3(){
         console.log(partida.upgrades.ac3);
     }
 }
-
+function usarAc(ac){
+    cps = 1000 / ac.cps
+    setTimeout(setInterval(updateCoins, cps), 30000) 
+}
 personaje.addEventListener("click",updateCoins)
 mejora.addEventListener("click",        addStr)
 pMejora.addEventListener("click",      addPStr)
