@@ -34,7 +34,10 @@ export function newUser(user) {
         upgrades:{
             up1: 0,
             up2: 0,
-            up3: 0
+            up3: 0,
+            ac1: 0,
+            ac2: 0,
+            ac3: 0,
         }
         }    
         GAMES.push(game);

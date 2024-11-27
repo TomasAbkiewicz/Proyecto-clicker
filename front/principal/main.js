@@ -323,3 +323,5 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+setInterval(save(partida), 300000)
