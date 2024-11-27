@@ -555,23 +555,10 @@ h1, h2, .popup1, .high .items .botones{
 }
 
 .tienda {
-    position: absolute; /* Para poder ajustar su posición con top y left */
+    position: absolute; 
     left: 5%;
-    bottom: 0%; /* Mueve la imagen hacia abajo (puedes ajustar el valor según necesites) */
+    bottom: 0%; 
     width: 250px; 
     height: auto;
     cursor: pointer; 
 }
-
-<<<<<<< Updated upstream
-.ac{
-    display: none;
-}
-=======
-<<<<<<< HEAD
-=======
-.ac{
-    display: none;
-}
->>>>>>> 6f834099d107649c929cb4aaba43df1257d0faad
->>>>>>> Stashed changes
