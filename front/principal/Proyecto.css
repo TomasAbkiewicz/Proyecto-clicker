@@ -575,9 +575,9 @@ h1, h2, .popup1, .high .items .botones{
 
 .tienda {
     position: absolute; 
-    left: 7.5%;
+    left: 11%;
     bottom: 0%; 
-    width: 250px; 
+    width: 275px; 
     height: auto;
     cursor: pointer; 
     z-index: 100;
