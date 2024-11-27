@@ -72,7 +72,11 @@ let mejora3 =document.getElementById("dualStr");
 let extra= 0
 let tiendaPopUp = document.getElementById("tiendaPopUp")
    
-
+let autoclickers = {
+    ac1 : {price: 20000, cps: 30},
+    ac2 : {price: 500000, cps: 80},
+    ac3 : {price: 10000000, cps: 250}
+}
 let upgradeStages3 = [
     {price:200, clickStrength:2, passiveStrength:2, extra:1},
     {price:400, clickStrength:4, passiveStrength:4, extra:1},
@@ -251,6 +255,13 @@ closeButton.addEventListener('click', function() {
          button.classList.remove("hidden"); 
     }
 });
+function buyAc1(){
+    if (contadorMonedas >= autoclickers.ac1.price){
+        contadorMonedas -= autoclickers.ac1.price
+        partida.upgrades.ac1 += 1
+        console.log(partida.upgrades.ac1)
+    }
+}
 personaje.addEventListener("click",updateCoins)
 mejora.addEventListener("click",        addStr)
 pMejora.addEventListener("click",      addPStr)
