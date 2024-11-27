@@ -158,8 +158,19 @@ body {
     transition: transform 0.2s, box-shadow 0.2s;
     border: none;
 }
-
-
+.autoclickButtons {
+    display: flex;
+    gap: 10px; /* Adds spacing between buttons */
+    position: absolute; 
+    left: 25%;
+    bottom: 0%; 
+}
+.container {
+    display: flex;
+    align-items: center;
+   
+     
+}
 #shop:hover{
     transform: scale(1.03); 
 }

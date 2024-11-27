@@ -257,19 +257,44 @@ closeButton.addEventListener('click', function() {
 });
 function buyAc1(){
     if (contadorMonedas >= autoclickers.ac1.price){
-        contadorMonedas -= autoclickers.ac1.price
-        partida.upgrades.ac1 += 1
-        console.log(partida.upgrades.ac1)
+        contadorMonedas -= autoclickers.ac1.price;
+        contador.textContent = contadorMonedas
+        partida.upgrades.ac1 += 1;
+        console.log(partida.upgrades.ac1);
     }
 }
+function buyAc2(){
+    if (contadorMonedas >= autoclickers.ac2.price){
+        contadorMonedas -= autoclickers.ac2.price;
+        contador.textContent = contadorMonedas
+        partida.upgrades.ac2 += 1;
+        console.log(partida.upgrades.ac2);
+    }
+}
+function buyAc3(){
+    if (contadorMonedas >= autoclickers.ac3.price){
+        contadorMonedas -= autoclickers.ac3.price;
+        contador.textContent = contadorMonedas
+        partida.upgrades.ac3 += 1;
+        console.log(partida.upgrades.ac3);
+    }
+}
+function usarAc(ac) {
+    const cps = 1000 / ac.cps;
+    const intervalId = setInterval(updateCoins, cps);
+
+    setTimeout(() => {
+        clearInterval(intervalId); 
+    }, 30000);
+}
+
 personaje.addEventListener("click",updateCoins)
 mejora.addEventListener("click",        addStr)
 pMejora.addEventListener("click",      addPStr)
 mejora3.addEventListener("click",      addDStr)
-ac1.addEventListener("click", buyAc1)
-ac2.addEventListener("click", buyAc2)
-ac3.addEventListener("click", buyAc3)
-
+ac1.addEventListener("click",buyAc1)
+ac2.addEventListener("click",buyAc2)
+ac3.addEventListener("click",buyAc3)
 document.getElementById("save").addEventListener("click",() => save(partida))
 
 
