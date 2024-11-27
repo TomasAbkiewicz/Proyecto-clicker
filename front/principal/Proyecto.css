@@ -86,6 +86,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 10%;
 }
 
 
@@ -203,12 +204,12 @@ body {
 }
 
 .items {
-    padding: 10px 20px; /* Internal spacing of buttons */
+    padding: 10px 20px;     
    
-    color: white; /* Text color */
-    border: none; /* No border */
-    border-radius: 5px; /* Rounded borders */
-    font-size: 16px; /* Text size */
+    color: white;              
+    border: none;   
+    border-radius: 5px; 
+    font-size: 16px; 
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -312,7 +313,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-image: url(madera.jpg);
+    background-image: url(madera.png);
     background-size: 100% 100%; 
     background-position: center top; 
     background-repeat: no-repeat; 
@@ -562,6 +563,15 @@ h1, h2, .popup1, .high .items .botones{
     cursor: pointer; 
 }
 
+<<<<<<< Updated upstream
 .ac{
     display: none;
 }
+=======
+<<<<<<< HEAD
+=======
+.ac{
+    display: none;
+}
+>>>>>>> 6f834099d107649c929cb4aaba43df1257d0faad
+>>>>>>> Stashed changes

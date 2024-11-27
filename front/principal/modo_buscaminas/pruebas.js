@@ -166,3 +166,7 @@ withdrawButton.addEventListener("click", withdrawWinnings);
 
 // Actualiza el HUD inicial
 updateHUD();
+
+function goBack() {
+    window.history.back(); // Regresa a la página anterior
+}
