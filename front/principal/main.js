@@ -59,7 +59,9 @@
     
     
 })();
-
+let ac1 = document.getElementById("ac1")
+let ac2 = document.getElementById("ac2")
+let ac3 = document.getElementById("ac3")
 let pMejora = document.getElementById("passiveStr")
 let mejora = document.getElementById("clickStr")
 let modeButtons = Array.from(document.getElementsByClassName('btn'));
@@ -247,14 +249,15 @@ closeButton.addEventListener('click', function() {
     overlay.classList.add("hidden") 
     for (const button of botonesDerecha) {
          button.classList.remove("hidden"); 
-    } 
-
-
+    }
 });
 personaje.addEventListener("click",updateCoins)
 mejora.addEventListener("click",        addStr)
 pMejora.addEventListener("click",      addPStr)
 mejora3.addEventListener("click",      addDStr)
+ac1.addEventListener("click", buyAc1)
+ac2.addEventListener("click", buyAc2)
+ac3.addEventListener("click", buyAc3)
 
 document.getElementById("save").addEventListener("click",() => save(partida))
 
