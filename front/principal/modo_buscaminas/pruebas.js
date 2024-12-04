@@ -55,7 +55,6 @@ function setupBoard() {
         }
     }
 
-    // Genera las celdas del tablero
     board.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
     board.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
     for (let i = 0; i < rows; i++) {
