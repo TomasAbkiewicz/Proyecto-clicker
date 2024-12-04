@@ -8,23 +8,24 @@ const withdrawButton = document.getElementById("withdraw-btn");
 const statusDisplay = document.getElementById("status");
 const gridSizeSelector = document.getElementById("grid-size");
 
-let coins = sessionStorage.getItem("coins"); 
-let multiplier = 1.0; 
-let costPerGame = 0; 
-let rows = 0; 
-let cols = 0; 
-let numGnomes = 0; 
-let gameStarted = false; 
-let gameBoard = []; 
+let coins = sessionStorage.getItem("coins"); // Monedas iniciales
+let currentWinnings = 0; // Ganancias actuales
+let multiplier = 1.0; // Multiplicador inicial
+let costPerGame = 0; // Costo del juego según el tamaño
+let rows = 0; // Número de filas
+let cols = 0; // Número de columnas
+let numGnomes = 0; // Número de gnomos
+let gameStarted = false; // Estado del juego
+let gameBoard = []; // Tablero del juego
 
-// Actualiza el HUD (interfaz de usuario)
+
 function updateHUD() {
     coinsDisplay.textContent = coins.toLocaleString();
     multiplierDisplay.textContent = `${multiplier.toFixed(2)}x`;
     currentWinningsDisplay.textContent = currentWinnings.toLocaleString();
 }
 
-// Calcula el costo según el tamaño seleccionado
+
 function calculateCost() {
     const gridSize = gridSizeSelector.value;
     if (gridSize === "2x2") return 50000;
@@ -39,7 +40,7 @@ function setupBoard() {
     const [gridRows, gridCols] = gridSizeSelector.value.split("x").map(Number);
     rows = gridRows;
     cols = gridCols;
-    numGnomes = Math.floor((rows * cols) / 4); 
+    numGnomes = Math.floor((rows * cols) / 4); // Un cuarto de las celdas son gnomos
     gameBoard = Array.from({ length: rows }, () =>
         Array.from({ length: cols }, () => ({ hasGnome: false, revealed: false }))
     );
@@ -55,6 +56,7 @@ function setupBoard() {
         }
     }
 
+    // Genera las celdas del tablero
     board.style.gridTemplateRows = `repeat(${rows}, 1fr)`;
     board.style.gridTemplateColumns = `repeat(${cols}, 1fr)`;
     for (let i = 0; i < rows; i++) {
@@ -69,7 +71,7 @@ function setupBoard() {
     }
 }
 
-// Revela una celda seleccionada
+
 function revealCell(row, col, cell) {
     if (gameBoard[row][col].revealed || !gameStarted) return;
 
@@ -85,7 +87,7 @@ function revealCell(row, col, cell) {
     } else {
         cell.classList.add("revealed");
         cell.textContent = "💰";
-        multiplier += 0.25; 
+        multiplier += 0.25; // Incrementa el multiplicador
         currentWinnings = Math.floor(costPerGame * multiplier);
         withdrawButton.disabled = false;
         updateHUD();
@@ -98,7 +100,7 @@ function revealCell(row, col, cell) {
     }
 }
 
-// Revela todas las celdas al terminar el juego
+
 function revealAll() {
     for (let i = 0; i < rows; i++) {
         for (let j = 0; j < cols; j++) {
@@ -159,9 +161,11 @@ function startGame() {
     withdrawButton.disabled = true;
 }
 
+// Agrega event listeners a los botones
 startButton.addEventListener("click", startGame);
 withdrawButton.addEventListener("click", withdrawWinnings);
 
+// Actualiza el HUD inicial
 updateHUD();
 
 
