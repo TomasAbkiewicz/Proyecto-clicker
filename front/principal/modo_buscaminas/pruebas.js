@@ -40,7 +40,7 @@ function setupBoard() {
     const [gridRows, gridCols] = gridSizeSelector.value.split("x").map(Number);
     rows = gridRows;
     cols = gridCols;
-    numGnomes = Math.floor((rows * cols) / 4); // Un cuarto de las celdas son gnomos
+    numGnomes = Math.floor((rows * cols) / 4); 
     gameBoard = Array.from({ length: rows }, () =>
         Array.from({ length: cols }, () => ({ hasGnome: false, revealed: false }))
     );
@@ -87,7 +87,7 @@ function revealCell(row, col, cell) {
     } else {
         cell.classList.add("revealed");
         cell.textContent = "💰";
-        multiplier += 0.25; // Incrementa el multiplicador
+        multiplier += 0.25; 
         currentWinnings = Math.floor(costPerGame * multiplier);
         withdrawButton.disabled = false;
         updateHUD();
@@ -131,7 +131,7 @@ function checkWinCondition() {
     return revealedCells === rows * cols - numGnomes;
 }
 
-// Retira las ganancias actuales
+
 function withdrawWinnings() {
     coins += currentWinnings;
     updateHUD();
@@ -142,7 +142,7 @@ function withdrawWinnings() {
     board.innerHTML = "";
 }
 
-// Inicia el juego
+
 function startGame() {
     costPerGame = calculateCost();
 
@@ -161,11 +161,9 @@ function startGame() {
     withdrawButton.disabled = true;
 }
 
-// Agrega event listeners a los botones
 startButton.addEventListener("click", startGame);
 withdrawButton.addEventListener("click", withdrawWinnings);
 
-// Actualiza el HUD inicial
 updateHUD();
 
 
@@ -192,5 +190,5 @@ function save(games) {
 function goBack() {
     save(game)
     console.log("ñe")
-    window.history.back(); // Regresa a la página anterior
+    window.history.back(); 
 }

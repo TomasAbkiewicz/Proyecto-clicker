@@ -284,7 +284,7 @@ function buyAc3(){
     }
 }
 function usarAc1() {
-    console.log("actuvo!")
+    console.log("activo!")
     if (!autoActive){
         console.log("sigue activo")
         partida.upgrades.ac1 -= 1
@@ -299,7 +299,7 @@ function usarAc1() {
     }
 } 
 function usarAc2() {
-    console.log("actuvo!")
+    console.log("activo!")
     if (!autoActive){
         console.log("sigue activo")
         partida.upgrades.ac2 -= 1
@@ -314,7 +314,7 @@ function usarAc2() {
     }
 } 
 function usarAc3() {
-    console.log("actuvo!")
+    console.log("activo!")
     if (!autoActive){
         console.log("sigue activo")
         partida.upgrades.ac3 -= 1
