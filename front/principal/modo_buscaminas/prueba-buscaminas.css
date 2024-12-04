@@ -159,8 +159,8 @@ select:hover {
 }
 
 #back-button:hover {
-    background: linear-gradient(to bottom, #c8b39a, #a58c73); /* Tono más claro al pasar el cursor */
-    transform: scale(1.05); /* Efecto de agrandamiento */
+    background: linear-gradient(to bottom, #c8b39a, #a58c73); 
+    transform: scale(1.05); 
 }
 
 #back-button:active {

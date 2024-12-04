@@ -8,15 +8,14 @@ const withdrawButton = document.getElementById("withdraw-btn");
 const statusDisplay = document.getElementById("status");
 const gridSizeSelector = document.getElementById("grid-size");
 
-let coins = sessionStorage.getItem("coins"); // Monedas iniciales
-let currentWinnings = 0; // Ganancias actuales
-let multiplier = 1.0; // Multiplicador inicial
-let costPerGame = 0; // Costo del juego según el tamaño
-let rows = 0; // Número de filas
-let cols = 0; // Número de columnas
-let numGnomes = 0; // Número de gnomos
-let gameStarted = false; // Estado del juego
-let gameBoard = []; // Tablero del juego
+let coins = sessionStorage.getItem("coins"); 
+let multiplier = 1.0; 
+let costPerGame = 0; 
+let rows = 0; 
+let cols = 0; 
+let numGnomes = 0; 
+let gameStarted = false; 
+let gameBoard = []; 
 
 // Actualiza el HUD (interfaz de usuario)
 function updateHUD() {
