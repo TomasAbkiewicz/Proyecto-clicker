@@ -40,7 +40,7 @@ function setupBoard() {
     const [gridRows, gridCols] = gridSizeSelector.value.split("x").map(Number);
     rows = gridRows;
     cols = gridCols;
-    numGnomes = Math.floor((rows * cols) / 4); // Un cuarto de las celdas son gnomos
+    numGnomes = Math.floor((rows * cols) / 4); 
     gameBoard = Array.from({ length: rows }, () =>
         Array.from({ length: cols }, () => ({ hasGnome: false, revealed: false }))
     );
