@@ -185,8 +185,7 @@ function save(games) {
         })
     }
 }
-function goBack() {
-    save(game)
-    console.log("ñe")
+function goBack(){
+    save(game);
     window.history.back(); 
 }
